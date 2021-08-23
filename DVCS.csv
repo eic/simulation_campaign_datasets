@@ -1,6 +1,6 @@
 # filename, total_number_of_events, events_per_20h_chunk, number_of_chunks
 EVGEN/DVCS/DVCS_18x275_2M/DVCS.1.hepmc,,,1
 EVGEN/DVCS/DVCS_18x275_2M/DVCS.2.hepmc,,,1
-EVGEN/DVCS/DVCS_5x100_2M/DVCS.1.hepmc,,,1
-EVGEN/DVCS/DVCS_5x100_2M/DVCS.2.hepmc,,,1
+EVGEN/DVCS/DVCS_10x100_2M/DVCS.1.hepmc,,,1
+EVGEN/DVCS/DVCS_10x100_2M/DVCS.2.hepmc,,,1
 EVGEN/DVCS/DVCS_5x41_1M/DVCS.1.hepmc,,,1
