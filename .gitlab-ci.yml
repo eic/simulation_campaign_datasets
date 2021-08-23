@@ -1,0 +1,14 @@
+image: eicweb.phy.anl.gov:4567/eic/juggler/juggler:latest
+
+DIS:
+  stage: test
+  tags:
+    - s3
+  script:
+    - grep -v ^\#  DVCS.csv | gawk -F',' '{print($1)}' | while read data ; do \
+        mkdir -p $(dirname ${data/EVGEN/EVGEN\/CI}) ; \
+        mc head -n 1000 S3/eictest/ATHENA/$data > ${data/EVGEN/EVGEN\/CI} ; \
+        nevents=$(grep ^E ${data/EVGEN/EVGEN\/CI} | wc -l) ; \
+        test $nevents -gt 0 ; \
+        echo /opt/campaigns/hepmc3/scripts/run.sh ${data/EVGEN/EVGEN\/CI} $((nevents-1)) ; \
+      done
