@@ -5,7 +5,7 @@ DIS:
   tags:
     - s3
   script:
-    - grep -v ^\#  DVCS.csv | gawk -F',' '{print($1)}' | while read data ; do
+    - grep -v ^\#  DVCS.csv | awk -F',' '{print($1)}' | while read data ; do
         mkdir -p $(dirname ${data/EVGEN/EVGEN\/CI}) ;
         mc head -n 1000 S3/eictest/ATHENA/$data > ${data/EVGEN/EVGEN\/CI} ;
         nevents=$(grep ^E ${data/EVGEN/EVGEN\/CI} | wc -l) ;
