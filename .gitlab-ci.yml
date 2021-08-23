@@ -11,5 +11,5 @@ DIS:
         mc head -n 1000 S3/eictest/ATHENA/$data > ${data/EVGEN/EVGEN\/CI} ;
         nevents=$(grep ^E ${data/EVGEN/EVGEN\/CI} | wc -l) ;
         test $nevents -gt 0 ;
-        echo /opt/campaigns/hepmc3/scripts/run.sh ${data/EVGEN/EVGEN\/CI} $((nevents-1)) ;
+        /opt/campaigns/hepmc3/scripts/run.sh ${data/EVGEN/EVGEN\/CI} $((nevents-1)) ;
       done
