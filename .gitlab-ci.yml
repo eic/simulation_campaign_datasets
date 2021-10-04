@@ -14,7 +14,7 @@ test:
         cifile=${file/EVGEN/EVGEN\/CI} ;
         cidir=$(dirname ${cifile}) ;
         mkdir -p ${cidir} ;
-        mc head -n 10000 S3/eictest/ATHENA/$file > ${cifile} ;
+        mc head -n 1000 S3/eictest/ATHENA/$file > ${cifile} ;
         nevents=$(grep ^E ${cifile} | wc -l) ;
         test $nevents -gt 0 ;
         mkdir -p $(dirname results/${cifile}.time) ;
