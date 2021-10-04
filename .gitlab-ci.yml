@@ -14,7 +14,7 @@ test:
         cifile=${file/EVGEN/EVGEN\/CI} ;
         cidir=$(dirname ${cifile}) ;
         mkdir -p ${cidir} ;
-        mc head -n 1000 S3/eictest/ATHENA/$file > ${cifile} ;
+        mc head -n 10000 S3/eictest/ATHENA/$file > ${cifile} ;
         nevents=$(grep ^E ${cifile} | wc -l) ;
         test $nevents -gt 0 ;
         mkdir -p $(dirname results/${cifile}.time) ;
@@ -22,7 +22,7 @@ test:
         /usr/bin/time -v -o results/${cifile}.time /opt/campaigns/hepmc3/scripts/run.sh ${cifile} $((nevents-1)) ;
         t2=$(date +%s.%N) ;
         dt=$(python -c "print(1000.0*($t2-$t1)/($nevents))") ;
-        cat $file,$dt >> results/$DATA ;
+        echo "$file,$dt" >> results/$DATA ;
       done < $DATA
   parallel:
     matrix:
