@@ -16,7 +16,7 @@ nevents:
     - while IFS="," read file nevents ; do
         if [ -z "$nevents" ] ; then
           nevents=$(mc cat S3/eictest/ATHENA/$file | grep ^E | wc -l) ;
-          echo "$file,$nevents"
+          echo "$file,$nevents" ;
         fi
         echo "$file,$nevents" >> results/$DATA ;
       done < $DATA
