@@ -18,6 +18,7 @@ nevents:
           nevents=$(mc cat S3/eictest/ATHENA/$file | grep ^E | wc -l) ;
           echo "$file,$nevents" ;
         fi ;
+        mkdir -p results ;
         echo "$file,$nevents" >> results/$DATA ;
       done < $DATA
 
