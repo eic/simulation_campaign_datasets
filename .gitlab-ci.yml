@@ -13,14 +13,8 @@ nevents:
       - DATA: ["DVCS.csv", "DIS.csv", "SIDIS.csv"]
   script:
     - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
-    - while IFS="," read file nevents ; do
-        if [ -z "$nevents" ] ; then
-          nevents=$(mc cat S3/eictest/ATHENA/$file | grep ^E | wc -l) ;
-          echo "$file,$nevents" ;
-        fi ;
-        mkdir -p results ;
-        echo "$file,$nevents" >> results/$DATA ;
-      done < $DATA
+    - mkdir -p results/datasets/nevents/
+    - scripts/count_events.sh < $DATA | tee results/datasets/nevents/$DATA 
 
 timing:
   stage: test
@@ -31,22 +25,10 @@ timing:
     expire_in: 1 week 
     paths:
       - results/
-  script:
-    - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
-    - while IFS="," read file nevents ; do
-        cifile=${file/EVGEN/EVGEN\/CI} ;
-        cidir=$(dirname ${cifile}) ;
-        mkdir -p ${cidir} ;
-        mc head -n 1000 S3/eictest/ATHENA/$file > ${cifile} ;
-        nevents=$(grep ^E ${cifile} | wc -l) ;
-        test $nevents -gt 0 ;
-        mkdir -p $(dirname results/${cifile}.time) ;
-        t1=$(date +%s.%N) ;
-        /usr/bin/time -v -o results/${cifile}.time /opt/campaigns/hepmc3/scripts/run.sh ${cifile} $((nevents-1)) ;
-        t2=$(date +%s.%N) ;
-        dt=$(python -c "print(1000.0*($t2-$t1)/($nevents))") ;
-        echo "$file,$dt" >> results/$DATA ;
-      done < results/$DATA
   parallel:
     matrix:
       - DATA: ["DVCS.csv", "DIS.csv", "SIDIS.csv"]
+  script:
+    - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
+    - mkdir -p results/datasets/timings/
+    - scripts/determine_timing.sh < results/datasets/nevents/$DATA | tee results/datasets/timings/$DATA
