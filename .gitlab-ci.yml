@@ -27,7 +27,7 @@ timing:
       - results/
   parallel:
     matrix:
-      - DATA: ["DVCS.csv", "DIS.csv", "SIDIS.csv"]
+      - DATA: ["DVCS.csv", "DIS.csv", "SIDIS.csv", "SINGLE.csv"]
   script:
     - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
     - mkdir -p results/datasets/timings/
