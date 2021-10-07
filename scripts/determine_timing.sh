@@ -13,7 +13,8 @@ while IFS="," read file nevents ; do
     test $n -gt 0 || exit -1
     type="hepmc3"
   elif [ "${type}" == "steer" ] ; then
-    mc cp S3/eictest/ATHENA/${file} ${cifile}
+    mc cp -q S3/eictest/ATHENA/${file} ${cifile} > /dev/null
+    test -f ${cifile}
     n=$((nlines/10)) # 10 lines per event equivalent
     type="single"
   else
