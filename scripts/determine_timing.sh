@@ -1,7 +1,7 @@
 #!/bin/bash
 
 file=${1?Specify filename}
-nevents${2?Specify nevents}
+nevents=${2?Specify nevents}
 
 nlines=1000
 
