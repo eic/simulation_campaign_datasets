@@ -15,6 +15,7 @@ while IFS="," read file nevents ; do
   elif [ "${type}" == "steer" ] ; then
     mc cp S3/eictest/ATHENA/$file > ${cifile}
     n=$((nlines/10)) # 10 lines per event equivalent
+    type="single"
   else
     echo "Error: extension not recognized"
     exit -1
