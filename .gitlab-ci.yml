@@ -14,7 +14,7 @@ nevents:
   script:
     - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
     - mkdir -p results/datasets/nevents/
-    - scripts/count_events.sh < $DATA | tee results/datasets/nevents/$DATA 
+    - cat $DATA | parallel -j 8 --colsep "," scripts/count_events.sh {1} {2} | tee results/datasets/nevents/$DATA
 
 timing:
   stage: test

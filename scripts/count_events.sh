@@ -1,9 +1,13 @@
 #!/bin/bash
 
-while IFS="," read file nevents ; do
-  if [ -z "$nevents" ] ; then
-    nevents=$(mc cat S3/eictest/ATHENA/$file | grep ^E | wc -l)
-  fi
-  mkdir -p results
-  echo "$file,$nevents"
-done
+file=${1?Specify filename}
+nevents=${2:-} # allow empty
+
+# if nevents not known
+if [ -z "$nevents" ] ; then
+  # count events
+  nevents=$(mc cat S3/eictest/ATHENA/$file | grep ^E | wc -l)
+fi
+
+# output
+echo "$file,$nevents"
