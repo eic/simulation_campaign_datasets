@@ -57,4 +57,4 @@ collect:
   needs: ["timing"]
   script:
     - rm -rf results/logs/
-    - tree -DFhs results/datasets/
+    - lr -Rlh results/datasets/
