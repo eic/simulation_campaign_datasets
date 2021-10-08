@@ -57,4 +57,4 @@ collect:
   needs: ["timing"]
   script:
     - rm -rf results/logs/
-    - lr -Rlh results/datasets/
+    - ls -Rlh results/datasets/
