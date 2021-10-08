@@ -1,7 +1,7 @@
 image: eicweb.phy.anl.gov:4567/eic/juggler/juggler:latest
 
 variables:
-  JOBS: 8
+  JOBS: 24
 
 default:
   timeout: 3 hours
