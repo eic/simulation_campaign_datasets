@@ -43,5 +43,5 @@ timing:
 collect:timing:
   stage: collect
   needs: ["timings"]
-  scripts:
+  script:
     - tree -DFhs results/datasets/
