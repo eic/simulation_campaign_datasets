@@ -16,11 +16,17 @@ nevents:
       - results/
   parallel:
     matrix:
-      - DATA: ["DVCS.csv", "DIS.csv", "SIDIS.csv", "SINGLE.csv"]
+      - DATA:
+        - "DIS/NC/DIS_NC.csv"
+        - "DIS/CC/DIS_CC.csv"
+        - "EXCLUSIVE/DVCS.csv"
+        - "SINGLE/SINGLE_3to50deg.csv"
+        - "SINGLE/SINGLE_45to135deg.csv"
+        - "SINGLE/SINGLE_130to177deg.csv"
   script:
     - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
-    - mkdir -p results/datasets/nevents/
-    - cat $DATA | parallel -j 8 --colsep "," scripts/count_events.sh {1} {2} | tee results/datasets/nevents/$DATA
+    - mkdir -p $(dirname results/datasets/nevents/$DATA)
+    - cat $DATA | parallel -j $JOBS --colsep "," scripts/count_events.sh {1} {2} | tee results/datasets/nevents/$DATA
 
 timing:
   stage: test
@@ -33,8 +39,14 @@ timing:
       - results/
   parallel:
     matrix:
-      - DATA: ["DVCS.csv", "DIS.csv", "SIDIS.csv", "SINGLE.csv"]
+      - DATA:
+        - "DIS/NC/DIS_NC.csv"
+        - "DIS/CC/DIS_CC.csv"
+        - "EXCLUSIVE/DVCS.csv"
+        - "SINGLE/SINGLE_3to50deg.csv"
+        - "SINGLE/SINGLE_45to135deg.csv"
+        - "SINGLE/SINGLE_130to177deg.csv"
   script:
     - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
-    - mkdir -p results/datasets/timings/
+    - mkdir -p $(dirname results/datasets/timings/$DATA)
     - cat results/datasets/nevents/$DATA | parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} | tee results/datasets/timings/$DATA
