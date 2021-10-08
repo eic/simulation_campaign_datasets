@@ -5,15 +5,20 @@ variables:
 
 default:
   timeout: 3 hours
-
-nevents:
-  stage: test
-  tags:
-    - s3
   artifacts:
     expire_in: 1 week 
     paths:
       - results/
+
+stages:
+  - nevents
+  - timings
+  - collect
+
+nevents:
+  stage: nevents
+  tags:
+    - s3
   parallel:
     matrix:
       - DATA:
@@ -29,14 +34,10 @@ nevents:
     - cat $DATA | parallel -j $JOBS --colsep "," scripts/count_events.sh {1} {2} | tee results/datasets/nevents/$DATA
 
 timing:
-  stage: test
+  stage: timings
   tags:
     - s3
   needs: ["nevents"]
-  artifacts:
-    expire_in: 1 week 
-    paths:
-      - results/
   parallel:
     matrix:
       - DATA:
@@ -50,3 +51,10 @@ timing:
     - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
     - mkdir -p $(dirname results/datasets/timings/$DATA)
     - cat results/datasets/nevents/$DATA | parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} | tee results/datasets/timings/$DATA
+
+collect:
+  stage: collect
+  needs: ["timing"]
+  script:
+    - rm -rf results/logs/
+    - tree -DFhs results/datasets/
