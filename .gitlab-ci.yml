@@ -15,10 +15,7 @@ stages:
   - timings
   - collect
 
-nevents:
-  stage: nevents
-  tags:
-    - s3
+.datasets:
   parallel:
     matrix:
       - DATA:
@@ -28,6 +25,12 @@ nevents:
         - "SINGLE/SINGLE_3to50deg.csv"
         - "SINGLE/SINGLE_45to135deg.csv"
         - "SINGLE/SINGLE_130to177deg.csv"
+
+nevents:
+  stage: nevents
+  tags:
+    - s3
+  extends: .datasets
   script:
     - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
     - mkdir -p $(dirname results/datasets/nevents/$DATA)
@@ -37,16 +40,8 @@ timing:
   stage: timings
   tags:
     - s3
+  extends: .datasets
   needs: ["nevents"]
-  parallel:
-    matrix:
-      - DATA:
-        - "DIS/NC/DIS_NC.csv"
-        - "DIS/CC/DIS_CC.csv"
-        - "EXCLUSIVE/DVCS.csv"
-        - "SINGLE/SINGLE_3to50deg.csv"
-        - "SINGLE/SINGLE_45to135deg.csv"
-        - "SINGLE/SINGLE_130to177deg.csv"
   script:
     - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
     - mkdir -p $(dirname results/datasets/timings/$DATA)
