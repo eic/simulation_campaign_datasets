@@ -29,7 +29,7 @@ stages:
         - "EXCLUSIVE/TCS/TCS_5x41.csv"
         - "EXCLUSIVE/TCS/TCS_5x100.csv"
         - "EXCLUSIVE/TCS/TCS_10x100.csv"
-        - "EXCLUSIVE/TCS/TCS_18x285.csv"
+        - "EXCLUSIVE/TCS/TCS_18x275.csv"
         - "EXCLUSIVE/UPSILON.csv"
         - "SIDIS/Lambda.csv"
         - "SIDIS/ep_18x110.csv"
