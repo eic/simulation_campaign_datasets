@@ -20,7 +20,8 @@ stages:
     matrix:
       - DATA:
         - "DIS/NC/DIS_NC.csv"
-        - "DIS/CC/DIS_CC.csv"
+        - "DIS/NC/DIS_NC_hepmc2.csv"
+        - "DIS/CC/DIS_CC_hepmc2.csv"
         - "EXCLUSIVE/DVCS.csv"
         - "EXCLUSIVE/DEMP.csv"
         - "EXCLUSIVE/DVMP.csv"

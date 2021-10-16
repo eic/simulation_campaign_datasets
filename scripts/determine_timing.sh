@@ -21,6 +21,9 @@ if [ "${type}" == "hepmc" ] ; then
   n=$(grep ^E ${cifile} | wc -l)
   n=$((n-1)) # last event is corrupted
   test $n -gt 0 || exit -1
+  if [ -z "${file##*hepmc2*}" ] ; then
+    export USEHEPMC3=false
+  fi
   type="hepmc3"
 elif [ "${type}" == "steer" ] ; then
   # get full steer file
