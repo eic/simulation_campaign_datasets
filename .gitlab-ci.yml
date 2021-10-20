@@ -50,8 +50,6 @@ stages:
 
 nevents:
   stage: nevents
-  tags:
-    - s3
   extends: .datasets
   script:
     - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
@@ -60,8 +58,6 @@ nevents:
 
 timing:
   stage: timings
-  tags:
-    - s3
   extends: .datasets
   needs: ["nevents"]
   script:
