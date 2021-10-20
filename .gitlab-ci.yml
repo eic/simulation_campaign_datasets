@@ -1,5 +1,12 @@
 image: eicweb.phy.anl.gov:4567/eic/juggler/juggler:latest
 
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+    - if: '$CI_PIPELINE_SOURCE == "webide"'
+    - if: '$CI_COMMIT_BRANCH == "master"'
+
 variables:
   JOBS: 6
 
