@@ -52,7 +52,7 @@ nevents:
   script:
     - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
     - mkdir -p $(dirname results/datasets/nevents/$DATA)
-    - cat $DATA | parallel -j $JOBS --colsep "," scripts/count_events.sh {1} {2} | sort | tee results/datasets/nevents/$DATA
+    - cat $DATA | parallel -j $JOBS --colsep "," scripts/count_events.sh {1} {2} {3} | sort | tee results/datasets/nevents/$DATA
 
 timing:
   stage: timings
@@ -63,7 +63,7 @@ timing:
   script:
     - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
     - mkdir -p $(dirname results/datasets/timings/$DATA)
-    - cat results/datasets/nevents/$DATA | parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} | sort | tee results/datasets/timings/$DATA
+    - cat results/datasets/nevents/$DATA | parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA
 
 collect:
   stage: collect
