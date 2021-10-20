@@ -8,7 +8,7 @@ n_lines_per_event=${3?Specify n_lines_per_event}
 n_events_test=100
 
 # number of hepmc lines to read (includes buffer)
-nlines=$((n_events_test*n_lines_per_event*1.20))
+nlines=$((2*n_events_test*n_lines_per_event))
 
 # ensure CI is added to local file
 cifile=${file/EVGEN/EVGEN\/CI}
