@@ -2,9 +2,13 @@
 
 file=${1?Specify filename}
 nevents=${2?Specify nevents}
+n_lines_per_event=${3?Specify n_lines_per_event}
 
-# number of hepmc lines to read
-nlines=1000
+# number of events to simulate
+n_events_test=100
+
+# number of hepmc lines to read (includes buffer)
+nlines=$((2*n_events_test*n_lines_per_event))
 
 # ensure CI is added to local file
 cifile=${file/EVGEN/EVGEN\/CI}
@@ -29,8 +33,7 @@ elif [ "${type}" == "steer" ] ; then
   # get full steer file
   mc cp -q S3/eictest/ATHENA/${file} ${cifile} > /dev/null
   test -f ${cifile}
-  # use 10 lines per event equivalent
-  n=$((nlines/10))
+  n=$n_events_test
   type="single"
 else
   echo "Error: extension not recognized"
