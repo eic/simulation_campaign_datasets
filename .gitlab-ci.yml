@@ -6,6 +6,7 @@ workflow:
     - if: '$CI_PIPELINE_SOURCE == "web"'
     - if: '$CI_PIPELINE_SOURCE == "webide"'
     - if: '$CI_COMMIT_BRANCH == "master"'
+    - if: '$CI_COMMIT_TAG'
 
 variables:
   JOBS: 6
@@ -23,8 +24,37 @@ stages:
   - collect
 
 .datasets:
-  variables:
-    DATA: "DIS/NC/DIS_NC_5x41.csv"
+    parallel:
+    matrix:
+      - DATA:
+        - "DIS/NC/DIS_NC_5x41.csv"
+        - "DIS/NC/DIS_NC_5x100.csv"
+        - "DIS/NC/DIS_NC_10x100.csv"
+        - "DIS/NC/DIS_NC_10x275.csv"
+        - "DIS/NC/DIS_NC_18x275.csv"
+        - "DIS/NC/DIS_NC_hepmc2.csv"
+        - "DIS/CC/DIS_CC_hepmc2.csv"
+        - "EXCLUSIVE/TCS/TCS_5x41.csv"
+        - "EXCLUSIVE/TCS/TCS_5x100.csv"
+        - "EXCLUSIVE/TCS/TCS_10x100.csv"
+        - "EXCLUSIVE/TCS/TCS_18x275.csv"
+        - "EXCLUSIVE/DVCS.csv"
+        - "EXCLUSIVE/DEMP.csv"
+        - "EXCLUSIVE/DVMP.csv"
+        - "EXCLUSIVE/x_y_psi.csv"
+        - "EXCLUSIVE/omega.csv"
+        - "EXCLUSIVE/TCS/TCS_5x41.csv"
+        - "EXCLUSIVE/TCS/TCS_5x100.csv"
+        - "EXCLUSIVE/TCS/TCS_10x100.csv"
+        - "EXCLUSIVE/TCS/TCS_18x275.csv"
+        - "EXCLUSIVE/UPSILON.csv"
+        - "SIDIS/Lambda.csv"
+        - "SIDIS/ep_18x110.csv"
+       # - "SIDIS/eA_18x110.csv"
+        #- "SINGLE/SINGLE_3to50deg.csv"
+        #- "SINGLE/SINGLE_45to135deg.csv"
+        #- "SINGLE/SINGLE_130to177deg.csv"
+        #- "SR/SR.csv"
 
 nevents:
   stage: nevents
