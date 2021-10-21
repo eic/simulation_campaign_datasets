@@ -71,4 +71,5 @@ include:
   - local: 'SR/config.yml'
 
 collect:
+  extends: .collect
   needs: ["DIS:collect", "SR:collect"]
