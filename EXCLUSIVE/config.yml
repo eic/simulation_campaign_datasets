@@ -29,6 +29,6 @@ EXCLUSIVE:timings:
 EXCLUSIVE:collect:
   extends: .collect
   needs: 
-    - EXCLUSIVE:DVCS:timings
-    - EXCLUSIVE:TCS:timings
+    - EXCLUSIVE:DVCS:collect
+    - EXCLUSIVE:TCS:collect
     - EXCLUSIVE:timings
