@@ -1,0 +1,24 @@
+EXCLUSIVE:TCS:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/TCS/TCS_5x41.csv"
+        - "EXCLUSIVE/TCS/TCS_10x100.csv"
+        - "EXCLUSIVE/TCS/TCS_18x275.csv"
+
+EXCLUSIVE:TCS:timings:
+  extends: .timings
+  needs: 
+    - EXCLUSIVE:TCS:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/TCS/TCS_5x41.csv"
+        - "EXCLUSIVE/TCS/TCS_10x100.csv"
+        - "EXCLUSIVE/TCS/TCS_18x275.csv"
+
+EXCLUSIVE:TCS:collect:
+  extends: .collect
+  needs: 
+    - EXCLUSIVE:TCS:timings

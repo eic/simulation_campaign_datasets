@@ -1,0 +1,24 @@
+EXCLUSIVE:DVCS:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DVCS/DVCS_5x41.csv"
+        - "EXCLUSIVE/DVCS/DVCS_10x100.csv"
+        - "EXCLUSIVE/DVCS/DVCS_18x275.csv"
+
+EXCLUSIVE:DVCS:timings:
+  extends: .timings
+  needs: 
+    - EXCLUSIVE:DVCS:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DVCS/DVCS_5x41.csv"
+        - "EXCLUSIVE/DVCS/DVCS_10x100.csv"
+        - "EXCLUSIVE/DVCS/DVCS_18x275.csv"
+
+EXCLUSIVE:DVCS:collect:
+  extends: .collect
+  needs: 
+    - EXCLUSIVE:DVCS:timings

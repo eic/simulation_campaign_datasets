@@ -19,11 +19,6 @@ stages:
 #   parallel:
 #     matrix:
 #       - DATA:
-#         - "EXCLUSIVE/TCS/TCS_5x41.csv"
-#         - "EXCLUSIVE/TCS/TCS_5x100.csv"
-#         - "EXCLUSIVE/TCS/TCS_10x100.csv"
-#         - "EXCLUSIVE/TCS/TCS_18x275.csv"
-#         - "EXCLUSIVE/DVCS.csv"
 #         - "EXCLUSIVE/DEMP.csv"
 #         - "EXCLUSIVE/DVMP.csv"
 #         - "EXCLUSIVE/x_y_psi.csv"

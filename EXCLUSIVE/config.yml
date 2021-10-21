@@ -1,3 +1,3 @@
 include:
-  - local: 'DVCS/config.yml'
-  - local: 'TCS/config.yml'
+  - local: 'EXCLUSIVE/DVCS/config.yml'
+  - local: 'EXCLUSIVE/TCS/config.yml'
