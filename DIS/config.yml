@@ -3,7 +3,7 @@ include:
   - local: 'DIS/CC/config.yml'
 
 DIS:collect:
-  extends: .collect.
+  extends: .collect
   needs:
     - DIS:NC:collect
     - DIS:CC:collect
