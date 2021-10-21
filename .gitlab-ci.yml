@@ -15,16 +15,6 @@ stages:
   - timings
   - collect
 
-# .datasets:
-#   parallel:
-#     matrix:
-#       - DATA:
-#         - "EXCLUSIVE/DEMP.csv"
-#         - "EXCLUSIVE/DVMP.csv"
-#         - "EXCLUSIVE/x_y_psi.csv"
-#         - "EXCLUSIVE/omega.csv"
-#         - "EXCLUSIVE/UPSILON.csv"
-
 .nevents:
   stage: nevents
   script:
@@ -47,11 +37,16 @@ stages:
 
 include:
   - local: 'DIS/config.yml'
-#  - local: 'EXCLUSIVE/config.yml'
+  - local: 'EXCLUSIVE/config.yml'
   - local: 'SIDIS/config.yml'
   - local: 'SINGLE/config.yml'
   - local: 'SR/config.yml'
 
 collect:
   extends: .collect
-  needs: ["DIS:collect", "SR:collect"]
+  needs:
+    - "DIS:collect"
+    - "EXCLUSIVE:collect"
+    - "SIDIS:collect"
+    - "SINGLE:collect"
+    - "SR:collect"
