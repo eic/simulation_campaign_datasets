@@ -1,0 +1,20 @@
+SR:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "SR/SR.csv"
+
+SR:timings:
+  extends: .timings
+  needs: 
+    - SR:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "SR/SR.csv"
+
+SR:collect:
+  extends: .collect
+  needs: 
+    - SR:timings

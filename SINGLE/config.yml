@@ -1,0 +1,24 @@
+SINGLE:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "SINGLE/SINGLE_3to50deg.csv"
+        - "SINGLE/SINGLE_45to135deg.csv"
+        - "SINGLE/SINGLE_130to177deg.csv"
+
+SINGLE:timings:
+  extends: .timings
+  needs: 
+    - SINGLE:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "SINGLE/SINGLE_3to50deg.csv"
+        - "SINGLE/SINGLE_45to135deg.csv"
+        - "SINGLE/SINGLE_130to177deg.csv"
+
+SINGLE:collect:
+  extends: .collect
+  needs: 
+    - SINGLE:timings

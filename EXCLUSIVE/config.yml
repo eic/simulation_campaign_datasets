@@ -1,0 +1,34 @@
+include:
+  - local: 'EXCLUSIVE/DVCS/config.yml'
+  - local: 'EXCLUSIVE/TCS/config.yml'
+
+EXCLUSIVE:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DEMP.csv"
+        - "EXCLUSIVE/DVMP.csv"
+        - "EXCLUSIVE/UPSILON.csv"
+        - "EXCLUSIVE/omega.csv"
+        - "EXCLUSIVE/x_y_psi.csv"
+
+EXCLUSIVE:timings:
+  extends: .timings
+  needs: 
+    - EXCLUSIVE:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DEMP.csv"
+        - "EXCLUSIVE/DVMP.csv"
+        - "EXCLUSIVE/UPSILON.csv"
+        - "EXCLUSIVE/omega.csv"
+        - "EXCLUSIVE/x_y_psi.csv"
+
+EXCLUSIVE:collect:
+  extends: .collect
+  needs: 
+    - EXCLUSIVE:DVCS:collect
+    - EXCLUSIVE:TCS:collect
+    - EXCLUSIVE:timings

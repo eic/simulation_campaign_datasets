@@ -1,0 +1,24 @@
+SIDIS:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "SIDIS/Lambda.csv"
+        - "SIDIS/ep_18x110.csv"
+        - "SIDIS/eA_18x110.csv"
+
+SIDIS:timings:
+  extends: .timings
+  needs: 
+    - SIDIS:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "SIDIS/Lambda.csv"
+        - "SIDIS/ep_18x110.csv"
+        - "SIDIS/eA_18x110.csv"
+
+SIDIS:collect:
+  extends: .collect
+  needs: 
+    - SIDIS:timings
