@@ -35,10 +35,6 @@ stages:
 #         - "EXCLUSIVE/DVMP.csv"
 #         - "EXCLUSIVE/x_y_psi.csv"
 #         - "EXCLUSIVE/omega.csv"
-#         - "EXCLUSIVE/TCS/TCS_5x41.csv"
-#         - "EXCLUSIVE/TCS/TCS_5x100.csv"
-#         - "EXCLUSIVE/TCS/TCS_10x100.csv"
-#         - "EXCLUSIVE/TCS/TCS_18x275.csv"
 #         - "EXCLUSIVE/UPSILON.csv"
 #         - "SIDIS/Lambda.csv"
 #         - "SIDIS/ep_18x110.csv"
@@ -68,4 +64,13 @@ stages:
     - ls -Rlh results/datasets/
 
 include:
+  - local: 'DIS/config.yml'
+#  - local: 'EXCLUSIVE/config.yml'
+#  - local: 'SIDIS/config.yml'
+#  - local: 'SINGLE/config.yml'
   - local: 'SR/config.yml'
+
+collect:
+  needs:
+    - DIS:collect
+    - SR:collect

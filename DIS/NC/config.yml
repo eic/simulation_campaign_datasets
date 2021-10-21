@@ -1,0 +1,18 @@
+DIS:NC:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA: "DIS/NC/DIS_NC_hepmc2.csv"
+
+DIS:NC:timings:
+  extends: .timings
+  needs: 
+    - DIS:NC:nevents
+  parallel:
+    matrix:
+      - DATA: "DIS/NC/DIS_NC_hepmc2.csv"
+
+DIS:NC:collect:
+  extends: .collect
+  needs: 
+    - DIS:NC:timings

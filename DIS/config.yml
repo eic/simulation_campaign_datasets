@@ -1,0 +1,10 @@
+include:
+  - local: 'NC/config.yml'
+  - local: 'CC/config.yml'
+
+DIS:collect:
+  extends: .collect.
+  needs:
+    - DIS:NC:collect
+    - DIS:CC:collect
+    
