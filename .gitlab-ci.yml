@@ -44,7 +44,7 @@ stages:
         - "EXCLUSIVE/x_y_psi.csv"
         - "EXCLUSIVE/omega.csv"
         - "EXCLUSIVE/TCS/TCS_5x41.csv"
-        - "EXCLUSIVE/TCS/TCS_5x100.csv"
+        #- "EXCLUSIVE/TCS/TCS_5x100.csv"
         #- "EXCLUSIVE/TCS/TCS_10x100.csv"
         #- "EXCLUSIVE/TCS/TCS_18x275.csv"
         #- "EXCLUSIVE/UPSILON.csv"
