@@ -1,6 +1,6 @@
 include:
-  - local: 'NC/config.yml'
-  - local: 'CC/config.yml'
+  - local: 'DIS/NC/config.yml'
+  - local: 'DIS/CC/config.yml'
 
 DIS:collect:
   extends: .collect.
