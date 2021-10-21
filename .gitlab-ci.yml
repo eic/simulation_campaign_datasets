@@ -24,7 +24,7 @@ stages:
   - collect
 
 .datasets:
-    parallel:
+  parallel:
     matrix:
       - DATA:
         - "DIS/NC/DIS_NC_5x41.csv"
