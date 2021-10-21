@@ -7,7 +7,8 @@ SR:nevents:
 
 SR:timings:
   extends: .timings
-  needs: [SR:nevents]
+  needs: 
+    - SR:nevents
   parallel:
     matrix:
       DATA:
@@ -15,4 +16,5 @@ SR:timings:
 
 SR:collect:
   extends: .collect
-  needs: [SR:timings]
+  needs: 
+    - SR:timings
