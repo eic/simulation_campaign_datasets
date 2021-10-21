@@ -66,8 +66,8 @@ stages:
 include:
   - local: 'DIS/config.yml'
 #  - local: 'EXCLUSIVE/config.yml'
-#  - local: 'SIDIS/config.yml'
-#  - local: 'SINGLE/config.yml'
+  - local: 'SIDIS/config.yml'
+  - local: 'SINGLE/config.yml'
   - local: 'SR/config.yml'
 
 collect:
