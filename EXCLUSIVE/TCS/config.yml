@@ -3,9 +3,12 @@ EXCLUSIVE:TCS:nevents:
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/TCS/TCS_5x41.csv"
-        - "EXCLUSIVE/TCS/TCS_10x100.csv"
-        - "EXCLUSIVE/TCS/TCS_18x275.csv"
+        #- "EXCLUSIVE/TCS/TCS_5x41.csv"
+        #- "EXCLUSIVE/TCS/TCS_10x100.csv"
+        #- "EXCLUSIVE/TCS/TCS_18x275.csv"
+        - "EXCLUSIVE/TCS/TCS_BH_5x41.csv"
+        - "EXCLUSIVE/TCS/TCS_BH_10x100.csv"
+        - "EXCLUSIVE/TCS/TCS_BH_18x275.csv"
 
 EXCLUSIVE:TCS:timings:
   extends: .timings
@@ -14,9 +17,12 @@ EXCLUSIVE:TCS:timings:
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/TCS/TCS_5x41.csv"
-        - "EXCLUSIVE/TCS/TCS_10x100.csv"
-        - "EXCLUSIVE/TCS/TCS_18x275.csv"
+        #- "EXCLUSIVE/TCS/TCS_5x41.csv"
+        #- "EXCLUSIVE/TCS/TCS_10x100.csv"
+        #- "EXCLUSIVE/TCS/TCS_18x275.csv"
+        - "EXCLUSIVE/TCS/TCS_BH_5x41.csv"
+        - "EXCLUSIVE/TCS/TCS_BH_10x100.csv"
+        - "EXCLUSIVE/TCS/TCS_BH_18x275.csv"
 
 EXCLUSIVE:TCS:collect:
   extends: .collect
