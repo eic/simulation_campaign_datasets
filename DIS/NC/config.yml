@@ -9,6 +9,7 @@ DIS:NC:nevents:
         - "DIS/NC/DIS_NC_10x100.csv"
         - "DIS/NC/DIS_NC_10x275.csv"
         - "DIS/NC/DIS_NC_18x275.csv"
+        - "DIS/NC/DIS_NC_5x41_novtx.csv"
 
 DIS:NC:timings:
   extends: .timings
@@ -23,6 +24,7 @@ DIS:NC:timings:
         - "DIS/NC/DIS_NC_10x100.csv"
         - "DIS/NC/DIS_NC_10x275.csv"
         - "DIS/NC/DIS_NC_18x275.csv"
+        - "DIS/NC/DIS_NC_5x41_novtx.csv"
 
 DIS:NC:collect:
   extends: .collect
