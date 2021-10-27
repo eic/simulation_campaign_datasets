@@ -1,7 +1,5 @@
 #!/bin/bash
 
-export PS1="[\\u@\\h:\\w] $"
-
 file=${1?Specify filename}
 nevents=${2?Specify nevents}
 n_lines_per_event=${3?Specify n_lines_per_event}
