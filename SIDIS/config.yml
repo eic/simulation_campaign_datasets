@@ -5,7 +5,11 @@ SIDIS:nevents:
       - DATA:
         - "SIDIS/Lambda.csv"
         - "SIDIS/ep_18x110.csv"
-        - "SIDIS/eA_18x110.csv"
+        - "SIDIS/eA_18x110_12.csv"
+        - "SIDIS/eA_18x110_34.csv"
+        - "SIDIS/eA_18x110_56.csv"
+        - "SIDIS/eA_18x110_78.csv"
+        - "SIDIS/eA_18x110_9.csv"
 
 SIDIS:timings:
   extends: .timings
@@ -16,8 +20,11 @@ SIDIS:timings:
       - DATA:
         - "SIDIS/Lambda.csv"
         - "SIDIS/ep_18x110.csv"
-        - "SIDIS/eA_18x110.csv"
-
+        - "SIDIS/eA_18x110_12.csv"
+        - "SIDIS/eA_18x110_34.csv"
+        - "SIDIS/eA_18x110_56.csv"
+        - "SIDIS/eA_18x110_78.csv"
+        - "SIDIS/eA_18x110_9.csv"
 SIDIS:collect:
   extends: .collect
   needs: 
