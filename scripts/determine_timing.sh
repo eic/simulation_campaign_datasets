@@ -58,8 +58,8 @@ t2=$(date +%s.%N)
 dt0n=$(echo "scale=5; ($t2-$t1)" | bc -l)
 
 # initialization correction
-dt1=$(echo "scale=5; if($dt0n>$dt01) print(($dt0n-$dt01)/($n-1)) else print($dt0n/$n)" | bc -l)
-dt0=$(echo "scale=5; if($dt01>$dt1)  print(($dt01-$dt1))         else print(100)"      | bc -l)
+dt1=$(echo "scale=5; if($dt0n>$dt01) print(($dt0n-$dt01)/($n-1)) else print($dt0n/$n/sqrt($n))" | bc -l)
+dt0=$(echo "scale=5; if($dt01>$dt1)  print(($dt01-$dt1))         else print(100)"               | bc -l)
 
 # output
 echo "$file,$nevents,$dt0,$dt1"
