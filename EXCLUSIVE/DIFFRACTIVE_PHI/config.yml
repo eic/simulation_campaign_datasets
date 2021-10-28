@@ -1,0 +1,22 @@
+EXCLUSIVE:DIFFRACTIVE_PHI:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DIFFRACTIVE_PHI/BeAGLE.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre.csv"
+
+EXCLUSIVE:DIFFRACTIVE_PHI:timings:
+  extends: .timings
+  needs: 
+    - EXCLUSIVE:DIFFRACTIVE_PHI:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DIFFRACTIVE_PHI/BeAGLE.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre.csv"
+
+EXCLUSIVE:DIFFRACTIVE_PHI:collect:
+  extends: .collect
+  needs: 
+    - EXCLUSIVE:DIFFRACTIVE_PHI:timings
