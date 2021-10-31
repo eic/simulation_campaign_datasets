@@ -4,7 +4,7 @@ EXCLUSIVE:DIFFRACTIVE_PHI:nevents:
     matrix:
       - DATA:
         - "EXCLUSIVE/DIFFRACTIVE_PHI/BeAGLE.csv"
-        - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre.csv"
+        #- "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre.csv"
 
 EXCLUSIVE:DIFFRACTIVE_PHI:timings:
   extends: .timings
@@ -14,7 +14,7 @@ EXCLUSIVE:DIFFRACTIVE_PHI:timings:
     matrix:
       - DATA:
         - "EXCLUSIVE/DIFFRACTIVE_PHI/BeAGLE.csv"
-        - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre.csv"
+        #- "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre.csv"
 
 EXCLUSIVE:DIFFRACTIVE_PHI:collect:
   extends: .collect
