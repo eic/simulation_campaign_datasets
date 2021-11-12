@@ -1,0 +1,20 @@
+EXCLUSIVE:DIFFRACTIVE_JPSI:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre.csv"
+
+EXCLUSIVE:DIFFRACTIVE_JPSI:timings:
+  extends: .timings
+  needs: 
+    - EXCLUSIVE:DIFFRACTIVE_JPSI:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre.csv"
+
+EXCLUSIVE:DIFFRACTIVE_JPSI:collect:
+  extends: .collect
+  needs: 
+    - EXCLUSIVE:DIFFRACTIVE_JPSI:timings
