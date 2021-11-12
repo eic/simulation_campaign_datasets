@@ -1,0 +1,20 @@
+EXCLUSIVE:DIFFRACTIVE_RHO:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DIFFRACTIVE_RHO/Sartre.csv"
+
+EXCLUSIVE:DIFFRACTIVE_RHO:timings:
+  extends: .timings
+  needs: 
+    - EXCLUSIVE:DIFFRACTIVE_RHO:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DIFFRACTIVE_RHO/Sartre.csv"
+
+EXCLUSIVE:DIFFRACTIVE_RHO:collect:
+  extends: .collect
+  needs: 
+    - EXCLUSIVE:DIFFRACTIVE_RHO:timings
