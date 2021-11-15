@@ -11,6 +11,19 @@ DIS:NC:nevents:
         - "DIS/NC/DIS_NC_18x275.csv"
         - "DIS/NC/DIS_NC_5x41_novtx.csv"
 
+DIS:NC:gzip:
+  extends: .gzip
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/NC/DIS_NC_hepmc2.csv"
+        - "DIS/NC/DIS_NC_5x41.csv"
+        - "DIS/NC/DIS_NC_5x100.csv"
+        - "DIS/NC/DIS_NC_10x100.csv"
+        - "DIS/NC/DIS_NC_10x275.csv"
+        - "DIS/NC/DIS_NC_18x275.csv"
+        - "DIS/NC/DIS_NC_5x41_novtx.csv"
+
 DIS:NC:timings:
   extends: .timings
   needs: 
