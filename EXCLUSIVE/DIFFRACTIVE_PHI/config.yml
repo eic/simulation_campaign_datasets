@@ -1,3 +1,11 @@
+EXCLUSIVE:DIFFRACTIVE_PHI:gzip:
+  extends: .gzip
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DIFFRACTIVE_PHI/BeAGLE.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre.csv"
+
 EXCLUSIVE:DIFFRACTIVE_PHI:nevents:
   extends: .nevents
   parallel:

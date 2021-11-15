@@ -1,3 +1,10 @@
+EXCLUSIVE:DIFFRACTIVE_RHO:gzip:
+  extends: .gzip
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DIFFRACTIVE_RHO/Sartre.csv"
+
 EXCLUSIVE:DIFFRACTIVE_RHO:nevents:
   extends: .nevents
   parallel:

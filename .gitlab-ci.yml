@@ -20,7 +20,7 @@ stages:
   stage: gzip
   script:
     - mc config host add S3rw https://dtn01.sdcc.bnl.gov:9000 ${S3RW_ACCESS_KEY} ${S3RW_SECRET_KEY}
-    - cat $DATA | grep -v "^\#" | parallel -j $JOBS --colsep "," scripts/gzip_hepmc.sh {1} {2} {3}
+    - cat $DATA | grep -v "^\#" | parallel -j 1 --colsep "," scripts/gzip_hepmc.sh {1} {2} {3}
 
 .nevents:
   stage: nevents

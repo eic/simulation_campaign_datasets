@@ -5,6 +5,20 @@ include:
   - local: 'EXCLUSIVE/DVCS/config.yml'
   - local: 'EXCLUSIVE/TCS/config.yml'
 
+EXCLUSIVE:gzip:
+  extends: .gzip
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DEMP.csv"
+        - "EXCLUSIVE/DVCSD.csv"
+        - "EXCLUSIVE/DVMP.csv"
+        - "EXCLUSIVE/OMEGA.csv"
+        - "EXCLUSIVE/RHO.csv"
+        - "EXCLUSIVE/UPSILON.csv"
+        - "EXCLUSIVE/omega.csv"
+        - "EXCLUSIVE/x_y_psi.csv"
+
 EXCLUSIVE:nevents:
   extends: .nevents
   parallel:
