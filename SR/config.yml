@@ -1,3 +1,10 @@
+SR:gzip:
+  extends: .gzip
+  parallel:
+    matrix:
+      - DATA:
+        - "SR/SR.csv"
+
 SR:nevents:
   extends: .nevents
   parallel:

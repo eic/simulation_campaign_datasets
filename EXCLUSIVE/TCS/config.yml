@@ -1,3 +1,17 @@
+EXCLUSIVE:TCS:gzip:
+  extends: .gzip
+  parallel:
+    matrix:
+      - DATA:
+        #- "EXCLUSIVE/TCS/TCS_5x41.csv"
+        #- "EXCLUSIVE/TCS/TCS_10x100.csv"
+        #- "EXCLUSIVE/TCS/TCS_18x275.csv"
+        - "EXCLUSIVE/TCS/TCS_10x100_hiAcc.csv"
+        - "EXCLUSIVE/TCS/TCS_10x100_hiDiv.csv"
+        - "EXCLUSIVE/TCS/TCS_BH_5x41.csv"
+        - "EXCLUSIVE/TCS/TCS_BH_10x100.csv"
+        - "EXCLUSIVE/TCS/TCS_BH_18x275.csv"
+
 EXCLUSIVE:TCS:nevents:
   extends: .nevents
   parallel:

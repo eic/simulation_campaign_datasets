@@ -1,3 +1,9 @@
+DIS:CC:gzip:
+  extends: .gzip
+  parallel:
+    matrix:
+      - DATA: "DIS/CC/DIS_CC_hepmc2.csv"
+
 DIS:CC:nevents:
   extends: .nevents
   parallel:
