@@ -1,11 +1,11 @@
-DIS:CC:nevents:
-  extends: .nevents
+DIS:CC:gzip:
+  extends: .gzip
   parallel:
     matrix:
       - DATA: "DIS/CC/DIS_CC_hepmc2.csv"
 
-DIS:CC:gzip:
-  extends: .gzip
+DIS:CC:nevents:
+  extends: .nevents
   parallel:
     matrix:
       - DATA: "DIS/CC/DIS_CC_hepmc2.csv"

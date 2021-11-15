@@ -11,8 +11,8 @@ default:
       - results/
 
 stages:
-  - nevents
   - gzip
+  - nevents
   - timings
   - collect
 

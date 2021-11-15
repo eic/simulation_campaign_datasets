@@ -1,5 +1,5 @@
-DIS:NC:nevents:
-  extends: .nevents
+DIS:NC:gzip:
+  extends: .gzip
   parallel:
     matrix:
       - DATA:
@@ -11,8 +11,8 @@ DIS:NC:nevents:
         - "DIS/NC/DIS_NC_18x275.csv"
         - "DIS/NC/DIS_NC_5x41_novtx.csv"
 
-DIS:NC:gzip:
-  extends: .gzip
+DIS:NC:nevents:
+  extends: .nevents
   parallel:
     matrix:
       - DATA:
