@@ -3,7 +3,7 @@ EXCLUSIVE:DIFFRACTIVE_PHI:gzip:
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DIFFRACTIVE_PHI/BeAGLE.csv"
+        #- "EXCLUSIVE/DIFFRACTIVE_PHI/BeAGLE.csv"
         - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre.csv"
 
 EXCLUSIVE:DIFFRACTIVE_PHI:nevents:
@@ -11,7 +11,7 @@ EXCLUSIVE:DIFFRACTIVE_PHI:nevents:
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DIFFRACTIVE_PHI/BeAGLE.csv"
+        #- "EXCLUSIVE/DIFFRACTIVE_PHI/BeAGLE.csv"
         - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre.csv"
 
 EXCLUSIVE:DIFFRACTIVE_PHI:timings:
@@ -21,7 +21,7 @@ EXCLUSIVE:DIFFRACTIVE_PHI:timings:
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DIFFRACTIVE_PHI/BeAGLE.csv"
+        #- "EXCLUSIVE/DIFFRACTIVE_PHI/BeAGLE.csv"
         - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre.csv"
 
 EXCLUSIVE:DIFFRACTIVE_PHI:collect:
