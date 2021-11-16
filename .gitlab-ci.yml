@@ -34,13 +34,11 @@ stages:
   script:
     - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
     - mkdir -p $(dirname results/datasets/timings/$DATA)
-    #- cat results/datasets/nevents/$DATA | grep -v "^\#" | head -n 1 | parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA
-    - echo "EVGEN/DIS/NC/5x41/minQ2=1/pythia8NCDIS_5x41_minQ2=1_beamEffects_xAngle=-0.025_hiDiv_vtxfix_1.hepmc,998651,44.787289338,1.30609" | tee results/datasets/timings/$DATA
+    - cat results/datasets/nevents/$DATA | grep -v "^\#" | head -n 1 | parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA
     - |
+      export dt0 dt1
       IFS="," read file nevents dt0 dt1 < results/datasets/timings/$DATA
-      cat results/datasets/nevents/$DATA | grep -v "^\#" | while IFS="," read file nevents lines_per_event ; do
-        echo "${file},${nevents},${dt0},${dt1}"
-      done | tee results/datasets/timings/$DATA
+      cat results/datasets/nevents/$DATA | grep -v "^\#" | cat       | parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA
 
 .collect:
   stage: collect
