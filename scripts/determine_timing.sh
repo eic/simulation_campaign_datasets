@@ -51,13 +51,13 @@ mkdir -p $(dirname ${logfile})
 
 # time for 1 event (first, since will write to S3)
 t1=$(date +%s.%N)
-/opt/campaigns/${type}/scripts/run.sh ${cifile} 1 2>&1 | tee ${logfile}.1
+/opt/campaigns/${type}/scripts/run.sh ${cifile} 1 2>&1 > ${logfile}.1
 t2=$(date +%s.%N)
 dt01=$(echo "scale=5; ($t2-$t1)" | bc -l)
 
 # time for n events (last, so will overwrite 1 event)
 t1=$(date +%s.%N)
-/opt/campaigns/${type}/scripts/run.sh ${cifile} ${n} 2>&1 | tee ${logfile}.n
+/opt/campaigns/${type}/scripts/run.sh ${cifile} ${n} 2>&1 > ${logfile}.n
 t2=$(date +%s.%N)
 dt0n=$(echo "scale=5; ($t2-$t1)" | bc -l)
 
