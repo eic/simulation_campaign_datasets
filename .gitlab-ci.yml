@@ -42,12 +42,14 @@ stages:
         if [ -n "${first_dt0}" -a -n "${first_dt1}" ] ; then
           export dt0=${first_dt0}
           export dt1=${first_dt1}
-          echo "Using $dt0 and $dt1"
+          echo "export --- Using $dt0 and $dt1"
         fi
+        echo "fi --- Using $dt0 and $dt1"
       done
+      echo "done --- Using $dt0 and $dt1"
       # then apply to all lines in file
       cat results/datasets/nevents/$DATA | grep -v "^\#" | while IFS="," read file nevents lines_per_event ; do
-        echo ${file},${nevents},${dt0},${dt1}
+        echo "${file},${nevents},${dt0},${dt1}"
       done | tee results/datasets/timings/$DATA
 
 .collect:
