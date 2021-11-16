@@ -36,9 +36,13 @@ stages:
     - mkdir -p $(dirname results/datasets/timings/$DATA)
     - |
       # determine timing on first line (using parallel because of csv parsing)
-      cat results/datasets/nevents/$DATA | grep -v "^\#" | head -n 1 | parallel --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA
-      # then apply to all lines in file (using parallel but should be quick)
-      cat results/datasets/nevents/$DATA | grep -v "^\#" |    parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA
+      cat results/datasets/nevents/$DATA | grep -v "^\#" | head -n 1 | parallel --colsep "," scripts/determine_timing.sh {1} {2} {3} | while IFS="," read file ntotal dt0 dt1 ; do
+        export dt0 dt1
+      done
+      # then apply to all lines in file
+      cat results/datasets/nevents/$DATA | grep -v "^\#" | while IFS="," read file nevents nlines ; do
+        echo $file,$nevents,$dt0,$dt1
+      done | sort | tee results/datasets/timings/$DATA
 
 .collect:
   stage: collect
