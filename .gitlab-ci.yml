@@ -20,7 +20,7 @@ stages:
   stage: gzip
   script:
     - mc config host add S3rw https://dtn01.sdcc.bnl.gov:9000 ${S3RW_ACCESS_KEY} ${S3RW_SECRET_KEY}
-    - cat $DATA | grep -v "^\#" | parallel -j 1 --colsep "," scripts/gzip_hepmc.sh {1} {2} {3}
+    - cat $DATA | grep -v "^\#" | parallel -j $JOBS --colsep "," scripts/gzip_hepmc.sh {1} {2} {3}
 
 .nevents:
   stage: nevents
@@ -34,15 +34,18 @@ stages:
   script:
     - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
     - mkdir -p $(dirname results/datasets/timings/$DATA)
+    - cat results/datasets/nevents/$DATA | grep -v "^\#" | head -n 1 | parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA
     - |
-      # determine timing on first line (using parallel because of csv parsing)
-      cat results/datasets/nevents/$DATA | grep -v "^\#" | head -n 1 | parallel --colsep "," scripts/determine_timing.sh {1} {2} {3} | while IFS="," read file ntotal dt0 dt1 ; do
-        export dt0 dt1
+      # read timing for first line
+      cat results/datasets/timings/$DATA | grep -v "^\#" | head -n 1 | while IFS="," read file nevents first_dt0 first_dt1 ; do
+        if [ -n "${first_dt0}" -a -n "${first_dt1}"] ; then
+          export dt0=${first_dt0}
+          export dt1=${first_dt1}
+          echo "Using $dt0 and $dt1"
+        fi
       done
       # then apply to all lines in file
-      cat results/datasets/nevents/$DATA | grep -v "^\#" | while IFS="," read file nevents nlines ; do
-        echo $file,$nevents,$dt0,$dt1
-      done | sort | tee results/datasets/timings/$DATA
+      cat results/datasets/nevents/$DATA | grep -v "^\#" | parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA
 
 .collect:
   stage: collect
