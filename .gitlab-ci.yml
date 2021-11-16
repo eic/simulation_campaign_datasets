@@ -56,7 +56,7 @@ collect:
   extends: .collect
   needs:
     - "DIS:collect"
-    - "EXCLUSIVE:collect"
-    - "SIDIS:collect"
-    - "SINGLE:collect"
-    - "SR:collect"
+#    - "EXCLUSIVE:collect"
+#    - "SIDIS:collect"
+#    - "SINGLE:collect"
+#    - "SR:collect"
