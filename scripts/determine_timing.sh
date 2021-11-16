@@ -4,6 +4,12 @@ file=${1?Specify filename}
 nevents=${2?Specify nevents}
 n_lines_per_event=${3?Specify n_lines_per_event}
 
+if [ -n "$dt0" ] ; then
+  # reuse if already determined
+  echo "$file,$nevents,$dt0,$dt1"
+  exit
+fi
+
 # number of events to simulate
 n_events_test=100
 
@@ -45,19 +51,19 @@ mkdir -p $(dirname ${logfile})
 
 # time for 1 event (first, since will write to S3)
 t1=$(date +%s.%N)
-/opt/campaigns/${type}/scripts/run.sh ${cifile} 1 2>&1 > ${logfile}.1
+/opt/campaigns/${type}/scripts/run.sh ${cifile} 1 2>&1 | tee ${logfile}.1
 t2=$(date +%s.%N)
 dt01=$(echo "scale=5; ($t2-$t1)" | bc -l)
 
 # time for n events (last, so will overwrite 1 event)
 t1=$(date +%s.%N)
-/opt/campaigns/${type}/scripts/run.sh ${cifile} ${n} 2>&1 > ${logfile}.n
+/opt/campaigns/${type}/scripts/run.sh ${cifile} ${n} 2>&1 | tee ${logfile}.n
 t2=$(date +%s.%N)
 dt0n=$(echo "scale=5; ($t2-$t1)" | bc -l)
 
 # initialization correction (require at least a minimum positive difference)
-dt1=$(echo "scale=5; if($dt0n-$dt01>0.1*$dt01) print(($dt0n-$dt01)/($n-1)) else print(0.1*$dt01/$n)" | bc -l)
-dt0=$(echo "scale=5; if($dt01>$dt1) print(($dt01-$dt1)) else print(100)" | bc -l)
+export dt1=$(echo "scale=5; if($dt0n-$dt01>0.1*$dt01) print(($dt0n-$dt01)/($n-1)) else print(0.1*$dt01/$n)" | bc -l)
+export dt0=$(echo "scale=5; if($dt01>$dt1) print(($dt01-$dt1)) else print(100)" | bc -l)
 
 # output
 echo "$file,$nevents,$dt0,$dt1"

@@ -1,7 +1,7 @@
 image: eicweb.phy.anl.gov:4567/eic/juggler/juggler:latest
 
 variables:
-  JOBS: 6
+  JOBS: 1
 
 default:
   timeout: 3 hours
@@ -34,7 +34,10 @@ stages:
   script:
     - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
     - mkdir -p $(dirname results/datasets/timings/$DATA)
-    - cat results/datasets/nevents/$DATA | grep -v "^\#" | parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA
+    # determine timing on first line
+    - cat results/datasets/nevents/$DATA | grep -v "^\#" | head -n 1 | parallel --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA
+    # then apply to all lines in file
+    - cat results/datasets/nevents/$DATA | grep -v "^\#" |    parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA
 
 .collect:
   stage: collect
