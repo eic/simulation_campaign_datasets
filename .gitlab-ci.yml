@@ -2,6 +2,7 @@ image: eicweb.phy.anl.gov:4567/eic/juggler/juggler:latest
 
 variables:
   JOBS: 1
+  GZIP: 0
 
 default:
   timeout: 3 hours
@@ -18,6 +19,8 @@ stages:
 
 .gzip:
   stage: gzip
+  rules:
+    - if: '$GZIP == 1'
   script:
     - mc config host add S3rw https://dtn01.sdcc.bnl.gov:9000 ${S3RW_ACCESS_KEY} ${S3RW_SECRET_KEY}
     - cat $DATA | grep -v "^\#" | parallel -j 1 --colsep "," scripts/gzip_hepmc.sh {1} {2} {3}
