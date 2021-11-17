@@ -9,6 +9,8 @@ DIS:NC:5x41:gzip:
 
 DIS:NC:5x41:nevents:
   extends: .nevents
+  needs:
+    - DIS:NC:5x41:gzip
   parallel:
     matrix:
       - DATA:
