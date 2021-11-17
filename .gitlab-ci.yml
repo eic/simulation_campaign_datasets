@@ -48,16 +48,16 @@ stages:
 
 include:
   - local: 'DIS/config.yml'
-#  - local: 'EXCLUSIVE/config.yml'
-#  - local: 'SIDIS/config.yml'
-#  - local: 'SINGLE/config.yml'
-#  - local: 'SR/config.yml'
+  - local: 'EXCLUSIVE/config.yml'
+  - local: 'SIDIS/config.yml'
+  - local: 'SINGLE/config.yml'
+  - local: 'SR/config.yml'
 
 collect:
   extends: .collect
   needs:
     - "DIS:collect"
-#    - "EXCLUSIVE:collect"
-#    - "SIDIS:collect"
-#    - "SINGLE:collect"
-#    - "SR:collect"
+    - "EXCLUSIVE:collect"
+    - "SIDIS:collect"
+    - "SINGLE:collect"
+    - "SR:collect"
