@@ -21,33 +21,29 @@ cifile=${file/EVGEN/EVGEN\/CI}
 cidir=$(dirname ${cifile})
 mkdir -p ${cidir}
 
-# get extension
-type=${file##*.}
-if [ "${type}" == "hepmc" ] ; then
+# select type
+type="unknown"
+if [[ "${file}" =~ \.hepmc$ || "${file}" =~ \.hepmc\.gz$ ]] ; then
 
-  # check for gzipped version
-  if [ -z "$(mc ls S3/eictest/ATHENA/${file}.gz)" ] ; then
-    # regular
+  if [[ "${file}" =~ \.hepmc\.gz$ ]] ; then
     GUNZIP=(cat)
   else
-    # gzipped
-    file=${file}.gz
     GUNZIP=(gunzip -c)
   fi
 
   # get first lines of hepmc file
-  mc cat S3/eictest/ATHENA/${file} | ${GUNZIP[@]} | head -n $nlines > ${cifile}
+  mc cat S3/eictest/ATHENA/${file} | ${GUNZIP[@]} | head -n ${nlines} > ${cifile}
   test -f ${cifile}
   # count events
   n=$(grep ^E ${cifile} | wc -l)
   n=$((n-1)) # last event is corrupted
   test $n -gt 0 || exit -1
-  if [ -z "${file##*hepmc2*}" ] ; then
+  if [[ "${file}" =~ hepmc2 ] ; then
     export USEHEPMC3=false
   fi
   type="hepmc3"
 
-elif [ "${type}" == "steer" ] ; then
+elif [[ "${file}" =~ steer$ ]] ; then
 
   # get full steer file
   mc cp -q S3/eictest/ATHENA/${file} ${cifile} > /dev/null
