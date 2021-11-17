@@ -24,8 +24,18 @@ mkdir -p ${cidir}
 # get extension
 type=${file##*.}
 if [ "${type}" == "hepmc" ] ; then
+
+  # check for gzipped version
+  if [ -z "$(mc ls S3/eictest/ATHENA/${file}.gz)" ] ; then
+    # regular
+    GUNZIP=(cat)
+  else
+    # gzipped
+    GUNZIP=(gunzip -c)
+  fi
+
   # get first lines of hepmc file
-  mc head -n $nlines S3/eictest/ATHENA/${file} > ${cifile}
+  mc cat S3/eictest/ATHENA/${file} | ${GUNZIP[@]} | head -n $nlines > ${cifile}
   test -f ${cifile}
   # count events
   n=$(grep ^E ${cifile} | wc -l)
@@ -35,15 +45,20 @@ if [ "${type}" == "hepmc" ] ; then
     export USEHEPMC3=false
   fi
   type="hepmc3"
+
 elif [ "${type}" == "steer" ] ; then
+
   # get full steer file
   mc cp -q S3/eictest/ATHENA/${file} ${cifile} > /dev/null
   test -f ${cifile}
   n=$n_events_test
   type="single"
+
 else
+
   echo "Error: extension not recognized"
   exit -1
+
 fi
 
 logfile=results/logs/${cifile}.out
