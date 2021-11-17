@@ -31,6 +31,7 @@ if [ "${type}" == "hepmc" ] ; then
     GUNZIP=(cat)
   else
     # gzipped
+    file=${file}.gz
     GUNZIP=(gunzip -c)
   fi
 
