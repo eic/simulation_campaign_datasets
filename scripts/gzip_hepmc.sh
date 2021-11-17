@@ -7,11 +7,25 @@ file=${1?Specify filename}
 nevents=${2:-} # allow empty
 n_lines_per_event=${3:-} # allow empty
 
-if [ -z "$(mc ls S3rw/eictest/ATHENA/${file}.gz)" ] ; then
-  echo "gzip ${file}"
-  mc ls S3rw/eictest/ATHENA/${file}
-  mc cat S3rw/eictest/ATHENA/${file} | gzip -c | mc pipe S3rw/eictest/ATHENA/${file}.gz
-  mc ls S3rw/eictest/ATHENA/${file}.gz
+if [[ "${file}" =~ \.hepmc$ ]] ; then
+  if [ -z "$(mc ls S3rw/eictest/ATHENA/${file}.gz)" ] ; then
+    echo "gzip ${file}"
+    mc ls S3rw/eictest/ATHENA/${file}
+    mc cat S3rw/eictest/ATHENA/${file} | gzip -c | mc pipe S3rw/eictest/ATHENA/${file}.gz
+    mc ls S3rw/eictest/ATHENA/${file}.gz
+  else
+    echo "${file}.gz already exists"
+  fi
+elif [[ "${file}" =~ \.hepmc\.gz$ ]] ; then
+  if [ -z "$(mc ls S3rw/eictest/ATHENA/${file})" ] ; then
+    echo "gzip ${file/.gz/}"
+    mc ls S3rw/eictest/ATHENA/${file/.gz/}
+    mc cat S3rw/eictest/ATHENA/${file/.gz/} | gzip -c | mc pipe S3rw/eictest/ATHENA/${file}
+    mc ls S3rw/eictest/ATHENA/${file}
+  else
+    echo "${file} already exists"
+  fi
 else
-  echo "${file}.gz already exists"
+  echo "file ${file} not recognized"
+  exit 1
 fi
