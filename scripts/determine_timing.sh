@@ -7,7 +7,7 @@ file=${1?Specify filename}
 nevents=${2?Specify nevents}
 n_lines_per_event=${3?Specify n_lines_per_event}
 
-if [ -n "${dt0}" -a -n "${dt1}" ] ; then
+if [ -n "${dt0:-}" -a -n "${dt1:-}" ] ; then
   # reuse if already determined
   echo "$file,$nevents,$dt0,$dt1"
   exit
