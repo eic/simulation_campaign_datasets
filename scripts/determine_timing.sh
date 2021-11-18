@@ -26,9 +26,9 @@ type="unknown"
 if [[ "${file}" =~ \.hepmc$ || "${file}" =~ \.hepmc\.gz$ ]] ; then
 
   if [[ "${file}" =~ \.hepmc\.gz$ ]] ; then
-    GUNZIP=(cat)
-  else
     GUNZIP=(gunzip -c)
+  else
+    GUNZIP=(cat)
   fi
 
   # get first lines of hepmc file
