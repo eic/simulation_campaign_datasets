@@ -4,7 +4,7 @@ EXCLUSIVE:TCS:gzip:
     matrix:
       - DATA:
         - "EXCLUSIVE/TCS/TCS_5x41_hiAcc.csv"
-        - "EXCLUSIVE/TCS/TCS_5x4100_hiDiv.csv"
+        - "EXCLUSIVE/TCS/TCS_5x41_hiDiv.csv"
         - "EXCLUSIVE/TCS/TCS_10x100_hiAcc.csv"
         - "EXCLUSIVE/TCS/TCS_10x100_hiDiv.csv"
         - "EXCLUSIVE/TCS/TCS_18x275_hiAcc.csv"
@@ -18,7 +18,7 @@ EXCLUSIVE:TCS:nevents:
     matrix:
       - DATA:
         - "EXCLUSIVE/TCS/TCS_5x41_hiAcc.csv"
-        - "EXCLUSIVE/TCS/TCS_5x4100_hiDiv.csv"
+        - "EXCLUSIVE/TCS/TCS_5x41_hiDiv.csv"
         - "EXCLUSIVE/TCS/TCS_10x100_hiAcc.csv"
         - "EXCLUSIVE/TCS/TCS_10x100_hiDiv.csv"
         - "EXCLUSIVE/TCS/TCS_18x275_hiAcc.csv"
@@ -32,7 +32,7 @@ EXCLUSIVE:TCS:timings:
     matrix:
       - DATA:
         - "EXCLUSIVE/TCS/TCS_5x41_hiAcc.csv"
-        - "EXCLUSIVE/TCS/TCS_5x4100_hiDiv.csv"
+        - "EXCLUSIVE/TCS/TCS_5x41_hiDiv.csv"
         - "EXCLUSIVE/TCS/TCS_10x100_hiAcc.csv"
         - "EXCLUSIVE/TCS/TCS_10x100_hiDiv.csv"
         - "EXCLUSIVE/TCS/TCS_18x275_hiAcc.csv"
