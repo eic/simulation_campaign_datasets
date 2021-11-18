@@ -14,10 +14,10 @@ if [[ "${file}" =~ \.hepmc$ ]] ; then
     mc cat S3rw/eictest/ATHENA/${file} | gzip -c | mc pipe S3rw/eictest/ATHENA/${file}.gz
     mc ls S3rw/eictest/ATHENA/${file}.gz
   else
-    echo "${file}.gz already exists"
+    echo "${file}.gz already exists; change your input file to use the compressed file"
   fi
 elif [[ "${file}" =~ \.hepmc\.gz$ ]] ; then
-  echo "${file} already exists"
+  echo "${file} already compressed"
 else
   echo "${file} not recognized"
   exit 1

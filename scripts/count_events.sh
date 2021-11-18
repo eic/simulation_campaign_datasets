@@ -1,5 +1,5 @@
 #!/bin/bash
-set -Eu
+set -Eu # no pipefail to allow head to cut pipe
 trap 's=$?; echo "$0: Error on line "$LINENO": $BASH_COMMAND"; exit $s' ERR
 IFS=$'\n\t'
 
