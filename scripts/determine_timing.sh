@@ -1,4 +1,7 @@
 #!/bin/bash
+set -Euo pipefail
+trap 's=$?; echo "$0: Error on line "$LINENO": $BASH_COMMAND"; exit $s' ERR
+IFS=$'\n\t'
 
 file=${1?Specify filename}
 nevents=${2?Specify nevents}
