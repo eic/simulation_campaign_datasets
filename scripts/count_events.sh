@@ -8,9 +8,9 @@ nevents=${2:-} # allow empty
 n_lines_per_event=${3:-} # allow empty
 
 if [[ "${file}" =~ \.hepmc\.gz ]] ; then
-  GUNZIP=(cat)
-else
   GUNZIP=(gunzip -c)
+else
+  GUNZIP=(cat)
 fi
 
 # if nevents not known
