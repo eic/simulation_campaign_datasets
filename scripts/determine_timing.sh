@@ -27,6 +27,7 @@ if [[ "${file}" =~ \.hepmc$ || "${file}" =~ \.hepmc\.gz$ ]] ; then
 
   if [[ "${file}" =~ \.hepmc\.gz$ ]] ; then
     GUNZIP=(gunzip -c)
+    cifile=${cifile/.gz/}
   else
     GUNZIP=(cat)
   fi
