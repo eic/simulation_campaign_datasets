@@ -17,15 +17,8 @@ if [[ "${file}" =~ \.hepmc$ ]] ; then
     echo "${file}.gz already exists"
   fi
 elif [[ "${file}" =~ \.hepmc\.gz$ ]] ; then
-  if [ -z "$(mc ls S3rw/eictest/ATHENA/${file})" ] ; then
-    echo "gzip ${file/.gz/}"
-    mc ls S3rw/eictest/ATHENA/${file/.gz/}
-    mc cat S3rw/eictest/ATHENA/${file/.gz/} | gzip -c | mc pipe S3rw/eictest/ATHENA/${file}
-    mc ls S3rw/eictest/ATHENA/${file}
-  else
-    echo "${file} already exists"
-  fi
+  echo "${file} already exists"
 else
-  echo "file ${file} not recognized"
+  echo "${file} not recognized"
   exit 1
 fi
