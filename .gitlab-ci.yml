@@ -36,8 +36,8 @@ stages:
     - mkdir -p $(dirname results/datasets/timings/$DATA)
     - cat results/datasets/nevents/$DATA | grep -v "^\#" | head -n 1 | parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA
     - |
-      export dt0 dt1
       IFS="," read file nevents dt0 dt1 < results/datasets/timings/$DATA
+      export dt0 dt1
       cat results/datasets/nevents/$DATA | grep -v "^\#" | cat       | parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA
 
 .collect:
