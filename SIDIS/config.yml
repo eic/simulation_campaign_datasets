@@ -3,8 +3,8 @@ SIDIS:gzip:
   parallel:
     matrix:
       - DATA:
-        - "SIDIS/Lambda.csv"
-        - "SIDIS/ep_18x110.csv"
+        - "SIDIS/Lambda_hiDiv.csv"
+        - "SIDIS/Lambda_hiAcc.csv"
         - "SIDIS/eA_18x110.csv"
 
 SIDIS:nevents:
@@ -12,8 +12,8 @@ SIDIS:nevents:
   parallel:
     matrix:
       - DATA:
-        - "SIDIS/Lambda.csv"
-        - "SIDIS/ep_18x110.csv"
+        - "SIDIS/Lambda_hiDiv.csv"
+        - "SIDIS/Lambda_hiAcc.csv"
         - "SIDIS/eA_18x110.csv"
 
 SIDIS:timings:
@@ -23,8 +23,8 @@ SIDIS:timings:
   parallel:
     matrix:
       - DATA:
-        - "SIDIS/Lambda.csv"
-        - "SIDIS/ep_18x110.csv"
+        - "SIDIS/Lambda_hiDiv.csv"
+        - "SIDIS/Lambda_hiAcc.csv"
         - "SIDIS/eA_18x110.csv"
 
 SIDIS:collect:
