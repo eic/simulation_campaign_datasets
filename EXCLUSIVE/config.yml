@@ -18,7 +18,6 @@ EXCLUSIVE:gzip:
         - "EXCLUSIVE/DVMP.csv"
         - "EXCLUSIVE/UPSILON.csv"
         - "EXCLUSIVE/omega.csv"
-        - "EXCLUSIVE/x_y_psi.csv"
 
 EXCLUSIVE:nevents:
   extends: .nevents
@@ -30,7 +29,6 @@ EXCLUSIVE:nevents:
         - "EXCLUSIVE/DVMP.csv"
         - "EXCLUSIVE/UPSILON.csv"
         - "EXCLUSIVE/omega.csv"
-        - "EXCLUSIVE/x_y_psi.csv"
 
 EXCLUSIVE:timings:
   extends: .timings
@@ -44,7 +42,6 @@ EXCLUSIVE:timings:
         - "EXCLUSIVE/DVMP.csv"
         - "EXCLUSIVE/UPSILON.csv"
         - "EXCLUSIVE/omega.csv"
-        - "EXCLUSIVE/x_y_psi.csv"
 
 EXCLUSIVE:collect:
   extends: .collect
