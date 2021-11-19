@@ -1,0 +1,35 @@
+EXCLUSIVE:SPECTROSCOPY:gzip:
+  extends: .gzip
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/SPECTROSCOPY/x.csv"
+        - "EXCLUSIVE/SPECTROSCOPY/y.csv"
+        - "EXCLUSIVE/SPECTROSCOPY/psi.csv"
+
+EXCLUSIVE:SPECTROSCOPY:nevents:
+  extends: .nevents
+  needs:
+    - EXCLUSIVE:SPECTROSCOPY:gzip
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/SPECTROSCOPY/x.csv"
+        - "EXCLUSIVE/SPECTROSCOPY/y.csv"
+        - "EXCLUSIVE/SPECTROSCOPY/psi.csv"
+
+EXCLUSIVE:SPECTROSCOPY:timings:
+  extends: .timings
+  needs: 
+    - EXCLUSIVE:SPECTROSCOPY:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/SPECTROSCOPY/x.csv"
+        - "EXCLUSIVE/SPECTROSCOPY/y.csv"
+        - "EXCLUSIVE/SPECTROSCOPY/psi.csv"
+
+EXCLUSIVE:SPECTROSCOPY:collect:
+  extends: .collect
+  needs: 
+    - EXCLUSIVE:SPECTROSCOPY:timings

@@ -1,8 +1,17 @@
 #!/bin/bash
+set -Eu # no pipefail to allow head to cut pipe
+trap 's=$?; echo "$0: Error on line "$LINENO": $BASH_COMMAND"; exit $s' ERR
+IFS=$'\n\t'
 
 file=${1?Specify filename}
 nevents=${2?Specify nevents}
 n_lines_per_event=${3?Specify n_lines_per_event}
+
+if [ -n "${dt0:-}" -a -n "${dt1:-}" ] ; then
+  # reuse if already determined
+  echo "$file,$nevents,$dt0,$dt1"
+  exit
+fi
 
 # number of events to simulate
 n_events_test=100
@@ -15,29 +24,42 @@ cifile=${file/EVGEN/EVGEN\/CI}
 cidir=$(dirname ${cifile})
 mkdir -p ${cidir}
 
-# get extension
-type=${file##*.}
-if [ "${type}" == "hepmc" ] ; then
+# select type
+type="unknown"
+if [[ "${file}" =~ \.hepmc$ || "${file}" =~ \.hepmc\.gz$ ]] ; then
+
+  if [[ "${file}" =~ \.hepmc\.gz$ ]] ; then
+    GUNZIP=(gunzip -c)
+    cifile=${cifile/.gz/}
+  else
+    GUNZIP=(cat)
+  fi
+
   # get first lines of hepmc file
-  mc head -n $nlines S3/eictest/ATHENA/${file} > ${cifile}
+  mc cat S3/eictest/ATHENA/${file} | ${GUNZIP[@]} | head -n ${nlines} > ${cifile}
   test -f ${cifile}
   # count events
   n=$(grep ^E ${cifile} | wc -l)
   n=$((n-1)) # last event is corrupted
   test $n -gt 0 || exit -1
-  if [ -z "${file##*hepmc2*}" ] ; then
+  if [[ "${file}" =~ hepmc2 ]] ; then
     export USEHEPMC3=false
   fi
   type="hepmc3"
-elif [ "${type}" == "steer" ] ; then
+
+elif [[ "${file}" =~ \.steer$ ]] ; then
+
   # get full steer file
   mc cp -q S3/eictest/ATHENA/${file} ${cifile} > /dev/null
   test -f ${cifile}
   n=$n_events_test
   type="single"
+
 else
+
   echo "Error: extension not recognized"
   exit -1
+
 fi
 
 logfile=results/logs/${cifile}.out

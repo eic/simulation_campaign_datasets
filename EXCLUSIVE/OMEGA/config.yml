@@ -1,0 +1,36 @@
+EXCLUSIVE:OMEGA:gzip:
+  extends: .gzip
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/OMEGA/slight_18x275_Q2of0to1_omegaNeutralDecay_ab_hiAcc.csv"
+        - "EXCLUSIVE/OMEGA/slight_18x275_Q2of0to1_omegaNeutralDecay_ab_hiDiv.csv"
+        - "EXCLUSIVE/OMEGA/slight_18x275_Q2of1to5_omegaNeutralDecay_ab_hiAcc.csv"
+        - "EXCLUSIVE/OMEGA/slight_18x275_Q2of1to5_omegaNeutralDecay_ab_hiDiv.csv"
+
+EXCLUSIVE:OMEGA:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/OMEGA/slight_18x275_Q2of0to1_omegaNeutralDecay_ab_hiAcc.csv"
+        - "EXCLUSIVE/OMEGA/slight_18x275_Q2of0to1_omegaNeutralDecay_ab_hiDiv.csv"
+        - "EXCLUSIVE/OMEGA/slight_18x275_Q2of1to5_omegaNeutralDecay_ab_hiAcc.csv"
+        - "EXCLUSIVE/OMEGA/slight_18x275_Q2of1to5_omegaNeutralDecay_ab_hiDiv.csv"
+
+EXCLUSIVE:OMEGA:timings:
+  extends: .timings
+  needs: 
+    - EXCLUSIVE:OMEGA:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/OMEGA/slight_18x275_Q2of0to1_omegaNeutralDecay_ab_hiAcc.csv"
+        - "EXCLUSIVE/OMEGA/slight_18x275_Q2of0to1_omegaNeutralDecay_ab_hiDiv.csv"
+        - "EXCLUSIVE/OMEGA/slight_18x275_Q2of1to5_omegaNeutralDecay_ab_hiAcc.csv"
+        - "EXCLUSIVE/OMEGA/slight_18x275_Q2of1to5_omegaNeutralDecay_ab_hiDiv.csv"
+
+EXCLUSIVE:OMEGA:collect:
+  extends: .collect
+  needs: 
+    - EXCLUSIVE:OMEGA:timings

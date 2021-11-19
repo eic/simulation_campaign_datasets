@@ -1,0 +1,36 @@
+EXCLUSIVE:RHO:gzip:
+  extends: .gzip
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/RHO/slight_10x100_Q2of0to1_rho2Pions_ab_hiAcc.csv"
+        - "EXCLUSIVE/RHO/slight_10x100_Q2of1to5_rho2Pions_ab_hiAcc.csv"
+        - "EXCLUSIVE/RHO/slight_10x100_Q2of0to1_rho2Pions_ab_hiDiv.csv"
+        - "EXCLUSIVE/RHO/slight_10x100_Q2of1to5_rho2Pions_ab_hiDiv.csv"
+
+EXCLUSIVE:RHO:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/RHO/slight_10x100_Q2of0to1_rho2Pions_ab_hiAcc.csv"
+        - "EXCLUSIVE/RHO/slight_10x100_Q2of1to5_rho2Pions_ab_hiAcc.csv"
+        - "EXCLUSIVE/RHO/slight_10x100_Q2of0to1_rho2Pions_ab_hiDiv.csv"
+        - "EXCLUSIVE/RHO/slight_10x100_Q2of1to5_rho2Pions_ab_hiDiv.csv"
+
+EXCLUSIVE:RHO:timings:
+  extends: .timings
+  needs: 
+    - EXCLUSIVE:RHO:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/RHO/slight_10x100_Q2of0to1_rho2Pions_ab_hiAcc.csv"
+        - "EXCLUSIVE/RHO/slight_10x100_Q2of1to5_rho2Pions_ab_hiAcc.csv"
+        - "EXCLUSIVE/RHO/slight_10x100_Q2of0to1_rho2Pions_ab_hiDiv.csv"
+        - "EXCLUSIVE/RHO/slight_10x100_Q2of1to5_rho2Pions_ab_hiDiv.csv"
+
+EXCLUSIVE:RHO:collect:
+  extends: .collect
+  needs: 
+    - EXCLUSIVE:RHO:timings

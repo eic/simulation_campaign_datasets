@@ -3,25 +3,26 @@ EXCLUSIVE:TCS:gzip:
   parallel:
     matrix:
       - DATA:
-        #- "EXCLUSIVE/TCS/TCS_5x41.csv"
-        #- "EXCLUSIVE/TCS/TCS_10x100.csv"
-        #- "EXCLUSIVE/TCS/TCS_18x275.csv"
+        - "EXCLUSIVE/TCS/TCS_5x41_hiAcc.csv"
+        - "EXCLUSIVE/TCS/TCS_5x41_hiDiv.csv"
         - "EXCLUSIVE/TCS/TCS_10x100_hiAcc.csv"
         - "EXCLUSIVE/TCS/TCS_10x100_hiDiv.csv"
-        - "EXCLUSIVE/TCS/TCS_BH_5x41.csv"
-        - "EXCLUSIVE/TCS/TCS_BH_10x100.csv"
-        - "EXCLUSIVE/TCS/TCS_BH_18x275.csv"
+        - "EXCLUSIVE/TCS/TCS_18x275_hiAcc.csv"
+        - "EXCLUSIVE/TCS/TCS_18x275_hiDiv.csv"
 
 EXCLUSIVE:TCS:nevents:
   extends: .nevents
+  needs:
+    - EXCLUSIVE:TCS:gzip
   parallel:
     matrix:
       - DATA:
+        - "EXCLUSIVE/TCS/TCS_5x41_hiAcc.csv"
+        - "EXCLUSIVE/TCS/TCS_5x41_hiDiv.csv"
         - "EXCLUSIVE/TCS/TCS_10x100_hiAcc.csv"
         - "EXCLUSIVE/TCS/TCS_10x100_hiDiv.csv"
-        - "EXCLUSIVE/TCS/TCS_BH_5x41.csv"
-        - "EXCLUSIVE/TCS/TCS_BH_10x100.csv"
-        - "EXCLUSIVE/TCS/TCS_BH_18x275.csv"
+        - "EXCLUSIVE/TCS/TCS_18x275_hiAcc.csv"
+        - "EXCLUSIVE/TCS/TCS_18x275_hiDiv.csv"
 
 EXCLUSIVE:TCS:timings:
   extends: .timings
@@ -30,11 +31,12 @@ EXCLUSIVE:TCS:timings:
   parallel:
     matrix:
       - DATA:
+        - "EXCLUSIVE/TCS/TCS_5x41_hiAcc.csv"
+        - "EXCLUSIVE/TCS/TCS_5x41_hiDiv.csv"
         - "EXCLUSIVE/TCS/TCS_10x100_hiAcc.csv"
         - "EXCLUSIVE/TCS/TCS_10x100_hiDiv.csv"
-        - "EXCLUSIVE/TCS/TCS_BH_5x41.csv"
-        - "EXCLUSIVE/TCS/TCS_BH_10x100.csv"
-        - "EXCLUSIVE/TCS/TCS_BH_18x275.csv"
+        - "EXCLUSIVE/TCS/TCS_18x275_hiAcc.csv"
+        - "EXCLUSIVE/TCS/TCS_18x275_hiDiv.csv"
 
 EXCLUSIVE:TCS:collect:
   extends: .collect

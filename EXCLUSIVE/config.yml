@@ -1,7 +1,10 @@
 include:
-  - local: 'EXCLUSIVE/DIFFRACTIVE_JPSI/config.yml'
-  - local: 'EXCLUSIVE/DIFFRACTIVE_PHI/config.yml'
-  - local: 'EXCLUSIVE/DIFFRACTIVE_RHO/config.yml'
+  #- local: 'EXCLUSIVE/DIFFRACTIVE_JPSI/config.yml'
+  #- local: 'EXCLUSIVE/DIFFRACTIVE_PHI/config.yml'
+  #- local: 'EXCLUSIVE/DIFFRACTIVE_RHO/config.yml'
+  #- local: 'EXCLUSIVE/OMEGA/config.yml'
+  #- local: 'EXCLUSIVE/RHO/config.yml'
+  - local: 'EXCLUSIVE/SPECTROSCOPY/config.yml'
   - local: 'EXCLUSIVE/DVCS/config.yml'
   - local: 'EXCLUSIVE/TCS/config.yml'
 
@@ -13,11 +16,7 @@ EXCLUSIVE:gzip:
         - "EXCLUSIVE/DEMP.csv"
         - "EXCLUSIVE/DVCSD.csv"
         - "EXCLUSIVE/DVMP.csv"
-        - "EXCLUSIVE/OMEGA.csv"
-        - "EXCLUSIVE/RHO.csv"
         - "EXCLUSIVE/UPSILON.csv"
-        - "EXCLUSIVE/omega.csv"
-        - "EXCLUSIVE/x_y_psi.csv"
 
 EXCLUSIVE:nevents:
   extends: .nevents
@@ -27,11 +26,7 @@ EXCLUSIVE:nevents:
         - "EXCLUSIVE/DEMP.csv"
         - "EXCLUSIVE/DVCSD.csv"
         - "EXCLUSIVE/DVMP.csv"
-        - "EXCLUSIVE/OMEGA.csv"
-        - "EXCLUSIVE/RHO.csv"
         - "EXCLUSIVE/UPSILON.csv"
-        - "EXCLUSIVE/omega.csv"
-        - "EXCLUSIVE/x_y_psi.csv"
 
 EXCLUSIVE:timings:
   extends: .timings
@@ -43,18 +38,17 @@ EXCLUSIVE:timings:
         - "EXCLUSIVE/DEMP.csv"
         - "EXCLUSIVE/DVCSD.csv"
         - "EXCLUSIVE/DVMP.csv"
-        - "EXCLUSIVE/OMEGA.csv"
-        - "EXCLUSIVE/RHO.csv"
         - "EXCLUSIVE/UPSILON.csv"
-        - "EXCLUSIVE/omega.csv"
-        - "EXCLUSIVE/x_y_psi.csv"
 
 EXCLUSIVE:collect:
   extends: .collect
   needs: 
-    - EXCLUSIVE:DIFFRACTIVE_JPSI:collect
-    - EXCLUSIVE:DIFFRACTIVE_PHI:collect
-    - EXCLUSIVE:DIFFRACTIVE_RHO:collect
+    #- EXCLUSIVE:DIFFRACTIVE_JPSI:collect
+    #- EXCLUSIVE:DIFFRACTIVE_PHI:collect
+    #- EXCLUSIVE:DIFFRACTIVE_RHO:collect
+    #- EXCLUSIVE:OMEGA:collect
+    #- EXCLUSIVE:RHO:collect
+    - EXCLUSIVE:SPECTROSCOPY:collect
     - EXCLUSIVE:DVCS:collect
     - EXCLUSIVE:TCS:collect
     - EXCLUSIVE:timings

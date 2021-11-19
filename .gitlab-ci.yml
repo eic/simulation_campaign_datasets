@@ -1,7 +1,7 @@
 image: eicweb.phy.anl.gov:4567/eic/juggler/juggler:latest
 
 variables:
-  JOBS: 6
+  JOBS: 1
 
 default:
   timeout: 3 hours
@@ -20,7 +20,7 @@ stages:
   stage: gzip
   script:
     - mc config host add S3rw https://dtn01.sdcc.bnl.gov:9000 ${S3RW_ACCESS_KEY} ${S3RW_SECRET_KEY}
-    - cat $DATA | grep -v "^\#" | parallel -j 1 --colsep "," scripts/gzip_hepmc.sh {1} {2} {3}
+    - cat $DATA | grep -v "^\#" | parallel -j $JOBS --colsep "," scripts/gzip_hepmc.sh {1} {2} {3}
 
 .nevents:
   stage: nevents
@@ -34,7 +34,11 @@ stages:
   script:
     - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
     - mkdir -p $(dirname results/datasets/timings/$DATA)
-    - cat results/datasets/nevents/$DATA | grep -v "^\#" | parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA
+    - cat results/datasets/nevents/$DATA | grep -v "^\#" | head -n 1 | parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA && echo $?
+    - |
+      IFS="," read file nevents dt0 dt1 < results/datasets/timings/$DATA
+      export dt0 dt1
+      cat results/datasets/nevents/$DATA | grep -v "^\#" | cat       | parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA
 
 .collect:
   stage: collect
