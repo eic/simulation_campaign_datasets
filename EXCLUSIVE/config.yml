@@ -1,7 +1,7 @@
 include:
-  - local: 'EXCLUSIVE/DIFFRACTIVE_JPSI/config.yml'
-  - local: 'EXCLUSIVE/DIFFRACTIVE_PHI/config.yml'
-  - local: 'EXCLUSIVE/DIFFRACTIVE_RHO/config.yml'
+  #- local: 'EXCLUSIVE/DIFFRACTIVE_JPSI/config.yml'
+  #- local: 'EXCLUSIVE/DIFFRACTIVE_PHI/config.yml'
+  #- local: 'EXCLUSIVE/DIFFRACTIVE_RHO/config.yml'
   - local: 'EXCLUSIVE/DVCS/config.yml'
   - local: 'EXCLUSIVE/TCS/config.yml'
   - local: 'EXCLUSIVE/OMEGA/config.yml'
