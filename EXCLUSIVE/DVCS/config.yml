@@ -3,18 +3,24 @@ EXCLUSIVE:DVCS:gzip:
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DVCS/DVCS_5x41.csv"
-        - "EXCLUSIVE/DVCS/DVCS_10x100.csv"
-        - "EXCLUSIVE/DVCS/DVCS_18x275.csv"
+        - "EXCLUSIVE/DVCS/DVCS_5x41_hiDiv.csv"
+        - "EXCLUSIVE/DVCS/DVCS_5x41_hiAcc.csv"
+        - "EXCLUSIVE/DVCS/DVCS_10x100_hiDiv.csv"
+        - "EXCLUSIVE/DVCS/DVCS_10x100_hiAcc.csv"
+        - "EXCLUSIVE/DVCS/DVCS_18x275_hiDiv.csv"
+        - "EXCLUSIVE/DVCS/DVCS_18x275_hiAcc.csv"
 
 EXCLUSIVE:DVCS:nevents:
   extends: .nevents
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DVCS/DVCS_5x41.csv"
-        - "EXCLUSIVE/DVCS/DVCS_10x100.csv"
-        - "EXCLUSIVE/DVCS/DVCS_18x275.csv"
+        - "EXCLUSIVE/DVCS/DVCS_5x41_hiDiv.csv"
+        - "EXCLUSIVE/DVCS/DVCS_5x41_hiAcc.csv"
+        - "EXCLUSIVE/DVCS/DVCS_10x100_hiDiv.csv"
+        - "EXCLUSIVE/DVCS/DVCS_10x100_hiAcc.csv"
+        - "EXCLUSIVE/DVCS/DVCS_18x275_hiDiv.csv"
+        - "EXCLUSIVE/DVCS/DVCS_18x275_hiAcc.csv"
 
 EXCLUSIVE:DVCS:timings:
   extends: .timings
@@ -23,9 +29,12 @@ EXCLUSIVE:DVCS:timings:
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DVCS/DVCS_5x41.csv"
-        - "EXCLUSIVE/DVCS/DVCS_10x100.csv"
-        - "EXCLUSIVE/DVCS/DVCS_18x275.csv"
+        - "EXCLUSIVE/DVCS/DVCS_5x41_hiDiv.csv"
+        - "EXCLUSIVE/DVCS/DVCS_5x41_hiAcc.csv"
+        - "EXCLUSIVE/DVCS/DVCS_10x100_hiDiv.csv"
+        - "EXCLUSIVE/DVCS/DVCS_10x100_hiAcc.csv"
+        - "EXCLUSIVE/DVCS/DVCS_18x275_hiDiv.csv"
+        - "EXCLUSIVE/DVCS/DVCS_18x275_hiAcc.csv"
 
 EXCLUSIVE:DVCS:collect:
   extends: .collect
