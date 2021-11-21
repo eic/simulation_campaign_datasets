@@ -8,7 +8,7 @@ SINGLE:nevents:
         - "SINGLE/SINGLE_130to177deg.csv"
 
 SINGLE:timings:
-  extends: .timings
+  extends: .timings_all
   needs: 
     - SINGLE:nevents
   parallel:
