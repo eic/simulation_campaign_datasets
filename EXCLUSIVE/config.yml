@@ -20,6 +20,8 @@ EXCLUSIVE:gzip:
 
 EXCLUSIVE:nevents:
   extends: .nevents
+  needs:
+    - EXCLUSIVE:gzip
   parallel:
     matrix:
       - DATA:
