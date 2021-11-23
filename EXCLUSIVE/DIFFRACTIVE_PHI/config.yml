@@ -11,7 +11,7 @@ EXCLUSIVE:DIFFRACTIVE_PHI:gzip:
 EXCLUSIVE:DIFFRACTIVE_PHI:nevents:
   extends: .nevents
   needs:
-    - EXCLUSIVE:DIFFRACTIVE_PHI:nevents
+    - EXCLUSIVE:DIFFRACTIVE_PHI:gzip
   parallel:
     matrix:
       - DATA:
