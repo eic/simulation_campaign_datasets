@@ -37,6 +37,7 @@ stages:
   stage: timings
   script:
     - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
+    - eic-info
     - mkdir -p $(dirname results/datasets/timings/$DATA)
     - echo $DATA
     - cat results/datasets/nevents/$DATA | grep -v "^\#" | head -n 1 || true
