@@ -12,6 +12,8 @@ EXCLUSIVE:DVCS:gzip:
 
 EXCLUSIVE:DVCS:nevents:
   extends: .nevents
+  needs:
+    - EXCLUSIVE:DVCS:gzip
   parallel:
     matrix:
       - DATA:

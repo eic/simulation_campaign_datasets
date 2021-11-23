@@ -7,6 +7,8 @@ SR:gzip:
 
 SR:nevents:
   extends: .nevents
+  needs:
+    - SR:gzip
   parallel:
     matrix:
       - DATA:
