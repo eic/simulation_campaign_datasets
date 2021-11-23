@@ -1,4 +1,4 @@
-image: eicweb.phy.anl.gov:4567/eic/juggler/juggler:latest
+image: eicweb.phy.anl.gov:4567/containers/eic_container/jug_xl:nightly
 
 variables:
   JOBS: 1
