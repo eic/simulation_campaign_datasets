@@ -3,14 +3,18 @@ EXCLUSIVE:DIFFRACTIVE_JPSI:gzip:
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre_Coherent.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre_Incoherent.csv"
 
 EXCLUSIVE:DIFFRACTIVE_JPSI:nevents:
   extends: .nevents
+  needs:
+    - EXCLUSIVE:DIFFRACTIVE_JPSI:gzip
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre_Coherent.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre_Incoherent.csv"
 
 EXCLUSIVE:DIFFRACTIVE_JPSI:timings:
   extends: .timings
@@ -19,7 +23,8 @@ EXCLUSIVE:DIFFRACTIVE_JPSI:timings:
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre_Coherent.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre_Incoherent.csv"
 
 EXCLUSIVE:DIFFRACTIVE_JPSI:collect:
   extends: .collect

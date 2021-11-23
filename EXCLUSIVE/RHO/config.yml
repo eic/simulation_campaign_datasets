@@ -10,6 +10,8 @@ EXCLUSIVE:RHO:gzip:
 
 EXCLUSIVE:RHO:nevents:
   extends: .nevents
+  needs:
+    - EXCLUSIVE:RHO:gzip
   parallel:
     matrix:
       - DATA:

@@ -10,6 +10,8 @@ EXCLUSIVE:OMEGA:gzip:
 
 EXCLUSIVE:OMEGA:nevents:
   extends: .nevents
+  needs:
+    - EXCLUSIVE:OMEGA:gzip
   parallel:
     matrix:
       - DATA:

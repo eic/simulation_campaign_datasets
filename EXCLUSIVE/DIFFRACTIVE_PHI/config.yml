@@ -4,15 +4,21 @@ EXCLUSIVE:DIFFRACTIVE_PHI:gzip:
     matrix:
       - DATA:
         #- "EXCLUSIVE/DIFFRACTIVE_PHI/BeAGLE.csv"
-        - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre_Coherent.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre_Coherent_q2_15.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre_Incoherent.csv"
 
 EXCLUSIVE:DIFFRACTIVE_PHI:nevents:
   extends: .nevents
+  needs:
+    - EXCLUSIVE:DIFFRACTIVE_PHI:nevents
   parallel:
     matrix:
       - DATA:
         #- "EXCLUSIVE/DIFFRACTIVE_PHI/BeAGLE.csv"
-        - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre_Coherent.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre_Coherent_q2_15.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre_Incoherent.csv"
 
 EXCLUSIVE:DIFFRACTIVE_PHI:timings:
   extends: .timings
@@ -22,7 +28,9 @@ EXCLUSIVE:DIFFRACTIVE_PHI:timings:
     matrix:
       - DATA:
         #- "EXCLUSIVE/DIFFRACTIVE_PHI/BeAGLE.csv"
-        - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre_Coherent.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre_Coherent_q2_15.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre_Incoherent.csv"
 
 EXCLUSIVE:DIFFRACTIVE_PHI:collect:
   extends: .collect
