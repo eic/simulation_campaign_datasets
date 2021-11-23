@@ -48,8 +48,8 @@ EXCLUSIVE:collect:
     - EXCLUSIVE:DIFFRACTIVE_JPSI:collect
     - EXCLUSIVE:DIFFRACTIVE_PHI:collect
     - EXCLUSIVE:DIFFRACTIVE_RHO:collect
-    - EXCLUSIVE:OMEGA:collect
-    - EXCLUSIVE:RHO:collect
+    #- EXCLUSIVE:OMEGA:collect
+    #- EXCLUSIVE:RHO:collect
     - EXCLUSIVE:SPECTROSCOPY:collect
     - EXCLUSIVE:DVCS:collect
     - EXCLUSIVE:TCS:collect
