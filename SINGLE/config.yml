@@ -3,9 +3,12 @@ SINGLE:nevents:
   parallel:
     matrix:
       - DATA:
-        - "SINGLE/SINGLE_3to50deg.csv"
-        - "SINGLE/SINGLE_45to135deg.csv"
-        - "SINGLE/SINGLE_130to177deg.csv"
+        - "SINGLE/3to50deg/e-.csv"
+        - "SINGLE/3to50deg/pi-.csv"
+        - "SINGLE/45to135deg/e-.csv"
+        - "SINGLE/45to135deg/pi-.csv"
+        - "SINGLE/130to177deg/e-.csv"
+        - "SINGLE/130to177deg/pi-.csv"
 
 SINGLE:timings:
   extends: .timings_all
@@ -14,9 +17,12 @@ SINGLE:timings:
   parallel:
     matrix:
       - DATA:
-        - "SINGLE/SINGLE_3to50deg.csv"
-        - "SINGLE/SINGLE_45to135deg.csv"
-        - "SINGLE/SINGLE_130to177deg.csv"
+        - "SINGLE/3to50deg/e-.csv"
+        - "SINGLE/3to50deg/pi-.csv"
+        - "SINGLE/45to135deg/e-.csv"
+        - "SINGLE/45to135deg/pi-.csv"
+        - "SINGLE/130to177deg/e-.csv"
+        - "SINGLE/130to177deg/pi-.csv"
 
 SINGLE:collect:
   extends: .collect

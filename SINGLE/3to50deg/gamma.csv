@@ -1,0 +1,10 @@
+EVGEN/SINGLE/gamma/100MeV/3to50deg/gamma_100MeV_3to50deg.steer,1000000,0
+EVGEN/SINGLE/gamma/200MeV/3to50deg/gamma_200MeV_3to50deg.steer,1000000,0
+EVGEN/SINGLE/gamma/500MeV/3to50deg/gamma_500MeV_3to50deg.steer,1000000,0
+EVGEN/SINGLE/gamma/1GeV/3to50deg/gamma_1GeV_3to50deg.steer,1000000,0
+EVGEN/SINGLE/gamma/2GeV/3to50deg/gamma_2GeV_3to50deg.steer,1000000,0
+EVGEN/SINGLE/gamma/5GeV/3to50deg/gamma_5GeV_3to50deg.steer,1000000,0
+EVGEN/SINGLE/gamma/10GeV/3to50deg/gamma_10GeV_3to50deg.steer,1000000,0
+EVGEN/SINGLE/gamma/20GeV/3to50deg/gamma_20GeV_3to50deg.steer,1000000,0
+EVGEN/SINGLE/gamma/40GeV/3to50deg/gamma_40GeV_3to50deg.steer,1000000,0
+EVGEN/SINGLE/gamma/60GeV/3to50deg/gamma_60GeV_3to50deg.steer,1000000,0

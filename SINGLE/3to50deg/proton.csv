@@ -1,0 +1,8 @@
+EVGEN/SINGLE/proton/100MeV/3to50deg/proton_100MeV_3to50deg.steer,1000000,0
+EVGEN/SINGLE/proton/200MeV/3to50deg/proton_200MeV_3to50deg.steer,1000000,0
+EVGEN/SINGLE/proton/500MeV/3to50deg/proton_500MeV_3to50deg.steer,1000000,0
+EVGEN/SINGLE/proton/1GeV/3to50deg/proton_1GeV_3to50deg.steer,1000000,0
+EVGEN/SINGLE/proton/2GeV/3to50deg/proton_2GeV_3to50deg.steer,1000000,0
+EVGEN/SINGLE/proton/5GeV/3to50deg/proton_5GeV_3to50deg.steer,1000000,0
+EVGEN/SINGLE/proton/10GeV/3to50deg/proton_10GeV_3to50deg.steer,1000000,0
+EVGEN/SINGLE/proton/20GeV/3to50deg/proton_20GeV_3to50deg.steer,1000000,0

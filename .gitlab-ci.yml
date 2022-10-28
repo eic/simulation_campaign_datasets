@@ -1,7 +1,7 @@
 image: eicweb.phy.anl.gov:4567/containers/eic_container/jug_xl:nightly
 
 variables:
-  JOBS: 8
+  JOBS: 1
 
 default:
   timeout: 3 hours
@@ -56,7 +56,7 @@ stages:
     - mkdir -p $(dirname results/datasets/timings/$DATA)
     - echo $DATA
     - cat results/datasets/nevents/$DATA | grep -v "^\#"
-    - cat results/datasets/nevents/$DATA | grep -v "^\#" | parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA
+    - cat results/datasets/nevents/$DATA | grep -v "^\#" | parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA || true
 
 .collect:
   stage: collect
@@ -65,17 +65,17 @@ stages:
     - ls -Rlh results/datasets/
 
 include:
-  - local: 'DIS/config.yml'
-  - local: 'EXCLUSIVE/config.yml'
-  - local: 'SIDIS/config.yml'
+#  - local: 'DIS/config.yml'
+#  - local: 'EXCLUSIVE/config.yml'
+#  - local: 'SIDIS/config.yml'
   - local: 'SINGLE/config.yml'
-  - local: 'SR/config.yml'
+#  - local: 'SR/config.yml'
 
 collect:
   extends: .collect
   needs:
-    - "DIS:collect"
-    - "EXCLUSIVE:collect"
-    - "SIDIS:collect"
+#    - "DIS:collect"
+#    - "EXCLUSIVE:collect"
+#    - "SIDIS:collect"
     - "SINGLE:collect"
-    - "SR:collect"
+#    - "SR:collect"
