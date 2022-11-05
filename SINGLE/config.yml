@@ -5,10 +5,13 @@ SINGLE:nevents:
       - DATA:
         - "SINGLE/3to50deg/e-.csv"
         - "SINGLE/3to50deg/pi-.csv"
+        - "SINGLE/3to50deg/gamma.csv"
         - "SINGLE/45to135deg/e-.csv"
         - "SINGLE/45to135deg/pi-.csv"
+        - "SINGLE/45to135deg/gamma.csv"
         - "SINGLE/130to177deg/e-.csv"
         - "SINGLE/130to177deg/pi-.csv"
+        - "SINGLE/130to177deg/gamma.csv"
 
 SINGLE:timings:
   extends: .timings_all
@@ -19,10 +22,13 @@ SINGLE:timings:
       - DATA:
         - "SINGLE/3to50deg/e-.csv"
         - "SINGLE/3to50deg/pi-.csv"
+        - "SINGLE/3to50deg/gamma.csv"
         - "SINGLE/45to135deg/e-.csv"
         - "SINGLE/45to135deg/pi-.csv"
+        - "SINGLE/45to135deg/gamma.csv"
         - "SINGLE/130to177deg/e-.csv"
         - "SINGLE/130to177deg/pi-.csv"
+        - "SINGLE/130to177deg/gamma.csv"
 
 SINGLE:collect:
   extends: .collect
