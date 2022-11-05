@@ -10,7 +10,7 @@ n_lines_per_event=${4?Specify n_lines_per_event}
 
 if [ -n "${dt0:-}" -a -n "${dt1:-}" ] ; then
   # reuse if already determined
-  echo "$file,$nevents,$dt0,$dt1"
+  echo "$file,$nevents,$dt0,$dt1" | tee -a "${out}"
   exit
 fi
 
@@ -37,7 +37,7 @@ if [[ "${file}" =~ \.hepmc$ || "${file}" =~ \.hepmc\.gz$ ]] ; then
   fi
 
   # get first lines of hepmc file
-  mc cat S3/eictest/ATHENA/${file} | ${GUNZIP[@]} | head -n ${nlines} > ${cifile}
+  mc cat S3/eictest/EPIC/${file} | ${GUNZIP[@]} | head -n ${nlines} > ${cifile}
   test -f ${cifile}
   # count events
   n=$(grep ^E ${cifile} | wc -l)
@@ -51,7 +51,7 @@ if [[ "${file}" =~ \.hepmc$ || "${file}" =~ \.hepmc\.gz$ ]] ; then
 elif [[ "${file}" =~ \.steer$ ]] ; then
 
   # get full steer file
-  mc cp -q S3/eictest/ATHENA/${file} ${cifile} > /dev/null
+  mc cp -q S3/eictest/EPIC/${file} ${cifile} > /dev/null
   test -f ${cifile}
   n=$n_events_test
   type="single"
