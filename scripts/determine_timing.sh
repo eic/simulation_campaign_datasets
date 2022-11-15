@@ -3,13 +3,14 @@ set -Eu # no pipefail to allow head to cut pipe
 trap 's=$?; echo "$0: Error on line "$LINENO": $BASH_COMMAND"; exit $s' ERR
 IFS=$'\n\t'
 
-file=${1?Specify filename}
-nevents=${2?Specify nevents}
-n_lines_per_event=${3?Specify n_lines_per_event}
+out=${1?Specify output}
+file=${2?Specify filename}
+nevents=${3?Specify nevents}
+n_lines_per_event=${4?Specify n_lines_per_event}
 
 if [ -n "${dt0:-}" -a -n "${dt1:-}" ] ; then
   # reuse if already determined
-  echo "$file,$nevents,$dt0,$dt1"
+  echo "$file,$nevents,$dt0,$dt1" | tee -a "${out}"
   exit
 fi
 
@@ -36,7 +37,7 @@ if [[ "${file}" =~ \.hepmc$ || "${file}" =~ \.hepmc\.gz$ ]] ; then
   fi
 
   # get first lines of hepmc file
-  mc cat S3/eictest/ATHENA/${file} | ${GUNZIP[@]} | head -n ${nlines} > ${cifile}
+  mc cat S3/eictest/EPIC/${file} | ${GUNZIP[@]} | head -n ${nlines} > ${cifile}
   test -f ${cifile}
   # count events
   n=$(grep ^E ${cifile} | wc -l)
@@ -50,7 +51,7 @@ if [[ "${file}" =~ \.hepmc$ || "${file}" =~ \.hepmc\.gz$ ]] ; then
 elif [[ "${file}" =~ \.steer$ ]] ; then
 
   # get full steer file
-  mc cp -q S3/eictest/ATHENA/${file} ${cifile} > /dev/null
+  mc cp -q S3/eictest/EPIC/${file} ${cifile} > /dev/null
   test -f ${cifile}
   n=$n_events_test
   type="single"
@@ -67,13 +68,13 @@ mkdir -p $(dirname ${logfile})
 
 # time for 1 event (first, since will write to S3)
 t1=$(date +%s.%N)
-/opt/campaigns/${type}/scripts/run.sh ${cifile} 1 2>&1 > ${logfile}.1
+/opt/campaigns/${type}/scripts/run.sh ${cifile} 1 2>&1 | tee ${logfile}.1
 t2=$(date +%s.%N)
 dt01=$(echo "scale=5; ($t2-$t1)" | bc -l)
 
 # time for n events (last, so will overwrite 1 event)
 t1=$(date +%s.%N)
-/opt/campaigns/${type}/scripts/run.sh ${cifile} ${n} 2>&1 > ${logfile}.n
+/opt/campaigns/${type}/scripts/run.sh ${cifile} ${n} 2>&1 | tee ${logfile}.n
 t2=$(date +%s.%N)
 dt0n=$(echo "scale=5; ($t2-$t1)" | bc -l)
 
@@ -82,4 +83,4 @@ dt1=$(echo "scale=5; if($dt0n-$dt01>0.1*$dt01) print(($dt0n-$dt01)/($n-1)) else 
 dt0=$(echo "scale=5; if($dt01>$dt1) print(($dt01-$dt1)) else print(100)" | bc -l)
 
 # output
-echo "$file,$nevents,$dt0,$dt1"
+echo "$file,$nevents,$dt0,$dt1" | tee -a "${out}"

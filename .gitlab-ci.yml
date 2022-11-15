@@ -6,7 +6,7 @@ variables:
 default:
   timeout: 3 hours
   artifacts:
-    expire_in: 1 week 
+    expire_in: 1 week
     paths:
       - results/
 
@@ -31,26 +31,26 @@ stages:
     - mkdir -p $(dirname results/datasets/nevents/$DATA)
     - echo $DATA
     - cat $DATA
-    - cat $DATA | grep -v "^\#" | parallel -j $JOBS --colsep "," scripts/count_events.sh {1} {2} {3} | sort | tee results/datasets/nevents/$DATA
-
+    - cat $DATA | grep -v "^\#" | parallel -k --lb -j $JOBS --colsep "," scripts/count_events.sh results/datasets/nevents/$DATA {1} {2} {3}
+    - sort -o results/datasets/nevents/$DATA results/datasets/nevents/$DATA
 .timings:
   stage: timings
   script:
     - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
-    - eic-info
     - mkdir -p $(dirname results/datasets/timings/$DATA)
     - echo $DATA
     - export DETECTOR_VERSION=nightly
     - export DETECTOR_CONFIG=epic_arches
-    - cat results/datasets/nevents/$DATA | grep -v "^\#" | head -n 1 || true
-    - cat results/datasets/nevents/$DATA | grep -v "^\#" | head -n 1 | parallel -j 1 --colsep "," scripts/determine_timing.sh {1} {2} {3} || true
-    - cat results/datasets/nevents/$DATA | grep -v "^\#" | head -n 1 | parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA || true
+    # Use sed '1!d1' instead of head -n 1 to avoid pipefail issues
+    - cat results/datasets/nevents/$DATA | grep -v "^\#" | sed '1!d'
+    - cat results/datasets/nevents/$DATA | grep -v "^\#" | sed '1!d' | parallel -k --lb -j $JOBS --colsep "," scripts/determine_timing.sh results/datasets/timings/$DATA {1} {2} {3}
     - echo $DATA
     - cat results/datasets/nevents/$DATA
     - |
       IFS="," read file nevents dt0 dt1 < results/datasets/timings/$DATA
       export dt0 dt1
-      cat results/datasets/nevents/$DATA | grep -v "^\#" | cat       | parallel -j $JOBS --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA
+      cat results/datasets/nevents/$DATA | grep -v "^\#" | cat       | parallel -k --lb -j $JOBS --colsep "," scripts/determine_timing.sh results/datasets/timings/$DATA {1} {2} {3}
+    - sort -o results/datasets/timings/$DATA results/datasets/timings/$DATA
 
 .timings_all:
   stage: timings
@@ -61,7 +61,8 @@ stages:
     - export DETECTOR_VERSION=nightly
     - export DETECTOR_CONFIG=epic_arches
     - cat results/datasets/nevents/$DATA | grep -v "^\#"
-    - cat results/datasets/nevents/$DATA | grep -v "^\#" | parallel -j 16 --colsep "," scripts/determine_timing.sh {1} {2} {3} | sort | tee results/datasets/timings/$DATA
+    - cat results/datasets/nevents/$DATA | grep -v "^\#" | parallel -k --lb -j $JOBS --colsep "," scripts/determine_timing.sh results/datasets/timings/$DATA {1} {2} {3}
+    - sort -o results/datasets/timings/$DATA results/datasets/timings/$DATA
 
 .collect:
   stage: collect
@@ -71,16 +72,16 @@ stages:
 
 include:
   - local: 'DIS/config.yml'
-  - local: 'EXCLUSIVE/config.yml'
-  - local: 'SIDIS/config.yml'
+#  - local: 'EXCLUSIVE/config.yml'
+#  - local: 'SIDIS/config.yml'
   - local: 'SINGLE/config.yml'
-  - local: 'SR/config.yml'
+#  - local: 'SR/config.yml'
 
 collect:
   extends: .collect
   needs:
     - "DIS:collect"
-    - "EXCLUSIVE:collect"
-    - "SIDIS:collect"
+#    - "EXCLUSIVE:collect"
+#    - "SIDIS:collect"
     - "SINGLE:collect"
-    - "SR:collect"
+#    - "SR:collect"
