@@ -20,10 +20,13 @@ n_events_test=100
 # number of hepmc lines to read (includes buffer)
 nlines=$((2*n_events_test*n_lines_per_event))
 
+# never write to S3 in these jobs
+export S3RW_ACCESS_KEY="" S3RW_SECRET_KEY=""
+
 # ensure CI is added to local file
-cifile=${file/EVGEN/EVGEN\/CI}
-cidir=$(dirname ${cifile})
-mkdir -p ${cidir}
+file=${file}
+dir=$(dirname ${file})
+mkdir -p ${dir}
 
 # select type
 type="unknown"
@@ -31,16 +34,16 @@ if [[ "${file}" =~ \.hepmc$ || "${file}" =~ \.hepmc\.gz$ ]] ; then
 
   if [[ "${file}" =~ \.hepmc\.gz$ ]] ; then
     GUNZIP=(gunzip -c)
-    cifile=${cifile/.gz/}
+    file=${file/.gz/}
   else
     GUNZIP=(cat)
   fi
 
   # get first lines of hepmc file
-  mc cat S3/eictest/EPIC/${file} | ${GUNZIP[@]} | head -n ${nlines} > ${cifile}
-  test -f ${cifile}
+  mc cat S3/eictest/EPIC/${file} | ${GUNZIP[@]} | head -n ${nlines} > ${file}
+  test -f ${file}
   # count events
-  n=$(grep ^E ${cifile} | wc -l)
+  n=$(grep ^E ${file} | wc -l)
   n=$((n-1)) # last event is corrupted
   test $n -gt 0 || exit -1
   if [[ "${file}" =~ hepmc2 ]] ; then
@@ -48,11 +51,16 @@ if [[ "${file}" =~ \.hepmc$ || "${file}" =~ \.hepmc\.gz$ ]] ; then
   fi
   type="hepmc3"
 
+elif [[ "${file}" =~ \.hepmc3\.tree\.root$ ]] ; then
+
+  n=$n_events_test
+  type="hepmc3"
+
 elif [[ "${file}" =~ \.steer$ ]] ; then
 
   # get full steer file
-  mc cp -q S3/eictest/EPIC/${file} ${cifile} > /dev/null
-  test -f ${cifile}
+  mc cp -q S3/eictest/EPIC/${file} ${file} > /dev/null
+  test -f ${file}
   n=$n_events_test
   type="single"
 
@@ -63,18 +71,18 @@ else
 
 fi
 
-logfile=results/logs/${cifile}.out
+logfile=results/logs/${file}.out
 mkdir -p $(dirname ${logfile})
 
 # time for 1 event (first, since will write to S3)
 t1=$(date +%s.%N)
-/opt/campaigns/${type}/scripts/run.sh ${cifile} 1 2>&1 | tee ${logfile}.1
+/opt/campaigns/${type}/scripts/run.sh ${file} 1 2>&1 | tee ${logfile}.1
 t2=$(date +%s.%N)
 dt01=$(echo "scale=5; ($t2-$t1)" | bc -l)
 
 # time for n events (last, so will overwrite 1 event)
 t1=$(date +%s.%N)
-/opt/campaigns/${type}/scripts/run.sh ${cifile} ${n} 2>&1 | tee ${logfile}.n
+/opt/campaigns/${type}/scripts/run.sh ${file} ${n} 2>&1 | tee ${logfile}.n
 t2=$(date +%s.%N)
 dt0n=$(echo "scale=5; ($t2-$t1)" | bc -l)
 
