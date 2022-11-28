@@ -1,8 +1,8 @@
-EVGEN/SINGLE/gamma/100MeV/45to135deg/gamma_100MeV_45to135deg.steer,1000000,0
-EVGEN/SINGLE/gamma/200MeV/45to135deg/gamma_200MeV_45to135deg.steer,1000000,0
-EVGEN/SINGLE/gamma/500MeV/45to135deg/gamma_500MeV_45to135deg.steer,1000000,0
-EVGEN/SINGLE/gamma/1GeV/45to135deg/gamma_1GeV_45to135deg.steer,1000000,0
-EVGEN/SINGLE/gamma/2GeV/45to135deg/gamma_2GeV_45to135deg.steer,1000000,0
-EVGEN/SINGLE/gamma/5GeV/45to135deg/gamma_5GeV_45to135deg.steer,1000000,0
-EVGEN/SINGLE/gamma/10GeV/45to135deg/gamma_10GeV_45to135deg.steer,1000000,0
-EVGEN/SINGLE/gamma/20GeV/45to135deg/gamma_20GeV_45to135deg.steer,1000000,0
+SINGLE/gamma/100MeV/45to135deg/gamma_100MeV_45to135deg,steer,1000000,0
+SINGLE/gamma/200MeV/45to135deg/gamma_200MeV_45to135deg,steer,1000000,0
+SINGLE/gamma/500MeV/45to135deg/gamma_500MeV_45to135deg,steer,1000000,0
+SINGLE/gamma/1GeV/45to135deg/gamma_1GeV_45to135deg,steer,1000000,0
+SINGLE/gamma/2GeV/45to135deg/gamma_2GeV_45to135deg,steer,1000000,0
+SINGLE/gamma/5GeV/45to135deg/gamma_5GeV_45to135deg,steer,1000000,0
+SINGLE/gamma/10GeV/45to135deg/gamma_10GeV_45to135deg,steer,1000000,0
+SINGLE/gamma/20GeV/45to135deg/gamma_20GeV_45to135deg,steer,1000000,0

@@ -1,8 +1,8 @@
-EVGEN/SINGLE/pi-/100MeV/3to50deg/pi-_100MeV_3to50deg.steer,1000000,0
-EVGEN/SINGLE/pi-/200MeV/3to50deg/pi-_200MeV_3to50deg.steer,1000000,0
-EVGEN/SINGLE/pi-/500MeV/3to50deg/pi-_500MeV_3to50deg.steer,1000000,0
-EVGEN/SINGLE/pi-/1GeV/3to50deg/pi-_1GeV_3to50deg.steer,1000000,0
-EVGEN/SINGLE/pi-/2GeV/3to50deg/pi-_2GeV_3to50deg.steer,1000000,0
-EVGEN/SINGLE/pi-/5GeV/3to50deg/pi-_5GeV_3to50deg.steer,1000000,0
-EVGEN/SINGLE/pi-/10GeV/3to50deg/pi-_10GeV_3to50deg.steer,1000000,0
-EVGEN/SINGLE/pi-/20GeV/3to50deg/pi-_20GeV_3to50deg.steer,1000000,0
+SINGLE/pi-/100MeV/3to50deg/pi-_100MeV_3to50deg,steer,1000000,0
+SINGLE/pi-/200MeV/3to50deg/pi-_200MeV_3to50deg,steer,1000000,0
+SINGLE/pi-/500MeV/3to50deg/pi-_500MeV_3to50deg,steer,1000000,0
+SINGLE/pi-/1GeV/3to50deg/pi-_1GeV_3to50deg,steer,1000000,0
+SINGLE/pi-/2GeV/3to50deg/pi-_2GeV_3to50deg,steer,1000000,0
+SINGLE/pi-/5GeV/3to50deg/pi-_5GeV_3to50deg,steer,1000000,0
+SINGLE/pi-/10GeV/3to50deg/pi-_10GeV_3to50deg,steer,1000000,0
+SINGLE/pi-/20GeV/3to50deg/pi-_20GeV_3to50deg,steer,1000000,0
