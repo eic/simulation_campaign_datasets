@@ -5,12 +5,13 @@ IFS=$'\n\t'
 
 out=${1?Specify output}
 file=${2?Specify filename}
-nevents=${3?Specify nevents}
-n_lines_per_event=${4?Specify n_lines_per_event}
+ext=${3?Specify extension}
+nevents=${4?Specify nevents}
+n_lines_per_event=${5?Specify n_lines_per_event}
 
 if [ -n "${dt0:-}" -a -n "${dt1:-}" ] ; then
   # reuse if already determined
-  echo "$file,$nevents,$dt0,$dt1" | tee -a "${out}"
+  echo "$file,$ext,$nevents,$dt0,$dt1" | tee -a "${out}"
   exit
 fi
 
@@ -24,43 +25,42 @@ nlines=$((2*n_events_test*n_lines_per_event))
 export S3RW_ACCESS_KEY="" S3RW_SECRET_KEY=""
 
 # ensure CI is added to local file
-file=${file}
-dir=$(dirname ${file})
+dir=$(dirname EVGEN/${file}.${ext})
 mkdir -p ${dir}
 
 # select type
 type="unknown"
-if [[ "${file}" =~ \.hepmc$ || "${file}" =~ \.hepmc\.gz$ ]] ; then
+if [[ "${ext}" =~ ^hepmc[2]?$ || "${ext}" =~ ^hepmc\.gz$ ]] ; then
 
-  if [[ "${file}" =~ \.hepmc\.gz$ ]] ; then
+  if [[ "${ext}" =~ ^hepmc\.gz$ ]] ; then
     GUNZIP=(gunzip -c)
-    file=${file/.gz/}
+    ext=${ext/.gz/}
   else
     GUNZIP=(cat)
   fi
 
   # get first lines of hepmc file
-  mc cat S3/eictest/EPIC/${file} | ${GUNZIP[@]} | head -n ${nlines} > ${file}
+  mc cat S3/eictest/EPIC/EVGEN/${file}.${ext}.gz | ${GUNZIP[@]} | head -n ${nlines} > EVGEN/${file}
   test -f ${file}
   # count events
   n=$(grep ^E ${file} | wc -l)
   n=$((n-1)) # last event is corrupted
   test $n -gt 0 || exit -1
-  if [[ "${file}" =~ hepmc2 ]] ; then
+  if [[ "${ext}" =~ ^hepmc2$ ]] ; then
     export USEHEPMC3=false
   fi
   type="hepmc3"
 
-elif [[ "${file}" =~ \.hepmc3\.tree\.root$ ]] ; then
+elif [[ "${ext}" =~ ^hepmc3\.tree\.root$ ]] ; then
 
   n=$n_events_test
   type="hepmc3"
 
-elif [[ "${file}" =~ \.steer$ ]] ; then
+elif [[ "${ext}" =~ ^steer$ ]] ; then
 
   # get full steer file
-  mc cp -q S3/eictest/EPIC/${file} ${file} > /dev/null
-  test -f ${file}
+  mc cp -q S3/eictest/EPIC/EVGEN/${file}.${ext} EVGEN/${file}.${ext} > /dev/null
+  test -f EVGEN/${file}.${ext}
   n=$n_events_test
   type="single"
 
@@ -76,13 +76,13 @@ mkdir -p $(dirname ${logfile})
 
 # time for 1 event (first, since will write to S3)
 t1=$(date +%s.%N)
-/opt/campaigns/${type}/scripts/run.sh ${file} 1 2>&1 | tee ${logfile}.1
+/opt/campaigns/${type}/scripts/run.sh EVGEN/${file}.${ext} 1 2>&1 | tee ${logfile}.1
 t2=$(date +%s.%N)
 dt01=$(echo "scale=5; ($t2-$t1)" | bc -l)
 
 # time for n events (last, so will overwrite 1 event)
 t1=$(date +%s.%N)
-/opt/campaigns/${type}/scripts/run.sh ${file} ${n} 2>&1 | tee ${logfile}.n
+/opt/campaigns/${type}/scripts/run.sh EVGEN/${file}.${ext} ${n} 2>&1 | tee ${logfile}.n
 t2=$(date +%s.%N)
 dt0n=$(echo "scale=5; ($t2-$t1)" | bc -l)
 
@@ -91,4 +91,4 @@ dt1=$(echo "scale=5; if($dt0n-$dt01>0.1*$dt01) print(($dt0n-$dt01)/($n-1)) else 
 dt0=$(echo "scale=5; if($dt01>$dt1) print(($dt01-$dt1)) else print(100)" | bc -l)
 
 # output
-echo "$file,$nevents,$dt0,$dt1" | tee -a "${out}"
+echo "$file,$ext,$nevents,$dt0,$dt1" | tee -a "${out}"

@@ -5,10 +5,11 @@ IFS=$'\n\t'
 
 out=${1?Specify output}
 file=${2?Specify filename}
-nevents=${3:-} # allow empty
-n_lines_per_event=${4:-} # allow empty
+ext=${3?Specify extension}
+nevents=${4:-} # allow empty
+n_lines_per_event=${5:-} # allow empty
 
-if [[ "${file}" =~ \.hepmc\.gz ]] ; then
+if [[ "${ext}" =~ ^hepmc\.gz$ ]] ; then
   GUNZIP=(gunzip -c)
 else
   GUNZIP=(cat)
@@ -17,15 +18,15 @@ fi
 # if nevents not known
 if [ -z "${nevents}" ] ; then
   # count events
-  nevents=$(mc cat S3/eictest/ATHENA/${file} | ${GUNZIP[@]} | grep ^E | wc -l)
+  nevents=$(mc cat S3/eictest/EPIC/EVGEN/${file}.${ext} | ${GUNZIP[@]} | grep ^E | wc -l)
 fi
 
 # if n_lines_per_event not known
 if [ -z "${n_lines_per_event}" ] ; then
   # count events in 10k lines
-  n_events_10k=$(mc cat S3/eictest/ATHENA/${file} | ${GUNZIP[@]} | head -n 10000 | grep ^E | wc -l)
+  n_events_10k=$(mc cat S3/eictest/EPIC/EVGEN/${file}.${ext} | ${GUNZIP[@]} | head -n 10000 | grep ^E | wc -l)
   n_lines_per_event=$((10000/n_events_10k))
 fi
 
 # output
-echo "$file,$nevents,$n_lines_per_event" | tee -a "${out}"
+echo "$file,$ext,$nevents,$n_lines_per_event" | tee -a "${out}"

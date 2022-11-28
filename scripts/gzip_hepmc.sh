@@ -4,21 +4,22 @@ trap 's=$?; echo "$0: Error on line "$LINENO": $BASH_COMMAND"; exit $s' ERR
 IFS=$'\n\t'
 
 file=${1?Specify filename}
-nevents=${2:-} # allow empty
-n_lines_per_event=${3:-} # allow empty
+ext=${2?Specify extension}
+nevents=${3:-} # allow empty
+n_lines_per_event=${4:-} # allow empty
 
-if [[ "${file}" =~ \.hepmc$ ]] ; then
-  if [ -z "$(mc ls S3rw/eictest/ATHENA/${file}.gz)" ] ; then
-    echo "gzip ${file}"
-    mc ls S3rw/eictest/ATHENA/${file}
-    mc cat S3rw/eictest/ATHENA/${file} | gzip -c | mc pipe S3rw/eictest/ATHENA/${file}.gz
-    mc ls S3rw/eictest/ATHENA/${file}.gz
+if [[ "${ext}" =~ ^hepmc$ ]] ; then
+  if [ -z "$(mc ls S3rw/eictest/EPIC/EVGEN/${file}.${ext}.gz)" ] ; then
+    echo "gzip ${file}.${ext}"
+    mc ls S3rw/eictest/EPIC/EVGEN/${file}.${ext}
+    mc cat S3rw/eictest/EPIC/EVGEN/${file}.${ext} | gzip -c | mc pipe S3rw/eictest/EPIC/EVGEN/${file}.${ext}.gz
+    mc ls S3rw/eictest/EPIC/EVGEN/${file}.${ext}.gz
   else
-    echo "${file}.gz already exists; change your input file to use the compressed file"
+    echo "${file}.${ext}.gz already exists; change your input file to use the compressed file"
   fi
-elif [[ "${file}" =~ \.hepmc\.gz$ ]] ; then
-  echo "${file} already compressed"
+elif [[ "${ext}" =~ ^hepmc\.gz$ ]] ; then
+  echo "${file}.${ext} already compressed"
 else
-  echo "${file} not recognized"
+  echo "${file}.${ext} not recognized"
   exit 1
 fi
