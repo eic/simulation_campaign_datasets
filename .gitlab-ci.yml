@@ -69,7 +69,7 @@ stages:
 include:
   - local: 'DIS/config.yml'
 #  - local: 'EXCLUSIVE/config.yml'
-#  - local: 'SIDIS/config.yml'
+  - local: 'SIDIS/config.yml'
   - local: 'SINGLE/config.yml'
 #  - local: 'SR/config.yml'
 
@@ -78,6 +78,6 @@ collect:
   needs:
     - "DIS:collect"
 #    - "EXCLUSIVE:collect"
-#    - "SIDIS:collect"
+    - "SIDIS:collect"
     - "SINGLE:collect"
 #    - "SR:collect"
