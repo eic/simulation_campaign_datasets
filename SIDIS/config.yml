@@ -1,22 +1,11 @@
-SIDIS:gzip:
-  extends: .gzip
-  parallel:
-    matrix:
-      - DATA:
-        - "SIDIS/Lambda_hiDiv.csv"
-        - "SIDIS/Lambda_hiAcc.csv"
-        - "SIDIS/eA_18x110.csv"
-
 SIDIS:nevents:
   extends: .nevents
-  needs:
-    - SIDIS:gzip
   parallel:
     matrix:
       - DATA:
         - "SIDIS/Lambda_hiDiv.csv"
         - "SIDIS/Lambda_hiAcc.csv"
-        - "SIDIS/eA_18x110.csv"
+#        - "SIDIS/eA_18x110.csv"
 
 SIDIS:timings:
   extends: .timings
@@ -27,7 +16,7 @@ SIDIS:timings:
       - DATA:
         - "SIDIS/Lambda_hiDiv.csv"
         - "SIDIS/Lambda_hiAcc.csv"
-        - "SIDIS/eA_18x110.csv"
+#        - "SIDIS/eA_18x110.csv"
 
 SIDIS:collect:
   extends: .collect
