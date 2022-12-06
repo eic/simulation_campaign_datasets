@@ -1,15 +1,5 @@
-EXCLUSIVE:DIFFRACTIVE_JPSI:gzip:
-  extends: .gzip
-  parallel:
-    matrix:
-      - DATA:
-        - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre_Coherent.csv"
-        - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre_Incoherent.csv"
-
 EXCLUSIVE:DIFFRACTIVE_JPSI:nevents:
   extends: .nevents
-  needs:
-    - EXCLUSIVE:DIFFRACTIVE_JPSI:gzip
   parallel:
     matrix:
       - DATA:
