@@ -33,6 +33,8 @@ stages:
     - cat $DATA
     - cat $DATA | grep -v "^\#" | parallel -k --lb -j $JOBS --colsep "," scripts/count_events.sh results/datasets/nevents/$DATA {1} {2} {3} {4}
     - sort -o results/datasets/nevents/$DATA results/datasets/nevents/$DATA
+    - sort -o $DATA $DATA
+    - diff $DATA results/datasets/nevents/$DATA
 .timings:
   stage: timings
   script:
