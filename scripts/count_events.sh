@@ -16,9 +16,15 @@ else
 fi
 
 # if nevents not known
-if [ -z "${nevents}" ] ; then
+if [[ "${nevents}" == 0 ]] ; then
   # count events
   nevents=$(mc cat S3/eictest/EPIC/EVGEN/${file}.${ext} | ${GUNZIP[@]} | grep ^E | wc -l)
+fi
+
+# if hepmc3.tree.root file
+if [[ "${ext}" =~ ^hepmc3\.tree.root$ ]] ; then
+  # get entries
+  nevents=$(root -l -b -q root://dtn-eic.jlab.org//work/eic2/EPIC/EVGEN/${file}.${ext} -e 'cout << hepmc3_tree->GetEntries() << endl;' | tail -n1)
 fi
 
 # if n_lines_per_event not known

@@ -1,5 +1,5 @@
-DIS/NC/10x100/minQ2=10/pythia8NCDIS_10x100_minQ2=10_beamEffects_xAngle=-0.025_hiDiv_vtxfix_1,hepmc3.tree.root,1000000,100
-DIS/NC/10x100/minQ2=10/pythia8NCDIS_10x100_minQ2=10_beamEffects_xAngle=-0.025_hiDiv_vtxfix_2,hepmc3.tree.root,1000000,100
-DIS/NC/10x100/minQ2=10/pythia8NCDIS_10x100_minQ2=10_beamEffects_xAngle=-0.025_hiDiv_vtxfix_3,hepmc3.tree.root,1000000,100
-DIS/NC/10x100/minQ2=10/pythia8NCDIS_10x100_minQ2=10_beamEffects_xAngle=-0.025_hiDiv_vtxfix_4,hepmc3.tree.root,1000000,100
-DIS/NC/10x100/minQ2=10/pythia8NCDIS_10x100_minQ2=10_beamEffects_xAngle=-0.025_hiDiv_vtxfix_5,hepmc3.tree.root,1000000,100
+DIS/NC/10x100/minQ2=10/pythia8NCDIS_10x100_minQ2=10_beamEffects_xAngle=-0.025_hiDiv_vtxfix_1,hepmc3.tree.root,999993,100
+DIS/NC/10x100/minQ2=10/pythia8NCDIS_10x100_minQ2=10_beamEffects_xAngle=-0.025_hiDiv_vtxfix_2,hepmc3.tree.root,999986,100
+DIS/NC/10x100/minQ2=10/pythia8NCDIS_10x100_minQ2=10_beamEffects_xAngle=-0.025_hiDiv_vtxfix_3,hepmc3.tree.root,999989,100
+DIS/NC/10x100/minQ2=10/pythia8NCDIS_10x100_minQ2=10_beamEffects_xAngle=-0.025_hiDiv_vtxfix_4,hepmc3.tree.root,999989,100
+DIS/NC/10x100/minQ2=10/pythia8NCDIS_10x100_minQ2=10_beamEffects_xAngle=-0.025_hiDiv_vtxfix_5,hepmc3.tree.root,999985,100
