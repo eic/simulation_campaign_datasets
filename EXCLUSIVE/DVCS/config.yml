@@ -1,19 +1,5 @@
-EXCLUSIVE:DVCS:gzip:
-  extends: .gzip
-  parallel:
-    matrix:
-      - DATA:
-        - "EXCLUSIVE/DVCS/DVCS_5x41_hiDiv.csv"
-        - "EXCLUSIVE/DVCS/DVCS_5x41_hiAcc.csv"
-        - "EXCLUSIVE/DVCS/DVCS_10x100_hiDiv.csv"
-        - "EXCLUSIVE/DVCS/DVCS_10x100_hiAcc.csv"
-        - "EXCLUSIVE/DVCS/DVCS_18x275_hiDiv.csv"
-        - "EXCLUSIVE/DVCS/DVCS_18x275_hiAcc.csv"
-
 EXCLUSIVE:DVCS:nevents:
   extends: .nevents
-  needs:
-    - EXCLUSIVE:DVCS:gzip
   parallel:
     matrix:
       - DATA:

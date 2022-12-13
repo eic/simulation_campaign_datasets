@@ -1,25 +1,5 @@
-EXCLUSIVE:TCS:gzip:
-  extends: .gzip
-  parallel:
-    matrix:
-      - DATA:
-        - "EXCLUSIVE/TCS/TCS_5x41_hiAcc.csv"
-        - "EXCLUSIVE/TCS/TCS_5x41_hiDiv.csv"
-        - "EXCLUSIVE/TCS/TCS_10x100_hiAcc.csv"
-        - "EXCLUSIVE/TCS/TCS_10x100_hiDiv.csv"
-        - "EXCLUSIVE/TCS/TCS_18x275_hiAcc.csv"
-        - "EXCLUSIVE/TCS/TCS_18x275_hiDiv.csv"
-        - "EXCLUSIVE/TCS/TCS_5x41_hiAcc_novtx.csv"
-        - "EXCLUSIVE/TCS/TCS_5x41_hiDiv_novtx.csv"
-        - "EXCLUSIVE/TCS/TCS_10x100_hiAcc_novtx.csv"
-        - "EXCLUSIVE/TCS/TCS_10x100_hiDiv_novtx.csv"
-        - "EXCLUSIVE/TCS/TCS_18x275_hiAcc_novtx.csv"
-        - "EXCLUSIVE/TCS/TCS_18x275_hiDiv_novtx.csv"
-
 EXCLUSIVE:TCS:nevents:
   extends: .nevents
-  needs:
-    - EXCLUSIVE:TCS:gzip
   parallel:
     matrix:
       - DATA:

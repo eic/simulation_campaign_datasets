@@ -5,8 +5,8 @@ include:
   #- local: 'EXCLUSIVE/OMEGA/config.yml'
   #- local: 'EXCLUSIVE/RHO/config.yml'
   #- local: 'EXCLUSIVE/SPECTROSCOPY/config.yml'
-  #- local: 'EXCLUSIVE/DVCS/config.yml'
-  #- local: 'EXCLUSIVE/TCS/config.yml'
+  - local: 'EXCLUSIVE/DVCS/config.yml'
+  - local: 'EXCLUSIVE/TCS/config.yml'
 
 EXCLUSIVE:nevents:
   extends: .nevents
@@ -39,6 +39,6 @@ EXCLUSIVE:collect:
     #- EXCLUSIVE:OMEGA:collect
     #- EXCLUSIVE:RHO:collect
     #- EXCLUSIVE:SPECTROSCOPY:collect
-    #- EXCLUSIVE:DVCS:collect
-    #- EXCLUSIVE:TCS:collect
+    - EXCLUSIVE:DVCS:collect
+    - EXCLUSIVE:TCS:collect
     - EXCLUSIVE:timings
