@@ -12,6 +12,10 @@ SINGLE:nevents:
         - "SINGLE/130to177deg/e-.csv"
         - "SINGLE/130to177deg/pi-.csv"
         - "SINGLE/130to177deg/gamma.csv"
+        - "SINGLE/energy_eta_scan/energy_eta_scan_e-.csv"
+        - "SINGLE/energy_eta_scan/energy_eta_scan_gamma.csv"
+        - "SINGLE/energy_eta_scan/energy_eta_scan_pi0.csv"
+        - "SINGLE/energy_eta_scan/energy_eta_scan_pi-.csv"
 
 SINGLE:timings:
   extends: .timings_all
@@ -29,6 +33,10 @@ SINGLE:timings:
         - "SINGLE/130to177deg/e-.csv"
         - "SINGLE/130to177deg/pi-.csv"
         - "SINGLE/130to177deg/gamma.csv"
+        - "SINGLE/energy_eta_scan/energy_eta_scan_e-.csv"
+        - "SINGLE/energy_eta_scan/energy_eta_scan_gamma.csv"
+        - "SINGLE/energy_eta_scan/energy_eta_scan_pi0.csv"
+        - "SINGLE/energy_eta_scan/energy_eta_scan_pi-.csv"
 
 SINGLE:collect:
   extends: .collect
