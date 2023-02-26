@@ -24,7 +24,7 @@ fi
 # if hepmc3.tree.root file
 if [[ "${ext}" =~ ^hepmc3\.tree.root$ ]] ; then
   # get entries
-  nevents=$(root -l -b -q s3https://eics3.sdcc.bnl.giv:9000/eictest/EPIC/EVGEN/${file}.${ext} -e 'cout << hepmc3_tree->GetEntries() << endl;' | tail -n1)
+  nevents=$(root -l -b -q s3https://eics3.sdcc.bnl.gov:9000/eictest/EPIC/EVGEN/${file}.${ext} -e 'cout << hepmc3_tree->GetEntries() << endl;' | tail -n1)
   n_lines_per_event=0
 fi
 
