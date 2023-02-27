@@ -42,7 +42,7 @@ if [ -z "${n_lines_per_event}" ] ; then
   # count events in 10k lines
   n_events_10k=$(mc cat ${s3prefix}/${s3file} | ${GUNZIP[@]} | head -n 10000 | grep ^E | wc -l)
   n_lines_per_event=$((10000/n_events_10k))
-if
+fi
 
 # output
 echo "$file,$ext,$nevents,$n_lines_per_event" | tee -a "${out}"
