@@ -26,9 +26,10 @@ stages:
 .nevents:
   stage: nevents
   script:
-    - mkdir -p $(dirname results/datasets/nevents/$DATA)
+    - mkdir -p $(dirname results/datasets/glob/$DATA)
     - grep -v "^\#" $DATA | parallel scripts/glob.sh results/datasets/glob/$DATA {}
     - sort -o results/datasets/glob/$DATA results/datasets/glob/$DATA
+    - mkdir -p $(dirname results/datasets/nevents/$DATA)
     - grep -v "^\#" results/datasets/glob/$DATA | parallel scripts/count_events.sh results/datasets/nevents/$DATA {}
     - sort -o results/datasets/nevents/$DATA results/datasets/nevents/$DATA
     - sort -o $DATA $DATA
