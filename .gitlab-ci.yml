@@ -23,6 +23,7 @@ stages:
 
 .parallel:
   before_script:
+    - shopt -s expand_aliases
     - alias parallel='parallel -k --lb -j 1 --colsep ","'
 
 .gzip:
