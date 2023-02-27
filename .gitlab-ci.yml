@@ -9,8 +9,8 @@ default:
   before_script:
     - shopt -s expand_aliases
     - alias parallel='parallel -k --lb -j 1 --colsep ","'
-    - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY}
-    - mc config host add S3rw https://dtn01.sdcc.bnl.gov:9000 ${S3RW_ACCESS_KEY} ${S3RW_SECRET_KEY}
+    - mc config host add S3 https://eics3.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY}
+    - mc config host add S3rw https://eics3.sdcc.bnl.gov:9000 ${S3RW_ACCESS_KEY} ${S3RW_SECRET_KEY}
 
 stages:
   - gzip
