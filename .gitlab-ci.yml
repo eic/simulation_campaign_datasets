@@ -1,7 +1,7 @@
 image: eicweb.phy.anl.gov:4567/containers/eic_container/jug_xl:nightly
 
 variables:
-  JOBS: 1
+  parallel: parallel -k --lb -j 1 --colsep ","
 
 default:
   timeout: 3 hours
@@ -16,50 +16,51 @@ stages:
   - timings
   - collect
 
+.s3:
+  before_script:
+    - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
+
+.s3rw:
+  before_script:
+    - mc config host add S3rw https://dtn01.sdcc.bnl.gov:9000 ${S3RW_ACCESS_KEY} ${S3RW_SECRET_KEY}
+
 .gzip:
   stage: gzip
+  extends: .s3rw
   script:
-    - mc config host add S3rw https://dtn01.sdcc.bnl.gov:9000 ${S3RW_ACCESS_KEY} ${S3RW_SECRET_KEY}
-    - echo $DATA
-    - cat $DATA
-    - cat $DATA | grep -v "^\#" | parallel -j $JOBS --colsep "," scripts/gzip_hepmc.sh {1} {2} {3} {4}
+    - grep -v "^\#" $DATA | ${parallel} scripts/gzip_hepmc.sh {}
 
 .nevents:
   stage: nevents
+  extends: .s3
   script:
-    - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
     - mkdir -p $(dirname results/datasets/nevents/$DATA)
-    - echo $DATA
-    - cat $DATA
-    - cat $DATA | grep -v "^\#" | parallel -k --lb -j $JOBS --colsep "," scripts/count_events.sh results/datasets/nevents/$DATA {1} {2} {3} {4}
+    - grep -v "^\#" $DATA | ${parallel} scripts/glob.sh results/datasets/glob/$DATA {}
+    - sort -o results/datasets/glob/$DATA results/datasets/glob/$DATA
+    - grep -v "^\#" results/datasets/glob/$DATA | ${parallel} scripts/count_events.sh results/datasets/nevents/$DATA {}
     - sort -o results/datasets/nevents/$DATA results/datasets/nevents/$DATA
     - sort -o $DATA $DATA
     - diff $DATA results/datasets/nevents/$DATA
+
 .timings:
   stage: timings
+  extends: .s3
   script:
-    - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
     - mkdir -p $(dirname results/datasets/timings/$DATA)
-    - echo $DATA
     # Use sed '1!d1' instead of head -n 1 to avoid pipefail issues
-    - cat results/datasets/nevents/$DATA | grep -v "^\#" | sed '1!d'
-    - cat results/datasets/nevents/$DATA | grep -v "^\#" | sed '1!d' | parallel -k --lb -j $JOBS --colsep "," scripts/determine_timing.sh results/datasets/timings/$DATA {1} {2} {3} {4}
-    - echo $DATA
-    - cat results/datasets/timings/$DATA
+    - grep -v "^\#" results/datasets/nevents/$DATA | sed '1!d' | ${parallel} scripts/determine_timing.sh results/datasets/timings/$DATA {}
     - |
       IFS="," read file ext nevents dt0 dt1 < results/datasets/timings/$DATA
       export dt0 dt1
-      cat results/datasets/nevents/$DATA | grep -v "^\#" | cat       | parallel -k --lb -j $JOBS --colsep "," scripts/determine_timing.sh results/datasets/timings/$DATA {1} {2} {3} {4}
+      grep -v "^\#" results/datasets/nevents/$DATA | ${parallel} scripts/determine_timing.sh results/datasets/timings/$DATA {}
     - sort -o results/datasets/timings/$DATA results/datasets/timings/$DATA
 
 .timings_all:
   stage: timings
+  extends: .s3
   script:
-    - mc config host add S3 https://dtn01.sdcc.bnl.gov:9000 ${S3_ACCESS_KEY} ${S3_SECRET_KEY}
     - mkdir -p $(dirname results/datasets/timings/$DATA)
-    - echo $DATA
-    - cat results/datasets/nevents/$DATA | grep -v "^\#"
-    - cat results/datasets/nevents/$DATA | grep -v "^\#" | parallel -k --lb -j $JOBS --colsep "," scripts/determine_timing.sh results/datasets/timings/$DATA {1} {2} {3} {4}
+    - grep -v "^\#" results/datasets/nevents/$DATA | ${parallel} scripts/determine_timing.sh results/datasets/timings/$DATA {}
     - sort -o results/datasets/timings/$DATA results/datasets/timings/$DATA
 
 .collect:
