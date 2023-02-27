@@ -23,8 +23,13 @@ fi
 
 # if hepmc3.tree.root file
 if [[ "${ext}" =~ ^hepmc3\.tree.root$ ]] ; then
-  # get entries
-  nevents=$(root -l -b -q s3https://eics3.sdcc.bnl.gov:9000/eictest/EPIC/EVGEN/${file}.${ext} -e 'cout << hepmc3_tree->GetEntries() << endl;' | tail -n1)
+  # get entries from xrootd
+  nevents1=$(root -l -b -q root://dtn-eic.jlab.org//work/eic2/EPIC/EVGEN/${file}.${ext} -e 'cout << hepmc3_tree->GetEntries() << endl;' | tail -n1)
+  # get entries from S3
+  nevents2=$(root -l -b -q s3https://eics3.sdcc.bnl.gov:9000/eictest/EPIC/EVGEN/${file}.${ext} -e 'cout << hepmc3_tree->GetEntries() << endl;' | tail -n1)
+  # compare
+  test ${nevents1} -eq ${nevents2}
+  nevents=${nevents}
   n_lines_per_event=0
 fi
 
