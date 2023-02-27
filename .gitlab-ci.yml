@@ -1,8 +1,5 @@
 image: eicweb.phy.anl.gov:4567/containers/eic_container/jug_xl:nightly
 
-variables:
-  parallel: parallel -k --lb -j 1 --colsep ","
-
 default:
   timeout: 3 hours
   artifacts:
@@ -24,43 +21,47 @@ stages:
   before_script:
     - mc config host add S3rw https://dtn01.sdcc.bnl.gov:9000 ${S3RW_ACCESS_KEY} ${S3RW_SECRET_KEY}
 
+.parallel:
+  before_script:
+    - alias parallel='parallel -k --lb -j 1 --colsep ","'
+
 .gzip:
   stage: gzip
-  extends: .s3rw
+  extends: [.s3rw, .parallel]
   script:
-    - grep -v "^\#" $DATA | ${parallel} scripts/gzip_hepmc.sh {}
+    - grep -v "^\#" $DATA | parallel scripts/gzip_hepmc.sh {}
 
 .nevents:
   stage: nevents
-  extends: .s3
+  extends: [.s3, .parallel]
   script:
     - mkdir -p $(dirname results/datasets/nevents/$DATA)
-    - grep -v "^\#" $DATA | ${parallel} scripts/glob.sh results/datasets/glob/$DATA {}
+    - grep -v "^\#" $DATA | parallel scripts/glob.sh results/datasets/glob/$DATA {}
     - sort -o results/datasets/glob/$DATA results/datasets/glob/$DATA
-    - grep -v "^\#" results/datasets/glob/$DATA | ${parallel} scripts/count_events.sh results/datasets/nevents/$DATA {}
+    - grep -v "^\#" results/datasets/glob/$DATA | parallel scripts/count_events.sh results/datasets/nevents/$DATA {}
     - sort -o results/datasets/nevents/$DATA results/datasets/nevents/$DATA
     - sort -o $DATA $DATA
     - diff $DATA results/datasets/nevents/$DATA
 
 .timings:
   stage: timings
-  extends: .s3
+  extends: [.s3, .parallel]
   script:
     - mkdir -p $(dirname results/datasets/timings/$DATA)
     # Use sed '1!d1' instead of head -n 1 to avoid pipefail issues
-    - grep -v "^\#" results/datasets/nevents/$DATA | sed '1!d' | ${parallel} scripts/determine_timing.sh results/datasets/timings/$DATA {}
+    - grep -v "^\#" results/datasets/nevents/$DATA | sed '1!d' | parallel scripts/determine_timing.sh results/datasets/timings/$DATA {}
     - |
       IFS="," read file ext nevents dt0 dt1 < results/datasets/timings/$DATA
       export dt0 dt1
-      grep -v "^\#" results/datasets/nevents/$DATA | ${parallel} scripts/determine_timing.sh results/datasets/timings/$DATA {}
+      grep -v "^\#" results/datasets/nevents/$DATA | parallel scripts/determine_timing.sh results/datasets/timings/$DATA {}
     - sort -o results/datasets/timings/$DATA results/datasets/timings/$DATA
 
 .timings_all:
   stage: timings
-  extends: .s3
+  extends: [.s3, .parallel]
   script:
     - mkdir -p $(dirname results/datasets/timings/$DATA)
-    - grep -v "^\#" results/datasets/nevents/$DATA | ${parallel} scripts/determine_timing.sh results/datasets/timings/$DATA {}
+    - grep -v "^\#" results/datasets/nevents/$DATA | parallel scripts/determine_timing.sh results/datasets/timings/$DATA {}
     - sort -o results/datasets/timings/$DATA results/datasets/timings/$DATA
 
 .collect:
