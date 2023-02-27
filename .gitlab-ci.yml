@@ -6,6 +6,9 @@ default:
     expire_in: 1 week
     paths:
       - results/
+  before_script:
+    - shopt -s expand_aliases
+    - alias parallel='parallel -k --lb -j 1 --colsep ","'
 
 stages:
   - gzip
@@ -21,20 +24,15 @@ stages:
   before_script:
     - mc config host add S3rw https://dtn01.sdcc.bnl.gov:9000 ${S3RW_ACCESS_KEY} ${S3RW_SECRET_KEY}
 
-.parallel:
-  before_script:
-    - shopt -s expand_aliases
-    - alias parallel='parallel -k --lb -j 1 --colsep ","'
-
 .gzip:
   stage: gzip
-  extends: [.s3rw, .parallel]
+  extends: .s3rw
   script:
     - grep -v "^\#" $DATA | parallel scripts/gzip_hepmc.sh {}
 
 .nevents:
   stage: nevents
-  extends: [.s3, .parallel]
+  extends: .s3
   script:
     - mkdir -p $(dirname results/datasets/nevents/$DATA)
     - grep -v "^\#" $DATA | parallel scripts/glob.sh results/datasets/glob/$DATA {}
@@ -46,7 +44,7 @@ stages:
 
 .timings:
   stage: timings
-  extends: [.s3, .parallel]
+  extends: .s3
   script:
     - mkdir -p $(dirname results/datasets/timings/$DATA)
     # Use sed '1!d1' instead of head -n 1 to avoid pipefail issues
@@ -59,7 +57,7 @@ stages:
 
 .timings_all:
   stage: timings
-  extends: [.s3, .parallel]
+  extends: .s3
   script:
     - mkdir -p $(dirname results/datasets/timings/$DATA)
     - grep -v "^\#" results/datasets/nevents/$DATA | parallel scripts/determine_timing.sh results/datasets/timings/$DATA {}
