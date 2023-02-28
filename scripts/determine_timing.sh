@@ -50,7 +50,6 @@ t1=$(date +%s.%N)
 t2=$(date +%s.%N)
 dt01=$(echo "scale=5; ($t2-$t1)" | bc -l)
 du01=$(du -sc $TMPDIR/*/RECO $TMPDIR/*/FULL | tail -n 1 | awk '{print($1)}')
-echo $du01
 
 # time for n events (last, so will overwrite 1 event)
 t1=$(date +%s.%N)
@@ -58,7 +57,6 @@ t1=$(date +%s.%N)
 t2=$(date +%s.%N)
 dt0n=$(echo "scale=5; ($t2-$t1)" | bc -l)
 du0n=$(du -sc $TMPDIR/*/RECO $TMPDIR/*/FULL | tail -n 1 | awk '{print($1)}')
-echo ${du0n}
 
 # initialization correction (require at least a minimum positive difference)
 dt1=$(echo "scale=5; if($dt0n-$dt01>0.1*$dt01) print(($dt0n-$dt01)/($n-1)) else print(0.1*$dt01/$n)" | bc -l)
