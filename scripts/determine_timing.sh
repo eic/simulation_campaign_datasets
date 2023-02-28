@@ -63,6 +63,7 @@ dt1=$(echo "scale=5; if($dt0n-$dt01>0.1*$dt01) print(($dt0n-$dt01)/($n-1)) else 
 dt0=$(echo "scale=5; if($dt01>$dt1) print(($dt01-$dt1)) else print(100)" | bc -l)
 
 # initialization correction (require at least a minimum positive difference)
+echo $du01 $du0n
 du1=$(echo "scale=5; if($du0n-$du01>0.1*$du01) print(($du0n-$du01)/($n-1)) else print(0.1*$du01/$n)" | bc -l)
 du0=$(echo "scale=5; if($du01>$du1) print(($du01-$du1)) else print(100)" | bc -l)
 
