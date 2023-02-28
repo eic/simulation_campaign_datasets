@@ -1,5 +1,1 @@
-DIS/CC/10x100/minQ2=100/pythia8CCDIS_10x100_minQ2=100_beamEffects_xAngle=-0.025_hiDiv_1,hepmc3.tree.root,1000000,0
-DIS/CC/10x100/minQ2=100/pythia8CCDIS_10x100_minQ2=100_beamEffects_xAngle=-0.025_hiDiv_2,hepmc3.tree.root,1000000,0
-DIS/CC/10x100/minQ2=100/pythia8CCDIS_10x100_minQ2=100_beamEffects_xAngle=-0.025_hiDiv_3,hepmc3.tree.root,1000000,0
-DIS/CC/10x100/minQ2=100/pythia8CCDIS_10x100_minQ2=100_beamEffects_xAngle=-0.025_hiDiv_4,hepmc3.tree.root,1000000,0
-DIS/CC/10x100/minQ2=100/pythia8CCDIS_10x100_minQ2=100_beamEffects_xAngle=-0.025_hiDiv_5,hepmc3.tree.root,1000000,0
+DIS/CC/10x100/minQ2=100/pythia8CCDIS_10x100_minQ2=100_beamEffects_xAngle=-0.025_hiDiv_?,hepmc3.tree.root,0,0
