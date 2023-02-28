@@ -49,7 +49,7 @@ t1=$(date +%s.%N)
 /opt/campaigns/${type}/scripts/run.sh EVGEN/${file}.${ext} 1 2>&1 | tee ${logfile}.1
 t2=$(date +%s.%N)
 dt01=$(echo "scale=5; ($t2-$t1)" | bc -l)
-du01=$(du -sc $TMPDIR/*/RECO $TMPDIR/*/FULL | tail -n 1 | awk '{print($0)}')
+du01=$(du -sc $TMPDIR/*/RECO $TMPDIR/*/FULL | tail -n 1 | awk '{print($1)}')
 echo $du01
 
 # time for n events (last, so will overwrite 1 event)
@@ -57,7 +57,7 @@ t1=$(date +%s.%N)
 /opt/campaigns/${type}/scripts/run.sh EVGEN/${file}.${ext} ${n} 2>&1 | tee ${logfile}.n
 t2=$(date +%s.%N)
 dt0n=$(echo "scale=5; ($t2-$t1)" | bc -l)
-du0n=$(du -sc $TMPDIR/*/RECO $TMPDIR/*/FULL | tail -n 1 | awk '{print($0)}')
+du0n=$(du -sc $TMPDIR/*/RECO $TMPDIR/*/FULL | tail -n 1 | awk '{print($1)}')
 echo ${du0n}
 
 # initialization correction (require at least a minimum positive difference)
