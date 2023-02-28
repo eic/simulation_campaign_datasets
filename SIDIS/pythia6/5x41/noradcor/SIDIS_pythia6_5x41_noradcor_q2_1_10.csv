@@ -1,10 +1,1 @@
-SIDIS/pythia6/ep_5x41/hepmc_ip6/noradcor/ep_noradcor.5x41_q2_1_10_run001,hepmc3.tree.root,2000000,0
-SIDIS/pythia6/ep_5x41/hepmc_ip6/noradcor/ep_noradcor.5x41_q2_1_10_run002,hepmc3.tree.root,2000000,0
-SIDIS/pythia6/ep_5x41/hepmc_ip6/noradcor/ep_noradcor.5x41_q2_1_10_run003,hepmc3.tree.root,2000000,0
-SIDIS/pythia6/ep_5x41/hepmc_ip6/noradcor/ep_noradcor.5x41_q2_1_10_run004,hepmc3.tree.root,2000000,0
-SIDIS/pythia6/ep_5x41/hepmc_ip6/noradcor/ep_noradcor.5x41_q2_1_10_run005,hepmc3.tree.root,2000000,0
-SIDIS/pythia6/ep_5x41/hepmc_ip6/noradcor/ep_noradcor.5x41_q2_1_10_run006,hepmc3.tree.root,2000000,0
-SIDIS/pythia6/ep_5x41/hepmc_ip6/noradcor/ep_noradcor.5x41_q2_1_10_run007,hepmc3.tree.root,2000000,0
-SIDIS/pythia6/ep_5x41/hepmc_ip6/noradcor/ep_noradcor.5x41_q2_1_10_run008,hepmc3.tree.root,2000000,0
-SIDIS/pythia6/ep_5x41/hepmc_ip6/noradcor/ep_noradcor.5x41_q2_1_10_run009,hepmc3.tree.root,2000000,0
-SIDIS/pythia6/ep_5x41/hepmc_ip6/noradcor/ep_noradcor.5x41_q2_1_10_run010,hepmc3.tree.root,2000000,0
+SIDIS/pythia6/ep_5x41/hepmc_ip6/noradcor/ep_noradcor.5x41_q2_1_10_run*,hepmc3.tree.root,0,0
