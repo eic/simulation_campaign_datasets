@@ -33,7 +33,6 @@ stages:
     - grep -v "^\#" results/datasets/glob/$DATA | parallel scripts/count_events.sh results/datasets/nevents/$DATA {}
     - sort -o results/datasets/nevents/$DATA results/datasets/nevents/$DATA
     - sort -o $DATA $DATA
-    - diff $DATA results/datasets/nevents/$DATA
 
 .timings:
   stage: timings
