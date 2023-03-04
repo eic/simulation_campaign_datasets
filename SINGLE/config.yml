@@ -17,6 +17,11 @@ SINGLE:nevents:
         - "SINGLE/energy_eta_scan/energy_eta_scan_pi0_abs_eta_lt_1.csv"
         - "SINGLE/energy_eta_scan/energy_eta_scan_pi-_abs_eta_lt_1.csv"
         - "SINGLE/energy_eta_scan/energy_eta_scan_mu-_abs_eta_lt_1.csv"
+        - "SINGLE/energy_eta_scan/energy_eta_scan_e-_abs_eta_lt_1.2.csv"
+        - "SINGLE/energy_eta_scan/energy_eta_scan_gamma_abs_eta_lt_1.2.csv"
+        - "SINGLE/energy_eta_scan/energy_eta_scan_pi0_abs_eta_lt_1.2.csv"
+        - "SINGLE/energy_eta_scan/energy_eta_scan_pi-_abs_eta_lt_1.2.csv"
+        - "SINGLE/energy_eta_scan/energy_eta_scan_mu-_abs_eta_lt_1.2.csv"
 SINGLE:timings:
   extends: .timings_all
   needs: 
@@ -38,6 +43,11 @@ SINGLE:timings:
         - "SINGLE/energy_eta_scan/energy_eta_scan_pi0_abs_eta_lt_1.csv"
         - "SINGLE/energy_eta_scan/energy_eta_scan_pi-_abs_eta_lt_1.csv"
         - "SINGLE/energy_eta_scan/energy_eta_scan_mu-_abs_eta_lt_1.csv"
+        - "SINGLE/energy_eta_scan/energy_eta_scan_e-_abs_eta_lt_1.2.csv"
+        - "SINGLE/energy_eta_scan/energy_eta_scan_gamma_abs_eta_lt_1.2.csv"
+        - "SINGLE/energy_eta_scan/energy_eta_scan_pi0_abs_eta_lt_1.2.csv"
+        - "SINGLE/energy_eta_scan/energy_eta_scan_pi-_abs_eta_lt_1.2.csv"
+        - "SINGLE/energy_eta_scan/energy_eta_scan_mu-_abs_eta_lt_1.2.csv"
 
 SINGLE:collect:
   extends: .collect
