@@ -3,6 +3,8 @@ EXCLUSIVE:DIFFRACTIVE_JPSI:nevents:
   parallel:
     matrix:
       - DATA:
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/BeAGLE/ePb_18x108.41_tau10_B1.1_Je_highstats.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/BeAGLE/ePb_18x108.41_tau10_B1.1_Jmu_highstats.csv"
         - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre_Coherent.csv"
         - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre_Incoherent.csv"
 
@@ -13,6 +15,8 @@ EXCLUSIVE:DIFFRACTIVE_JPSI:timings:
   parallel:
     matrix:
       - DATA:
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/BeAGLE/ePb_18x108.41_tau10_B1.1_Je_highstats.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/BeAGLE/ePb_18x108.41_tau10_B1.1_Jmu_highstats.csv"
         - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre_Coherent.csv"
         - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre_Incoherent.csv"
 
