@@ -4,7 +4,7 @@ EXCLUSIVE:DEMP:nevents:
     matrix:
       - DATA:
         - "EXCLUSIVE/DEMP/5on41.csv"
-        - "EXCLUSIVE/DEMP/5on10.csv"
+        - "EXCLUSIVE/DEMP/5on100.csv"
         - "EXCLUSIVE/DEMP/10on100.csv"
         - "EXCLUSIVE/DEMP/18on275.csv"
 
@@ -16,7 +16,7 @@ EXCLUSIVE:DEMP:timings:
     matrix:
       - DATA:
         - "EXCLUSIVE/DEMP/5on41.csv"
-        - "EXCLUSIVE/DEMP/5on10.csv"
+        - "EXCLUSIVE/DEMP/5on100.csv"
         - "EXCLUSIVE/DEMP/10on100.csv"
         - "EXCLUSIVE/DEMP/18on275.csv"
 
