@@ -1,0 +1,26 @@
+EXCLUSIVE:DEMP:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DEMP/5on41.csv"
+        - "EXCLUSIVE/DEMP/5on10.csv"
+        - "EXCLUSIVE/DEMP/10on100.csv"
+        - "EXCLUSIVE/DEMP/18on275.csv"
+
+EXCLUSIVE:DEMP:timings:
+  extends: .timings
+  needs: 
+    - EXCLUSIVE:DEMP:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DEMP/5on41.csv"
+        - "EXCLUSIVE/DEMP/5on10.csv"
+        - "EXCLUSIVE/DEMP/10on100.csv"
+        - "EXCLUSIVE/DEMP/18on275.csv"
+
+EXCLUSIVE:DEMP:collect:
+  extends: .collect
+  needs: 
+    - EXCLUSIVE:DEMP:timings
