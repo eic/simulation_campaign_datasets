@@ -8,15 +8,13 @@ file=${2?Specify filename}
 ext=${3?Specify extension}
 nevents=${4?Specify nevents}
 n_lines_per_event=${5?Specify n_lines_per_event}
+n_events_test=${6?Specify number of events to simulate}
 
 if [ -n "${dt0:-}" -a -n "${dt1:-}" ] ; then
   # reuse if already determined
   echo "$file,$ext,$nevents,$dt0,$dt1" | tee -a "${out}"
   exit
 fi
-
-# number of events to simulate
-n_events_test=100
 
 # number of hepmc lines to read (includes buffer)
 nlines=$((2*n_events_test*n_lines_per_event))
