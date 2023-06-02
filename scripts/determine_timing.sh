@@ -8,7 +8,7 @@ file=${2?Specify filename}
 ext=${3?Specify extension}
 nevents=${4?Specify nevents}
 n_lines_per_event=${5?Specify n_lines_per_event}
-n_events_test=${6?Specify number of events to simulate}
+n_events_test=${6:-100}
 
 if [ -n "${dt0:-}" -a -n "${dt1:-}" ] ; then
   # reuse if already determined
