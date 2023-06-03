@@ -12,6 +12,8 @@ EXCLUSIVE:DIFFRACTIVE_JPSI:timings:
   extends: .timings
   needs: 
     - EXCLUSIVE:DIFFRACTIVE_JPSI:nevents
+  variables:
+    NEVENTS_PER_TEST: 25
   parallel:
     matrix:
       - DATA:
