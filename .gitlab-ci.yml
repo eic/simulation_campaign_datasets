@@ -65,6 +65,7 @@ stages:
       done
 
 include:
+  - local: 'BACKGROUNDS/config.yml'
   - local: 'DIS/config.yml'
   - local: 'EXCLUSIVE/config.yml'
   - local: 'SIDIS/config.yml'
@@ -74,6 +75,7 @@ include:
 collect:
   extends: .collect
   needs:
+    - "BACKGROUNDS:collect"
     - "DIS:collect"
     - "EXCLUSIVE:collect"
     - "SIDIS:collect"
