@@ -1,0 +1,7 @@
+include:
+  - local: 'BACKGROUNDS/10x100/config.yml'
+
+DIS:collect:
+  extends: .collect
+  needs:
+    - BACKGROUNDS:10x100:collect
