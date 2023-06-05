@@ -1,0 +1,20 @@
+BACKGROUNDS:10x100:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "BACKGROUNDS/10x100/merged_lowstat/bgplussynrad_10x100_q2_10_100.csv"
+
+BACKGROUNDS:10x100:timings:
+  extends: .timings
+  needs: 
+    - BACKGROUNDS:10x100:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "BACKGROUNDS/10x100/merged_lowstat/bgplussynrad_10x100_q2_10_100.csv"
+
+DIS:NC:10x100:collect:
+  extends: .collect
+  needs: 
+    - BACKGROUNDS:10x100:timings
