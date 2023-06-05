@@ -14,7 +14,7 @@ BACKGROUNDS:10x100:timings:
       - DATA:
         - "BACKGROUNDS/10x100/merged_lowstat/bgplussynrad_10x100_q2_10_100.csv"
 
-DIS:NC:10x100:collect:
+BACKGROUNDS:10x100:collect:
   extends: .collect
   needs: 
     - BACKGROUNDS:10x100:timings
