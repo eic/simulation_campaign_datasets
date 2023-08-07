@@ -1,0 +1,20 @@
+EXCLUSIVE:UCHANNEL_RHO:10x100:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/UCHANNEL_RHO/10x100/Q2=0to10/rho_10x100_uChannel_Q2of0to10_hiDiv.csv"
+
+EXCLUSIVE:UCHANNEL_RHO:10x100:timings:
+  extends: .timings
+  needs: 
+    - EXCLUSIVE:UCHANNEL_RHO:10x100:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/UCHANNEL_RHO/10x100/Q2=0to10/rho_10x100_uChannel_Q2of0to10_hiDiv.csv"
+
+EXCLUSIVE:UCHANNEL_RHO:10x100:collect:
+  extends: .collect
+  needs: 
+    - EXCLUSIVE:UCHANNEL_RHO:10x100:timings
