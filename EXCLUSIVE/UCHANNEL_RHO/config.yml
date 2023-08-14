@@ -1,0 +1,7 @@
+include:
+  - local: 'EXCLUSIVE/UCHANNEL_RHO/10x100/config.yml'
+
+EXCLUSIVE:UCHANNEL_RHO:collect:
+  extends: .collect
+  needs: 
+    - EXCLUSIVE:UCHANNEL_RHO:10x100:collect

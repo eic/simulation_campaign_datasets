@@ -1,0 +1,20 @@
+EXCLUSIVE:UCHANNEL_PI0:18x275:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/UCHANNEL_PI0/18x275/Q2=0to10/pi0_18x275_uChannel_Q2of0to10_hiDiv.csv"
+
+EXCLUSIVE:UCHANNEL_PI0:18x275:timings:
+  extends: .timings
+  needs: 
+    - EXCLUSIVE:UCHANNEL_PI0:18x275:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/UCHANNEL_PI0/18x275/Q2=0to10/pi0_18x275_uChannel_Q2of0to10_hiDiv.csv"
+
+EXCLUSIVE:UCHANNEL_PI0:18x275:collect:
+  extends: .collect
+  needs: 
+    - EXCLUSIVE:UCHANNEL_PI0:18x275:timings
