@@ -1,0 +1,7 @@
+include:
+  - local: 'EXCLUSIVE/UCHANNEL_PI0/18x275/config.yml'
+
+EXCLUSIVE:UCHANNEL_PI0:collect:
+  extends: .collect
+  needs: 
+    - EXCLUSIVE:UCHANNEL_PI0:18x275:collect

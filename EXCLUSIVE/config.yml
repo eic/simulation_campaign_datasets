@@ -1,6 +1,8 @@
 include:
   - local: 'EXCLUSIVE/DIFFRACTIVE_JPSI/config.yml'
   - local: 'EXCLUSIVE/DIFFRACTIVE_PHI/config.yml'
+  - local: 'EXCLUSIVE/UCHANNEL_RHO/config.yml'
+  - local: 'EXCLUSIVE/UCHANNEL_PI0/config.yml'
   #- local: 'EXCLUSIVE/DIFFRACTIVE_RHO/config.yml'
   #- local: 'EXCLUSIVE/OMEGA/config.yml'
   #- local: 'EXCLUSIVE/RHO/config.yml'
@@ -34,6 +36,8 @@ EXCLUSIVE:collect:
   needs: 
     - EXCLUSIVE:DIFFRACTIVE_JPSI:collect
     - EXCLUSIVE:DIFFRACTIVE_PHI:collect
+    - EXCLUSIVE:UCHANNEL_RHO:collect
+    - EXCLUSIVE:UCHANNEL_PI0:collect
     #- EXCLUSIVE:DIFFRACTIVE_RHO:collect
     #- EXCLUSIVE:OMEGA:collect
     #- EXCLUSIVE:RHO:collect
