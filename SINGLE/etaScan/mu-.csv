@@ -1,1 +1,5 @@
-
+SINGLE/mu-/10GeV/etaScan/e-_10GeV_eta0.0,steer,1000000,0
+SINGLE/mu-/10GeV/etaScan/e-_10GeV_eta0.5,steer,1000000,0
+SINGLE/mu-/10GeV/etaScan/e-_10GeV_eta1.3,steer,1000000,0
+SINGLE/mu-/10GeV/etaScan/e-_10GeV_eta-1.4,steer,1000000,0
+SINGLE/mu-/10GeV/etaScan/e-_10GeV_eta-1.7,steer,1000000,0
