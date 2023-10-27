@@ -30,6 +30,9 @@ SINGLE:nevents:
         - "SINGLE/130to177deg/pi+.csv"
         - "SINGLE/130to177deg/kaon+.csv"
         - "SINGLE/130to177deg/proton.csv"
+        - "SINGLE/etaScan/e-.csv"
+        - "SINGLE/etaScan/mu-.csv"
+        - "SINGLE/etaScan/gamma.csv"
 SINGLE:timings:
   extends: .timings_all
   needs: 
@@ -64,6 +67,9 @@ SINGLE:timings:
         - "SINGLE/130to177deg/pi+.csv"
         - "SINGLE/130to177deg/kaon+.csv"
         - "SINGLE/130to177deg/proton.csv"
+        - "SINGLE/etaScan/e-.csv"
+        - "SINGLE/etaScan/mu-.csv"
+        - "SINGLE/etaScan/gamma.csv"
 
 SINGLE:collect:
   extends: .collect
