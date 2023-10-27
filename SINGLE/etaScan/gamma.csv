@@ -1,0 +1,5 @@
+SINGLE/gamma/100MeV/etaScan/gamma_100MeV_eta0.0,steer,1000000,0
+SINGLE/gamma/100MeV/etaScan/gamma_100MeV_eta0.5,steer,1000000,0
+SINGLE/gamma/100MeV/etaScan/gamma_100MeV_eta1.3,steer,1000000,0
+SINGLE/gamma/100MeV/etaScan/gamma_100MeV_eta-1.4,steer,1000000,0
+SINGLE/gamma/100MeV/etaScan/gamma_100MeV_eta-1.7,steer,1000000,0
