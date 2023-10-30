@@ -56,9 +56,6 @@ elif [[ "${ext}" =~ ^hepmc3\.tree\.root$ ]] ; then
 
 elif [[ "${ext}" =~ ^steer$ ]] ; then
 
-  # get full steer file
-  mc cp -q S3/eictest/EPIC/EVGEN/${file}.${ext} EVGEN/${file}.${ext} > /dev/null
-  test -f EVGEN/${file}.${ext}
   n=$n_events_test
   type="single"
 
