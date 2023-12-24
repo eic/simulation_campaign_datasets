@@ -1,0 +1,20 @@
+EXCLUSIVE:DVMP:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DVMP/EpIC1.0.0-1.0_DVMP_10x100.csv"
+
+EXCLUSIVE:DVMP:timings:
+  extends: .timings
+  needs: 
+    - EXCLUSIVE:DVMP:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DVMP/EpIC1.0.0-1.0_DVMP_10x100.csv"
+
+EXCLUSIVE:DVMP:collect:
+  extends: .collect
+  needs: 
+    - EXCLUSIVE:DVMP:timings
