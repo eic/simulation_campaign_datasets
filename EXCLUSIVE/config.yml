@@ -8,6 +8,7 @@ include:
   #- local: 'EXCLUSIVE/RHO/config.yml'
   #- local: 'EXCLUSIVE/SPECTROSCOPY/config.yml'
   - local: 'EXCLUSIVE/DEMP/config.yml'
+  - local: 'EXCLUSIVE/DVMP/config.yml'
   - local: 'EXCLUSIVE/DVCS/config.yml'
   - local: 'EXCLUSIVE/TCS/config.yml'
 
@@ -43,6 +44,7 @@ EXCLUSIVE:collect:
     #- EXCLUSIVE:RHO:collect
     #- EXCLUSIVE:SPECTROSCOPY:collect
     - EXCLUSIVE:DEMP:collect
+    - EXCLUSIVE:DVMP:collect
     - EXCLUSIVE:DVCS:collect
     - EXCLUSIVE:TCS:collect
     - EXCLUSIVE:timings
