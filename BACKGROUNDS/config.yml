@@ -1,7 +1,26 @@
 include:
   - local: 'BACKGROUNDS/10x100/config.yml'
 
+BACKGROUNDS:BEAMGAS:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "BACKGROUNDS/pythia8.306-1.0_ProtonBeamGas_275GeV.csv"
+        - "BACKGROUNDS/pythia8.306-1.0_ProtonBeamGas_100GeV.csv"
+
+BACKGROUNDS:BEAMGAS:timings:
+  extends: .timings
+  needs: 
+    - BACKGROUNDS:BEAMGAS:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "BACKGROUNDS/pythia8.306-1.0_ProtonBeamGas_275GeV.csv"
+        - "BACKGROUNDS/pythia8.306-1.0_ProtonBeamGas_100GeV.csv"
+
 BACKGROUNDS:collect:
   extends: .collect
   needs:
     - BACKGROUNDS:10x100:collect
+    - BACKGROUNDS:BEAMGAS:timings
