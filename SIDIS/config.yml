@@ -6,6 +6,7 @@ SIDIS:nevents:
         - "SIDIS/pythia6-eic-1.0.0_5x41_q2_0to1_ep_noradcor.csv"
         - "SIDIS/pythia6-eic-1.0.0_18x275_q2_0to1_ep_noradcor.csv"
         - "SIDIS/pythia6-eic-1.0.0_10x100_q2_0to1_ep_noradcor.csv"
+        - "SIDIS/pythia6-eic-1.0.0_10x275_q2_0to1_ep_noradcor.csv"
 
 SIDIS:timings:
   extends: .timings
@@ -17,6 +18,7 @@ SIDIS:timings:
         - "SIDIS/pythia6-eic-1.0.0_5x41_q2_0to1_ep_noradcor.csv"
         - "SIDIS/pythia6-eic-1.0.0_18x275_q2_0to1_ep_noradcor.csv"
         - "SIDIS/pythia6-eic-1.0.0_10x100_q2_0to1_ep_noradcor.csv"
+        - "SIDIS/pythia6-eic-1.0.0_10x275_q2_0to1_ep_noradcor.csv"
 
 SIDIS:collect:
   extends: .collect
