@@ -3,7 +3,7 @@ EXCLUSIVE:DVMP:nevents:
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DVMP/EpIC1.0.0-1.0_DVMP_10x100.csv"
+        - "EXCLUSIVE/DVMP/EpIC1.0.0-1.1_DVMP_10x100_hiAcc_ab.csv"
 
 EXCLUSIVE:DVMP:timings:
   extends: .timings
@@ -12,7 +12,7 @@ EXCLUSIVE:DVMP:timings:
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DVMP/EpIC1.0.0-1.0_DVMP_10x100.csv"
+        - "EXCLUSIVE/DVMP/EpIC1.0.0-1.1_DVMP_10x100_hiAcc_ab.csv"
 
 EXCLUSIVE:DVMP:collect:
   extends: .collect
