@@ -23,7 +23,7 @@ if [[ "${ext}" =~ ^hepmc3\.tree.root$ ]] ; then
   test ${nevents1} -eq ${nevents2}
   nevents=${nevents1}
   n_lines_per_event=0
-elif [[ "${ext}" =~ ^steer$ ]]
+elif [[ "${ext}" =~ ^steer$ ]] ; then 
   true
 else 
   echo "Error: Input extension is not recognized. Only '.hepmc3.tree.root' or '.steer' format is accepted. Please see the input pre-processing policy https://eic.github.io/epic-prod/documentation/input_preprocessing.html"
