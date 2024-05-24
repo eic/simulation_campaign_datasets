@@ -28,28 +28,7 @@ mkdir -p ${dir}
 
 # select type
 type="unknown"
-if [[ "${ext}" =~ ^hepmc[2]?$ || "${ext}" =~ ^hepmc\.gz$ ]] ; then
-
-  if [[ "${ext}" =~ ^hepmc\.gz$ ]] ; then
-    GUNZIP=(gunzip -c)
-    ext=${ext/.gz/}
-  else
-    GUNZIP=(cat)
-  fi
-
-  # get first lines of hepmc file
-  mc cat S3/eictest/EPIC/EVGEN/${file}.${ext}.gz | ${GUNZIP[@]} | head -n ${nlines} > EVGEN/${file}
-  test -f ${file}
-  # count events
-  n=$(grep ^E ${file} | wc -l)
-  n=$((n-1)) # last event is corrupted
-  test $n -gt 0 || exit -1
-  if [[ "${ext}" =~ ^hepmc2$ ]] ; then
-    export USEHEPMC3=false
-  fi
-  type="hepmc3"
-
-elif [[ "${ext}" =~ ^hepmc3\.tree\.root$ ]] ; then
+if [[ "${ext}" =~ ^hepmc3\.tree\.root$ ]] ; then
 
   n=$n_events_test
   type="hepmc3"
@@ -61,9 +40,8 @@ elif [[ "${ext}" =~ ^steer$ ]] ; then
 
 else
 
-  echo "Error: extension not recognized"
+  echo "Error: Input extension is not recognized. Only '.hepmc3.tree.root' or '.steer' format is accepted. Please see the input pre-processing policy https://eic.github.io/epic-prod/documentation/input_preprocessing.html"
   exit -1
-
 fi
 
 logfile=results/logs/${file}.out
