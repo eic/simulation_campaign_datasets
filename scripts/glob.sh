@@ -8,20 +8,16 @@ ext=${3?Specify extension}
 nevents=${4:-} # allow empty
 n_lines_per_event=${5:-} # allow empty
 
-s3prefix="S3/eictest/EPIC/EVGEN"
-s3https="s3https://eics3.sdcc.bnl.gov:9000/eictest/EPIC/EVGEN"
-xrootd="root://dtn-eic.jlab.org//work/eic2/EPIC/EVGEN"
+xrdurl="root://dtn-eic.jlab.org"
+xrdbase="/work/eic2/EPIC/EVGEN"
 
 # loop over glob expression
 dir=$(dirname ${dirfile})
 file=$(basename ${dirfile})
-echo ${s3prefix}/${dir}/${file}.${ext}
-for s3file in $(mc find ${s3prefix}/${dir} -name ${file}.${ext}) ; do
+echo ${xrdurl}/${xrdbase}/${dir}/${file}.${ext}
+for xrdfile in $(xrdfs ${xrdurl} ls ${xrdbase}/${dir} | grep ${file} | grep .${ext}) ; do
 
-  # unparse
-  dirfile=${s3file/${s3prefix}\//}
-  dir=$(dirname ${dirfile})
-  file=$(basename ${dirfile} .${ext})
+  file=$(basename ${xrdfile} .${ext})
 
   # output
   echo "${dir}/${file},$ext,$nevents,$n_lines_per_event" | tee -a "${out}"
