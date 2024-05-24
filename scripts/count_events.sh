@@ -13,18 +13,6 @@ s3prefix="S3/eictest/EPIC/EVGEN"
 s3https="s3https://eics3.sdcc.bnl.gov:9000/eictest/EPIC/EVGEN"
 xrootd="root://dtn-eic.jlab.org//work/eic2/EPIC/EVGEN"
 
-if [[ "${ext}" =~ ^hepmc\.gz$ ]] ; then
-  GUNZIP=(gunzip -c)
-else
-  GUNZIP=(cat)
-fi
-
-# if nevents not known
-if [[ "${nevents}" == 0 ]] ; then
-  # count events
-  nevents=$(mc cat ${s3prefix}/${s3file} | ${GUNZIP[@]} | grep ^E | wc -l)
-fi
-
 # if hepmc3.tree.root file
 if [[ "${ext}" =~ ^hepmc3\.tree.root$ ]] ; then
   # get entries from xrootd
@@ -35,13 +23,11 @@ if [[ "${ext}" =~ ^hepmc3\.tree.root$ ]] ; then
   test ${nevents1} -eq ${nevents2}
   nevents=${nevents1}
   n_lines_per_event=0
-fi
-
-# if n_lines_per_event not known
-if [ -z "${n_lines_per_event}" ] ; then
-  # count events in 10k lines
-  n_events_10k=$(mc cat ${s3prefix}/${s3file} | ${GUNZIP[@]} | head -n 10000 | grep ^E | wc -l)
-  n_lines_per_event=$((10000/n_events_10k))
+elif [[ "${ext}" =~ ^steer$ ]] ; then 
+  true
+else 
+  echo "Error: Input extension is not recognized. Only '.hepmc3.tree.root' or '.steer' format is accepted. Please see the input pre-processing policy https://eic.github.io/epic-prod/documentation/input_preprocessing.html"
+  exit -1
 fi
 
 # output
