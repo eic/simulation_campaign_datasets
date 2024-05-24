@@ -24,7 +24,8 @@ if [[ "${ext}" =~ ^hepmc3\.tree.root$ ]] ; then
   nevents=${nevents1}
   n_lines_per_event=0
 else 
-  echo "Input file format is not recognized. Only hepmc3.tree.root format is accepted. Please see the input pre-processing policy https://eic.github.io/epic-prod/documentation/input_preprocessing.html"
+  echo "Error: Input extension is not recognized. Only '.hepmc3.tree.root' format is accepted. Please see the input pre-processing policy https://eic.github.io/epic-prod/documentation/input_preprocessing.html"
+  exit -1
 fi
 
 # output
