@@ -15,10 +15,12 @@ xrdbase="/work/eic2/EPIC/EVGEN"
 dir=$(dirname ${dirfile})
 file=$(basename ${dirfile})
 echo ${xrdurl}/${xrdbase}/${dir}/${file}.${ext}
+file=${file/'?'/'*'} 
+
 for xrdfile in $(xrdfs ${xrdurl} ls ${xrdbase}/${dir} | grep ${file} | grep .${ext}) ; do
-
+  
   file=$(basename ${xrdfile} .${ext})
-
+  
   # output
   echo "${dir}/${file},$ext,$nevents,$n_lines_per_event" | tee -a "${out}"
 
