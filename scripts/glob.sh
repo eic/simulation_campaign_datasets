@@ -15,7 +15,8 @@ xrdbase="/work/eic2/EPIC/EVGEN"
 dir=$(dirname ${dirfile})
 file=$(basename ${dirfile})
 echo ${xrdurl}/${xrdbase}/${dir}/${file}.${ext}
-file=${file/'?'/'*'} 
+file=${file/'*'/'.*'}
+file=${file/'?'/'.*'} 
 
 for xrdfile in $(xrdfs ${xrdurl} ls ${xrdbase}/${dir} | grep ${file} | grep .${ext}) ; do
   
