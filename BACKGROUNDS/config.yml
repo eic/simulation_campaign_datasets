@@ -8,6 +8,7 @@ BACKGROUNDS:BEAMGAS:nevents:
       - DATA:
         - "BACKGROUNDS/pythia8.306-1.0_ProtonBeamGas_275GeV.csv"
         - "BACKGROUNDS/pythia8.306-1.0_ProtonBeamGas_100GeV.csv"
+        - "BACKGROUNDS/GETaLM1.0.0-1.0_ElectronBeamGas_10GeV_foam_emin10keV.csv"
 
 BACKGROUNDS:BEAMGAS:timings:
   extends: .timings
@@ -18,6 +19,7 @@ BACKGROUNDS:BEAMGAS:timings:
       - DATA:
         - "BACKGROUNDS/pythia8.306-1.0_ProtonBeamGas_275GeV.csv"
         - "BACKGROUNDS/pythia8.306-1.0_ProtonBeamGas_100GeV.csv"
+        - "BACKGROUNDS/GETaLM1.0.0-1.0_ElectronBeamGas_10GeV_foam_emin10keV.csv"
 
 BACKGROUNDS:collect:
   extends: .collect
