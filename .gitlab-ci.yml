@@ -43,7 +43,7 @@ stages:
     - |
       IFS="," read file ext nevents dt0 dt1 < results/datasets/timings/$DATA
       export dt0 dt1
-      grep -v "^\#" results/datasets/nevents/$DATA | parallel scripts/determine_timing.sh results/datasets/timings/$DATA {}
+      grep -v "^\#" results/datasets/nevents/$DATA | sed '1d' | parallel scripts/determine_timing.sh results/datasets/timings/$DATA {}
     - sort -o results/datasets/timings/$DATA results/datasets/timings/$DATA
 
 .timings_all:
