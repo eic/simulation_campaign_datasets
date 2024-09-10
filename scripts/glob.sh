@@ -17,12 +17,12 @@ file=$(basename ${dirfile})
 echo ${xrdurl}/${xrdbase}/${dir}/${file}.${ext}
 file=${file/'*'/'.*'}
 file=${file/'?'/'.*'} 
+list=$(xrdfs ${xrdurl} ls ${xrdbase}/${dir} | grep .${ext} | sed "s/.${ext}//g" | grep -E ${file})
 
-for xrdfile in $(xrdfs ${xrdurl} ls ${xrdbase}/${dir} | grep ${file} | grep .${ext}) ; do
-  
-  file=$(basename ${xrdfile} .${ext})
+
+for xrdfile in ${list} ; do
   
   # output
-  echo "${dir}/${file},$ext,$nevents,$n_lines_per_event" | tee -a "${out}"
+  echo "${xrdfile/${xrdbase}\//},$ext,$nevents,$n_lines_per_event" | tee -a "${out}"
 
 done
