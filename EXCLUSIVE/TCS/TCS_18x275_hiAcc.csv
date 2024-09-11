@@ -1,2 +1,2 @@
-EXCLUSIVE/TCS_ABCONV/18x275/hel_minus/TCS_gen_ab_hiAcc_18x275?_s*,hepmc3.tree.root,0,0
-EXCLUSIVE/TCS_ABCONV/18x275/hel_plus/TCS_gen_ab_hiAcc_18x275?_s*,hepmc3.tree.root,0,0
+EXCLUSIVE/TCS_ABCONV/18x275/hel_minus/TCS_gen_ab_hiAcc_18x275?_s[0-9]+$,hepmc3.tree.root,0,0
+EXCLUSIVE/TCS_ABCONV/18x275/hel_plus/TCS_gen_ab_hiAcc_18x275?_s[0-9]+$,hepmc3.tree.root,0,0
