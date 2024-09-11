@@ -1,1 +1,1 @@
-DIS/CC/10x100/minQ2=1000/pythia8CCDIS_10x100_minQ2=1000_beamEffects_xAngle=-0.025_hiDiv_[0-9]{1,}$,hepmc3.tree.root,0,0
+DIS/CC/10x100/minQ2=1000/pythia8CCDIS_10x100_minQ2=1000_beamEffects_xAngle=-0.025_hiDiv_[0-9]+$,hepmc3.tree.root,0,0
