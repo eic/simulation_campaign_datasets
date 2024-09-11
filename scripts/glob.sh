@@ -17,6 +17,7 @@ file=$(basename ${dirfile})
 echo ${xrdurl}/${xrdbase}/${dir}/${file}.${ext}
 file=${file/'*'/'.*'}
 file=${file/'?'/'.*'} 
+file=${file/'+'/'\+'}
 list=$(xrdfs ${xrdurl} ls ${xrdbase}/${dir} | grep .${ext} | sed "s/.${ext}//g" | grep -E ${file})
 
 
