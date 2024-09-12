@@ -1,2 +1,2 @@
-EXCLUSIVE/TCS_ABCONV/5x41/hel_minus/TCS_gen_ab_hiAcc_5x41?_s[0-9]+_novtx$,hepmc3.tree.root,0,0
-EXCLUSIVE/TCS_ABCONV/5x41/hel_plus/TCS_gen_ab_hiAcc_5x41?_s[0-9]+_novtx$,hepmc3.tree.root,0,0
+EXCLUSIVE/TCS_ABCONV/5x41/hel_minus/TCS_gen_ab_hiAcc_5x41[a-z]+_s[0-9]+_novtx$,hepmc3.tree.root,0,0
+EXCLUSIVE/TCS_ABCONV/5x41/hel_plus/TCS_gen_ab_hiAcc_5x41[a-z]+_s[0-9]+_novtx$,hepmc3.tree.root,0,0
