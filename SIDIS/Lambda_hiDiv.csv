@@ -1,1 +1,1 @@
-SIDIS/Lambda_ABCONV/hepmc_Lambda?_ab_hiDiv_18x275,hepmc3.tree.root,0,0
+SIDIS/Lambda_ABCONV/hepmc_Lambda[0-9]+_ab_hiDiv_18x275$,hepmc3.tree.root,0,0
