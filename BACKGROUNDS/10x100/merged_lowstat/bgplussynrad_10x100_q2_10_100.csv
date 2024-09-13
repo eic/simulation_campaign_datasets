@@ -1,1 +1,1 @@
-BACKGROUNDS/10x100/merged_lowstat/bgmerged_10000_ep_noradcor_10x100_q2_10_100_run*,hepmc3.tree.root,0,0
+BACKGROUNDS/10x100/merged_lowstat/bgmerged_10000_ep_noradcor_10x100_q2_10_100_run[0-9]+$,hepmc3.tree.root,0,0

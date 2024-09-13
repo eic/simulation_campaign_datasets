@@ -1,2 +1,2 @@
-EXCLUSIVE/DIFFRACTIVE_PHI_ABCONV/BeAGLE/ePb_18x108.41_tau10_B1.1_Phi_highstats/ePb_18x108.41_tune3_tau10_B1.1_Phi_extracted_?_ab_preset2,hepmc3.tree.root,0,0
-EXCLUSIVE/DIFFRACTIVE_PHI_ABCONV/BeAGLE/ePb_18x108.41_tau10_B1.1_Phi_highstats/ePb_18x108.41_tune3_tau10_B1.1_Phi_extracted_?_?_ab_preset2,hepmc3.tree.root,0,0
+EXCLUSIVE/DIFFRACTIVE_PHI_ABCONV/BeAGLE/ePb_18x108.41_tau10_B1.1_Phi_highstats/ePb_18x108.41_tune3_tau10_B1.1_Phi_extracted_[0-9]+_ab_preset2$,hepmc3.tree.root,0,0
+EXCLUSIVE/DIFFRACTIVE_PHI_ABCONV/BeAGLE/ePb_18x108.41_tau10_B1.1_Phi_highstats/ePb_18x108.41_tune3_tau10_B1.1_Phi_extracted_[0-9]+_[0-9]+_ab_preset2$,hepmc3.tree.root,0,0

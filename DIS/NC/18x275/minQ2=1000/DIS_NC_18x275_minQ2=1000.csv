@@ -1,1 +1,1 @@
-DIS/NC/18x275/minQ2=1000/pythia8NCDIS_18x275_minQ2=1000_beamEffects_xAngle=-0.025_hiDiv_?,hepmc3.tree.root,0,0
+DIS/NC/18x275/minQ2=1000/pythia8NCDIS_18x275_minQ2=1000_beamEffects_xAngle=-0.025_hiDiv_[0-9]+$,hepmc3.tree.root,0,0

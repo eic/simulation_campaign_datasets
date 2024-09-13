@@ -1,1 +1,1 @@
-SIDIS/pythia6/ep_10x100/hepmc_ip6/noradcor/ep_noradcor.10x100_q2_100_1000_run*,hepmc3.tree.root,0,0
+SIDIS/pythia6/ep_10x100/hepmc_ip6/noradcor/ep_noradcor.10x100_q2_100_1000_run[0-9]+$,hepmc3.tree.root,0,0

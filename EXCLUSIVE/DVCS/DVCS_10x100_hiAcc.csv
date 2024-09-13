@@ -1,1 +1,1 @@
-EXCLUSIVE/DVCS_ABCONV/10x100/DVCS.?.ab.hiAcc.10x100,hepmc3.tree.root,0,0
+EXCLUSIVE/DVCS_ABCONV/10x100/DVCS.[0-9]+.ab.hiAcc.10x100$,hepmc3.tree.root,0,0

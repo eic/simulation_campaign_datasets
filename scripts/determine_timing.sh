@@ -19,9 +19,6 @@ fi
 # number of hepmc lines to read (includes buffer)
 nlines=$((2*n_events_test*n_lines_per_event))
 
-# never write to S3 in these jobs
-export S3RW_ACCESS_KEY="" S3RW_SECRET_KEY=""
-
 # ensure CI is added to local file
 dir=$(dirname EVGEN/${file}.${ext})
 mkdir -p ${dir}
@@ -47,7 +44,7 @@ fi
 logfile=results/logs/${file}.out
 mkdir -p $(dirname ${logfile})
 
-# time for 1 event (first, since will write to S3)
+# time for 1 event (first)
 t1=$(date +%s.%N)
 /opt/campaigns/${type}/scripts/run.sh EVGEN/${file}.${ext} 1 2>&1 | tee ${logfile}.1
 t2=$(date +%s.%N)
