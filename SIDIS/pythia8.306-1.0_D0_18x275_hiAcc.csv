@@ -1,1 +1,1 @@
-SIDIS/D0_ABCONV/pythia8.306-1.0/18x275/hiAcc/pythia8.306-1.0_D0_18x275_hiAcc_run*,hepmc3.tree.root,0,0
+SIDIS/D0_ABCONV/pythia8.306-1.0/18x275/hiAcc/pythia8.306-1.0_D0_18x275_hiAcc_run[0-9]+$,hepmc3.tree.root,0,0

@@ -1,2 +1,2 @@
-EXCLUSIVE/TCS_ABCONV/18x275/hel_minus/tcs_bh_int_ab_hi*_18x275_hel_*_?_novtx,hepmc3.tree.root,0,0
-EXCLUSIVE/TCS_ABCONV/18x275/hel_plus/tcs_bh_int_ab_hi*_18x275_hel_*_?_novtx,hepmc3.tree.root,0,0
+EXCLUSIVE/TCS_ABCONV/18x275/hel_minus/tcs_bh_int_ab_hi[A-Za-z]+_18x275_hel_[a-z]+_[0-9]+_novtx$,hepmc3.tree.root,0,0
+EXCLUSIVE/TCS_ABCONV/18x275/hel_plus/tcs_bh_int_ab_hi[A-Za-z]+_18x275_hel_[a-z]+_[0-9]+_novtx$,hepmc3.tree.root,0,0

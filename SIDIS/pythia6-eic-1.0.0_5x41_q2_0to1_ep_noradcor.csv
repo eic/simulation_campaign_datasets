@@ -1,1 +1,1 @@
-SIDIS/pythia6-eic/1.0.0/5x41/q2_0to1/pythia_ep_noradcor_5x41_q2_0.000000001_1.0_run*.ab,hepmc3.tree.root,0,0
+SIDIS/pythia6-eic/1.0.0/5x41/q2_0to1/pythia_ep_noradcor_5x41_q2_0.000000001_1.0_run[0-9]+.ab$,hepmc3.tree.root,0,0

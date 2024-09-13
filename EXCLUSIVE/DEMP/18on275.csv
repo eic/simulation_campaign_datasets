@@ -1,1 +1,1 @@
-EXCLUSIVE/DEMP/18on275/eic_DEMPGen_18on275_ip6_pi+_1B_*,hepmc3.tree.root,0,0
+EXCLUSIVE/DEMP/18on275/eic_DEMPGen_18on275_ip6_pi+_1B_[0-9]+$,hepmc3.tree.root,0,0
