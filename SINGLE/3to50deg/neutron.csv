@@ -1,0 +1,8 @@
+SINGLE/neutron/100MeV/3to50deg/neutron_100MeV_3to50deg,steer,1000000,0
+SINGLE/neutron/200MeV/3to50deg/neutron_200MeV_3to50deg,steer,1000000,0
+SINGLE/neutron/500MeV/3to50deg/neutron_500MeV_3to50deg,steer,1000000,0
+SINGLE/neutron/1GeV/3to50deg/neutron_1GeV_3to50deg,steer,1000000,0
+SINGLE/neutron/2GeV/3to50deg/neutron_2GeV_3to50deg,steer,1000000,0
+SINGLE/neutron/5GeV/3to50deg/neutron_5GeV_3to50deg,steer,1000000,0
+SINGLE/neutron/10GeV/3to50deg/neutron_10GeV_3to50deg,steer,1000000,0
+SINGLE/neutron/20GeV/3to50deg/neutron_20GeV_3to50deg,steer,1000000,0
