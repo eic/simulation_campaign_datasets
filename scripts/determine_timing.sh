@@ -49,23 +49,28 @@ t1=$(date +%s.%N)
 /opt/campaigns/${type}/scripts/run.sh EVGEN/${file}.${ext} 1 2>&1 | tee ${logfile}.1
 t2=$(date +%s.%N)
 dt01=$(echo "scale=5; ($t2-$t1)" | bc -l)
-du01=$(du -sc $TMPDIR/*/RECO $TMPDIR/*/FULL | tail -n 1 | awk '{print($1)}')
+duf01=$(du -sc $TMPDIR/*/FULL | tail -n 1 | awk '{print($1)}')
+dur01=$(du -sc $TMPDIR/*/RECO | tail -n 1 | awk '{print($1)}')
 
 # time for n events (last, so will overwrite 1 event)
 t1=$(date +%s.%N)
 /opt/campaigns/${type}/scripts/run.sh EVGEN/${file}.${ext} ${n} 2>&1 | tee ${logfile}.n
 t2=$(date +%s.%N)
 dt0n=$(echo "scale=5; ($t2-$t1)" | bc -l)
-du0n=$(du -sc $TMPDIR/*/RECO $TMPDIR/*/FULL | tail -n 1 | awk '{print($1)}')
+duf0n=$(du -sc $TMPDIR/*/FULL | tail -n 1 | awk '{print($1)}')
+dur0n=$(du -sc $TMPDIR/*/RECO | tail -n 1 | awk '{print($1)}')
 
 # initialization correction (require at least a minimum positive difference)
 dt1=$(echo "scale=5; if($dt0n-$dt01>0.1*$dt01) print(($dt0n-$dt01)/($n-1)) else print(0.1*$dt01/$n)" | bc -l)
 dt0=$(echo "scale=5; if($dt01>$dt1) print(($dt01-$dt1)) else print(100)" | bc -l)
 
 # initialization correction (require at least a minimum positive difference)
-echo $du01 $du0n
-du1=$(echo "scale=5; if($du0n-$du01>0.1*$du01) print(($du0n-$du01)/($n-1)) else print(0.1*$du01/$n)" | bc -l)
-du0=$(echo "scale=5; if($du01>$du1) print(($du01-$du1)) else print(100)" | bc -l)
+# full data usage
+duf1=$(echo "scale=5; if($duf0n-$duf01>0.1*$duf01) print(($duf0n-$duf01)/($n-1)) else print(0.1*$duf01/$n)" | bc -l)
+duf0=$(echo "scale=5; if($duf01>$duf1) print(($duf01-$duf1)) else print(100)" | bc -l)
+# reco data usage
+dur1=$(echo "scale=5; if($dur0n-$dur01>0.1*$dur01) print(($dur0n-$dur01)/($n-1)) else print(0.1*$dur01/$n)" | bc -l)
+dur0=$(echo "scale=5; if($dur01>$dur1) print(($dur01-$dur1)) else print(100)" | bc -l)
 
 # output
-echo "$file,$ext,$nevents,$dt0,$dt1,$du0,$du1" | tee -a "${out}"
+echo "$file,$ext,$nevents,$dt0,$dt1,$duf0,$duf1,$dur0,$dur1" | tee -a "${out}"
