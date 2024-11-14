@@ -52,17 +52,17 @@ stages:
     - find results/datasets/
     - for d in `find results/datasets/timings/ -type d` ; do
         echo -n $d ;
-        find $d -name "*.csv" -print0 -exec awk 'BEGIN {FS=","} {sum+=$3*$5+$4} END {print(":",sum/3600,"core-hours")}' {} \;
+        find $d -name "*.csv" -print0 -exec awk 'BEGIN {FS=","} {sum+=$3*$5+$4} END {print(":",sum/3600,"core-hours")}' {} \; ;
         find $d -name "*.csv" -exec cat {} \; | awk 'BEGIN {FS=","} {sum+=$3*$5+$4} END {print(":",sum/3600,"core-hours")}' ;
       done
     - for d in `find results/datasets/timings/ -type d` ; do
         echo -n $d ;
-        find $d -name "*.csv" -print0 -exec awk 'BEGIN {FS=","} {sum+=$3*$7+$6} END {print(":",sum/1048576,"GB (full)")}' {} \;
+        find $d -name "*.csv" -print0 -exec awk 'BEGIN {FS=","} {sum+=$3*$7+$6} END {print(":",sum/1048576,"GB (full)")}' {} \; ;
         find $d -name "*.csv" -exec cat {} \; | awk 'BEGIN {FS=","} {sum+=$3*$7+$6} END {print(":",sum/1048576,"GB (full)")}' ;
       done
     - for d in `find results/datasets/timings/ -type d` ; do
         echo -n $d ;
-        find $d -name "*.csv" -print0 -exec awk 'BEGIN {FS=","} {sum+=$3*$9+$8} END {print(":",sum/1048576,"GB (reco)")}' {} \;
+        find $d -name "*.csv" -print0 -exec awk 'BEGIN {FS=","} {sum+=$3*$9+$8} END {print(":",sum/1048576,"GB (reco)")}' {} \; ;
         find $d -name "*.csv" -exec cat {} \; | awk 'BEGIN {FS=","} {sum+=$3*$9+$8} END {print(":",sum/1048576,"GB (reco)")}' ;
       done
 
