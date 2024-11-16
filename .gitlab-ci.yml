@@ -55,6 +55,16 @@ stages:
         echo -n $d ;
         find $d -name "*.csv" -exec cat {} \; | awk 'BEGIN {FS=","} {sum+=$3*$5+$4} END {print(":",sum/3600,"core-hours")}' ;
       done
+    - find results/datasets/timings/ -name "*.csv" -print0 -exec awk 'BEGIN {FS=","} {sum+=$3*$7+$6} END {print(":",sum/1048576,"GB (full)")}' {} \;
+    - for d in `find results/datasets/timings/ -type d` ; do
+        echo -n $d ;
+        find $d -name "*.csv" -exec cat {} \; | awk 'BEGIN {FS=","} {sum+=$3*$7+$6} END {print(":",sum/1048576,"GB (full)")}' ;
+      done
+    - find results/datasets/timings/ -name "*.csv" -print0 -exec awk 'BEGIN {FS=","} {sum+=$3*$9+$8} END {print(":",sum/1048576,"GB (reco)")}' {} \;
+    - for d in `find results/datasets/timings/ -type d` ; do
+        echo -n $d ;
+        find $d -name "*.csv" -exec cat {} \; | awk 'BEGIN {FS=","} {sum+=$3*$9+$8} END {print(":",sum/1048576,"GB (reco)")}' ;
+      done
 
 include:
   - local: 'BACKGROUNDS/config.yml'
