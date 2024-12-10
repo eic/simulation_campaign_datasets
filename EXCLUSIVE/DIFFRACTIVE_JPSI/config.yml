@@ -5,6 +5,11 @@ EXCLUSIVE:DIFFRACTIVE_JPSI:nevents:
       - DATA:
         - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre_Coherent.csv"
         - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre_Incoherent.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/lAger/lAger3.6.1-1.0_jpsi_5x41_hiAcc.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/lAger/lAger3.6.1-1.0_jpsi_5x100_hiAcc.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/lAger/lAger3.6.1-1.0_jpsi_10x100_hiAcc.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/lAger/lAger3.6.1-1.0_jpsi_18x275_hiAcc.csv"
+
 
 EXCLUSIVE:DIFFRACTIVE_JPSI:timings:
   extends: .timings
@@ -17,6 +22,10 @@ EXCLUSIVE:DIFFRACTIVE_JPSI:timings:
       - DATA:
         - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre_Coherent.csv"
         - "EXCLUSIVE/DIFFRACTIVE_JPSI/Sartre_Incoherent.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/lAger/lAger3.6.1-1.0_jpsi_5x41_hiAcc.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/lAger/lAger3.6.1-1.0_jpsi_5x100_hiAcc.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/lAger/lAger3.6.1-1.0_jpsi_10x100_hiAcc.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_JPSI/lAger/lAger3.6.1-1.0_jpsi_18x275_hiAcc.csv"
 
 EXCLUSIVE:DIFFRACTIVE_JPSI:collect:
   extends: .collect
