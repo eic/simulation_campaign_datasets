@@ -10,6 +10,12 @@ nevents=${4?Specify nevents}
 n_lines_per_event=${5?Specify n_lines_per_event}
 n_events_test=${NEVENTS_PER_TEST:-100}
 
+n=$n_events_test
+if [[ $ext != "hepmc3.tree.root" && $ext != "steer" ]]; then
+  echo "Error: Input extension is not recognized. Only 'hepmc3.tree.root' or 'steer' format is accepted. Please see the input pre-processing policy https://eic.github.io/epic-prod/documentation/input_preprocessing.html"
+  exit -1
+fi
+
 if [ -n "${dt0:-}" -a -n "${dt1:-}" ] ; then
   # reuse if already determined
   echo "$file,$ext,$nevents,$dt0,$dt1" | tee -a "${out}"
@@ -23,30 +29,12 @@ nlines=$((2*n_events_test*n_lines_per_event))
 dir=$(dirname EVGEN/${file}.${ext})
 mkdir -p ${dir}
 
-# select type
-type="unknown"
-if [[ "${ext}" =~ ^hepmc3\.tree\.root$ ]] ; then
-
-  n=$n_events_test
-  type="hepmc3"
-
-elif [[ "${ext}" =~ ^steer$ ]] ; then
-
-  n=$n_events_test
-  type="single"
-
-else
-
-  echo "Error: Input extension is not recognized. Only '.hepmc3.tree.root' or '.steer' format is accepted. Please see the input pre-processing policy https://eic.github.io/epic-prod/documentation/input_preprocessing.html"
-  exit -1
-fi
-
 logfile=results/logs/${file}.out
 mkdir -p $(dirname ${logfile})
 
 # time for 1 event (first)
 t1=$(date +%s.%N)
-/opt/campaigns/${type}/scripts/run.sh EVGEN/${file}.${ext} 1 2>&1 | tee ${logfile}.1
+/opt/campaigns/hepmc3/scripts/run.sh EVGEN/${file} ${ext} 1 2>&1 | tee ${logfile}.1
 t2=$(date +%s.%N)
 dt01=$(echo "scale=5; ($t2-$t1)" | bc -l)
 duf01=$(du -sc $TMPDIR/*/FULL | tail -n 1 | awk '{print($1)}')
@@ -54,7 +42,7 @@ dur01=$(du -sc $TMPDIR/*/RECO | tail -n 1 | awk '{print($1)}')
 
 # time for n events (last, so will overwrite 1 event)
 t1=$(date +%s.%N)
-/opt/campaigns/${type}/scripts/run.sh EVGEN/${file}.${ext} ${n} 2>&1 | tee ${logfile}.n
+/opt/campaigns/hepmc3/scripts/run.sh EVGEN/${file} ${ext} ${n} 2>&1 | tee ${logfile}.n
 t2=$(date +%s.%N)
 dt0n=$(echo "scale=5; ($t2-$t1)" | bc -l)
 duf0n=$(du -sc $TMPDIR/*/FULL | tail -n 1 | awk '{print($1)}')
