@@ -10,6 +10,7 @@ nevents=${4?Specify nevents}
 n_lines_per_event=${5?Specify n_lines_per_event}
 n_events_test=${NEVENTS_PER_TEST:-100}
 
+n=$n_events_test
 if [[ $ext != "hepmc3.tree.root" && $ext != "steer" ]]; then
   echo "Error: Input extension is not recognized. Only 'hepmc3.tree.root' or 'steer' format is accepted. Please see the input pre-processing policy https://eic.github.io/epic-prod/documentation/input_preprocessing.html"
   exit -1
