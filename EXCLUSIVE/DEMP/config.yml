@@ -3,18 +3,10 @@ EXCLUSIVE:DEMP:nevents:
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_5x41_pi+.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_5x100_pi+.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_10x100_pi+.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_18x275_pi+.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_5x41_K+Lambda.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_5x100_K+Lambda.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_10x100_K+Lambda.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_18x275_K+Lambda.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_5x41_K+Sigma0.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_5x100_K+Sigma0.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_10x100_K+Sigma0.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_18x275_K+Sigma0.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_pi+.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_10x100_pi+.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_18x275_pi+.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_K+Lambda.csv"
 
 EXCLUSIVE:DEMP:timings:
   extends: .timings
@@ -23,18 +15,10 @@ EXCLUSIVE:DEMP:timings:
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_5x41_pi+.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_5x100_pi+.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_10x100_pi+.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_18x275_pi+.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_5x41_K+Lambda.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_5x100_K+Lambda.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_10x100_K+Lambda.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_18x275_K+Lambda.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_5x41_K+Sigma0.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_5x100_K+Sigma0.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_10x100_K+Sigma0.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.0_18x275_K+Sigma0.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_pi+.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_10x100_pi+.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_18x275_pi+.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_K+Lambda.csv"
 
 EXCLUSIVE:DEMP:collect:
   extends: .collect
