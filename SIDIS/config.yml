@@ -9,6 +9,7 @@ SIDIS:nevents:
         - "SIDIS/pythia6-eic-1.0.0_10x275_q2_0to1_ep_noradcor.csv"
         - "SIDIS/pythia8.306-1.0_D0_18x275_hiAcc.csv"
         - "SIDIS/pythia8.306-1.0_D0_18x275_hiDiv.csv"
+        - "SIDIS/pythia8.306-1.1_D0_10x100_hiDiv.csv"
         - "SIDIS/pythia8.306-1.0_Lambda_18x275_hiAcc.csv"
         - "SIDIS/pythia8.306-1.0_Lambda_18x275_hiDiv.csv"
 
@@ -25,6 +26,7 @@ SIDIS:timings:
         - "SIDIS/pythia6-eic-1.0.0_10x275_q2_0to1_ep_noradcor.csv"
         - "SIDIS/pythia8.306-1.0_D0_18x275_hiAcc.csv"
         - "SIDIS/pythia8.306-1.0_D0_18x275_hiDiv.csv"
+        - "SIDIS/pythia8.306-1.0_D0_10x100_hiDiv.csv"
         - "SIDIS/pythia8.306-1.0_Lambda_18x275_hiAcc.csv"
         - "SIDIS/pythia8.306-1.0_Lambda_18x275_hiDiv.csv"
 
