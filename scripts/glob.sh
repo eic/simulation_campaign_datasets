@@ -9,7 +9,7 @@ nevents=${4:-} # allow empty
 n_lines_per_event=${5:-} # allow empty
 
 xrdurl="root://dtn-eic.jlab.org"
-xrdbase="/work/eic2/EPIC/EVGEN"
+xrdbase="/volatile/eic/EPIC/EVGEN"
 
 # loop over glob expression
 dir=$(dirname ${dirfile})
