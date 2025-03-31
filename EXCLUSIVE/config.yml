@@ -7,6 +7,7 @@ include:
   #- local: 'EXCLUSIVE/OMEGA/config.yml'
   #- local: 'EXCLUSIVE/RHO/config.yml'
   #- local: 'EXCLUSIVE/SPECTROSCOPY/config.yml'
+  - local: 'EXCLUSIVE/DIS/config.yml'
   - local: 'EXCLUSIVE/DEMP/config.yml'
   - local: 'EXCLUSIVE/DVMP/config.yml'
   - local: 'EXCLUSIVE/DVCS/config.yml'
@@ -43,6 +44,7 @@ EXCLUSIVE:collect:
     #- EXCLUSIVE:OMEGA:collect
     #- EXCLUSIVE:RHO:collect
     #- EXCLUSIVE:SPECTROSCOPY:collect
+    - EXCLUSIVE:DIS:collect
     - EXCLUSIVE:DEMP:collect
     - EXCLUSIVE:DVMP:collect
     - EXCLUSIVE:DVCS:collect
