@@ -3,10 +3,10 @@ EXCLUSIVE:DIS:nevents:
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DIS/BeAGLE1.03.02-1.0_DIS_eCu_en_10x115_q2_1to1000.csv"
-        - "EXCLUSIVE/DIS/BeAGLE1.03.02-1.0_DIS_eCu_ep_10x115_q2_1to1000.csv"
-        - "EXCLUSIVE/DIS/BeAGLE1.03.02-1.0_DIS_eRu_en_10x115_q2_1to1000.csv"
-        - "EXCLUSIVE/DIS/BeAGLE1.03.02-1.0_DIS_eRu_ep_10x115_q2_1to1000.csv"
+        - "EXCLUSIVE/DIS/BeAGLE1.03.02-1.0_DIS_eCu_en_10x115.csv"
+        - "EXCLUSIVE/DIS/BeAGLE1.03.02-1.0_DIS_eCu_ep_10x115.csv"
+        - "EXCLUSIVE/DIS/BeAGLE1.03.02-1.0_DIS_eRu_en_10x115.csv"
+        - "EXCLUSIVE/DIS/BeAGLE1.03.02-1.0_DIS_eRu_ep_10x115.csv"
         - "EXCLUSIVE/DIS/BeAGLE1.03.02-1.0_DIS_eHe3_10x166.csv"
         
 
@@ -17,10 +17,10 @@ EXCLUSIVE:DIS:timings:
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DIS/BeAGLE1.03.02-1.0_DIS_eCu_en_10x115_q2_1to1000.csv"
-        - "EXCLUSIVE/DIS/BeAGLE1.03.02-1.0_DIS_eCu_ep_10x115_q2_1to1000.csv"
-        - "EXCLUSIVE/DIS/BeAGLE1.03.02-1.0_DIS_eRu_en_10x115_q2_1to1000.csv"
-        - "EXCLUSIVE/DIS/BeAGLE1.03.02-1.0_DIS_eRu_ep_10x115_q2_1to1000.csv"
+        - "EXCLUSIVE/DIS/BeAGLE1.03.02-1.0_DIS_eCu_en_10x115.csv"
+        - "EXCLUSIVE/DIS/BeAGLE1.03.02-1.0_DIS_eCu_ep_10x115.csv"
+        - "EXCLUSIVE/DIS/BeAGLE1.03.02-1.0_DIS_eRu_en_10x115.csv"
+        - "EXCLUSIVE/DIS/BeAGLE1.03.02-1.0_DIS_eRu_ep_10x115.csv"
         - "EXCLUSIVE/DIS/BeAGLE1.03.02-1.0_DIS_eHe3_10x166.csv"
 
 EXCLUSIVE:DIS:collect:
