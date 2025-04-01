@@ -13,7 +13,7 @@ EXCLUSIVE:DIS:nevents:
 EXCLUSIVE:DIS:timings:
   extends: .timings
   needs: 
-    - EXCLUSIVE:DEMP:nevents
+    - EXCLUSIVE:DIS:nevents
   parallel:
     matrix:
       - DATA:
