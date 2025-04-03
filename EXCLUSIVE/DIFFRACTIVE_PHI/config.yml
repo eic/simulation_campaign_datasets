@@ -6,6 +6,7 @@ EXCLUSIVE:DIFFRACTIVE_PHI:nevents:
         - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre_Coherent.csv"
         - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre_Coherent_q2_15.csv"
         - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre_Incoherent.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_PHI/sartre1.39-1.0_coherent_phi_eAu_bsat_10x100.csv"
 
 EXCLUSIVE:DIFFRACTIVE_PHI:timings:
   extends: .timings
@@ -17,6 +18,7 @@ EXCLUSIVE:DIFFRACTIVE_PHI:timings:
         - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre_Coherent.csv"
         - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre_Coherent_q2_15.csv"
         - "EXCLUSIVE/DIFFRACTIVE_PHI/Sartre_Incoherent.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_PHI/sartre1.39-1.0_coherent_phi_eAu_bsat_10x100.csv"
 
 EXCLUSIVE:DIFFRACTIVE_PHI:collect:
   extends: .collect
