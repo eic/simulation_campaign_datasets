@@ -9,7 +9,6 @@ DIS:eA:nevents:
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eRu_ep_10x115.csv"
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eHe3_10x166.csv"
         
-
 DIS:eA:timings:
   extends: .timings
   needs: 
