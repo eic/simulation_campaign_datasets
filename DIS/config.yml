@@ -1,10 +1,11 @@
 include:
   - local: 'DIS/CC/config.yml'
   - local: 'DIS/NC/config.yml'
+  - local: 'DIS/eA/config.yml'
 
 DIS:collect:
   extends: .collect
   needs:
     - DIS:CC:collect
     - DIS:NC:collect
-    
+    - DIS:eA:collect
