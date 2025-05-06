@@ -1,4 +1,4 @@
-image: eicweb.phy.anl.gov:4567/containers/eic_container/jug_xl:nightly
+image: eicweb.phy.anl.gov:4567/containers/eic_container/eic_xl:nightly
 
 default:
   timeout: 3 hours
