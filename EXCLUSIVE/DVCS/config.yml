@@ -9,6 +9,7 @@ EXCLUSIVE:DVCS:nevents:
         - "EXCLUSIVE/DVCS/DVCS_10x100_hiAcc.csv"
         - "EXCLUSIVE/DVCS/DVCS_18x275_hiDiv.csv"
         - "EXCLUSIVE/DVCS/DVCS_18x275_hiAcc.csv"
+        - "EXCLUSIVE/DVCS/DVCS_10x130_hiAcc.csv"
 
 EXCLUSIVE:DVCS:timings:
   extends: .timings
@@ -23,6 +24,7 @@ EXCLUSIVE:DVCS:timings:
         - "EXCLUSIVE/DVCS/DVCS_10x100_hiAcc.csv"
         - "EXCLUSIVE/DVCS/DVCS_18x275_hiDiv.csv"
         - "EXCLUSIVE/DVCS/DVCS_18x275_hiAcc.csv"
+        - "EXCLUSIVE/DVCS/DVCS_10x130_hiAcc.csv"
 
 EXCLUSIVE:DVCS:collect:
   extends: .collect
