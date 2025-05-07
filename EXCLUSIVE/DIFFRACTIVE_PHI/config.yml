@@ -14,6 +14,8 @@ EXCLUSIVE:DIFFRACTIVE_PHI:timings:
   extends: .timings
   needs: 
     - EXCLUSIVE:DIFFRACTIVE_PHI:nevents
+  variables:
+    NEVENTS_PER_TEST: 25
   parallel:
     matrix:
       - DATA:
