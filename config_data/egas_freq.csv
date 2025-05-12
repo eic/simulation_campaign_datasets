@@ -1,2 +1,2 @@
-10GeVx275GeV_10000Ahr, 3177.25kHz
-18GeVx275GeV_10000Ahr, 316.94kHz
+10GeVx275GeV_10000Ahr, root://dtn-eic.jlab.org//volatile/eic/EPIC/EVGEN/BACKGROUNDS/BEAMGAS/electron/GETaLM1.0.0-1.0/18GeV/GETaLM1.0.0-1.0_ElectronBeamGas_10GeV_foam_emin10keV_run001.hepmc3.tree.root, 3177.25kHz, 0
+18GeVx275GeV_10000Ahr, root://dtn-eic.jlab.org//volatile/eic/EPIC/EVGEN/BACKGROUNDS/BEAMGAS/electron/GETaLM1.0.0-1.1/18GeV/GETaLM1.0.0-1.1_ElectronBeamGas_18GeV_emin10keV_run001.hepmc3.tree.root, 316.94kHz, 0
