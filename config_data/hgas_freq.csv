@@ -1,6 +1,2 @@
-5GeVx41GeV_10000Ahr, 12.2kHz
-5GeVx41GeV_100Ahr, 131.1kHz
-10GeVx100GeV_10000Ahr, 31.9kHz
-10GeVx100GeV_100Ahr, 342.8kHz
-18GeVx275GeV_10000Ahr, 22.5kHz
-18GeVx275GeV_100Ahr, 241.8kHz
+10GeVx275GeV_10000Ahr, root://dtn-eic.jlab.org//volatile/eic/EPIC/EVGEN/BACKGROUNDS/BEAMGAS/proton/pythia8.306-1.0/275GeV/pythia8.306-1.0_ProtonBeamGas_275GeV_run001.hepmc3.tree.root, 32.6kHz, 0
+18GeVx275GeV_10000Ahr, root://dtn-eic.jlab.org//volatile/eic/EPIC/EVGEN/BACKGROUNDS/BEAMGAS/proton/pythia8.306-1.0/275GeV/pythia8.306-1.0_ProtonBeamGas_275GeV_run001.hepmc3.tree.root, 22.5kHz, 0
