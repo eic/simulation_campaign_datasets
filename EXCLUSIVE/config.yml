@@ -10,7 +10,6 @@ include:
   - local: 'EXCLUSIVE/DEMP/config.yml'
   - local: 'EXCLUSIVE/DVMP/config.yml'
   - local: 'EXCLUSIVE/DVCS/config.yml'
-  - local: 'EXCLUSIVE/TCS/config.yml'
 
 EXCLUSIVE:nevents:
   extends: .nevents
@@ -46,5 +45,4 @@ EXCLUSIVE:collect:
     - EXCLUSIVE:DEMP:collect
     - EXCLUSIVE:DVMP:collect
     - EXCLUSIVE:DVCS:collect
-    - EXCLUSIVE:TCS:collect
     - EXCLUSIVE:timings
