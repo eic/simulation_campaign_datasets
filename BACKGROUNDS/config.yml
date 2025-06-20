@@ -26,6 +26,8 @@ BACKGROUNDS:BEAMGAS:timings:
   extends: .timings
   needs: 
     - BACKGROUNDS:BEAMGAS:nevents
+  variables:
+    NEVENTS_PER_TEST: 25
   parallel:
     matrix:
       - DATA:
