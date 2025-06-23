@@ -9,22 +9,38 @@ BACKGROUNDS:BEAMGAS:nevents:
         - "BACKGROUNDS/pythia8.306-1.0_ProtonBeamGas_275GeV.csv"
         - "BACKGROUNDS/pythia8.306-1.0_ProtonBeamGas_100GeV.csv"
         - "BACKGROUNDS/GETaLM1.0.0-1.0_ElectronBeamGas_10GeV_foam_emin10keV.csv"
+        - "BACKGROUNDS/GETaLM1.0.0-1.1_ElectronBeamGas_18GeV_emin10keV.csv"
         - "BACKGROUNDS/HEPMC_merger-1.0.2_bgmerged_MinBias_pythia6_10x100_egas_bgas.csv"
         - "BACKGROUNDS/dataprod_rel-1.0.0_synrad_18x275.csv"
-
+        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_brems_18x275_10000Ahr_machine_runtime_1ms.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_brems_18x275_10000Ahr_machine_runtime_10ms.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_coulomb_18x275_10000Ahr_machine_runtime_1ms.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_coulomb_18x275_10000Ahr_machine_runtime_10ms.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_touschek_18x275_10000Ahr_machine_runtime_1ms.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_touschek_18x275_10000Ahr_machine_runtime_10ms.csv"
+        
 BACKGROUNDS:BEAMGAS:timings:
   extends: .timings
   needs: 
     - BACKGROUNDS:BEAMGAS:nevents
+  variables:
+    NEVENTS_PER_TEST: 25
   parallel:
     matrix:
       - DATA:
         - "BACKGROUNDS/pythia8.306-1.0_ProtonBeamGas_275GeV.csv"
         - "BACKGROUNDS/pythia8.306-1.0_ProtonBeamGas_100GeV.csv"
         - "BACKGROUNDS/GETaLM1.0.0-1.0_ElectronBeamGas_10GeV_foam_emin10keV.csv"
+        - "BACKGROUNDS/GETaLM1.0.0-1.1_ElectronBeamGas_18GeV_emin10keV.csv"
         - "BACKGROUNDS/HEPMC_merger-1.0.2_bgmerged_MinBias_pythia6_10x100_egas_bgas.csv"
         - "BACKGROUNDS/dataprod_rel-1.0.0_synrad_18x275.csv"
-
+        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_brems_18x275_10000Ahr_machine_runtime_1ms.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_brems_18x275_10000Ahr_machine_runtime_10ms.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_coulomb_18x275_10000Ahr_machine_runtime_1ms.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_coulomb_18x275_10000Ahr_machine_runtime_10ms.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_touschek_18x275_10000Ahr_machine_runtime_1ms.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_touschek_18x275_10000Ahr_machine_runtime_10ms.csv"
+        
 BACKGROUNDS:collect:
   extends: .collect
   needs:
