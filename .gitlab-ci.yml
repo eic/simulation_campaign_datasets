@@ -1,4 +1,4 @@
-image: eicweb.phy.anl.gov:4567/containers/eic_container/eic_xl:nightly
+image: eicweb.phy.anl.gov:4567/containers/eic_container/eic_ci:nightly
 
 default:
   timeout: 3 hours
@@ -47,6 +47,7 @@ stages:
 
 .collect:
   stage: collect
+  image: alpine
   script:
     - rm -rf results/logs/
     - find results/datasets/
