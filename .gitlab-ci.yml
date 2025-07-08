@@ -48,6 +48,7 @@ stages:
 .collect:
   stage: collect
   image: alpine
+  before_script: []
   script:
     - rm -rf results/logs/
     - find results/datasets/
