@@ -8,6 +8,10 @@ DIS:eA:nevents:
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eRu_en_10x115.csv"
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eRu_ep_10x115.csv"
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eHe3_10x166.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_1to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_10to100.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_1to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_10to100.csv"
         
 DIS:eA:timings:
   extends: .timings
@@ -21,6 +25,10 @@ DIS:eA:timings:
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eRu_en_10x115.csv"
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eRu_ep_10x115.csv"
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eHe3_10x166.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_1to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_10to100.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_1to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_10to100.csv"
 
 DIS:eA:collect:
   extends: .collect
