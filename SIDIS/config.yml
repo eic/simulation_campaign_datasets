@@ -3,6 +3,10 @@ SIDIS:nevents:
   parallel:
     matrix:
       - DATA:
+        - "SIDIS/eA/BeAGLE1.03.01-1.0_D0_eAu_10x100_q2_1to10000.csv"
+        - "SIDIS/eA/BeAGLE1.03.01-1.0_Lc_eAu_10x100_q2_1to10000.csv"
+        - "SIDIS/ep/pythia8.306-1.2_D0_ep_5x41_q2_1to10000.csv"
+        - "SIDIS/ep/pythia8.306-1.2_Lc_ep_10x100_q2_1to10000.csv"
         - "SIDIS/pythia6-eic-1.0.0_5x41_q2_0to1_ep_noradcor.csv"
         - "SIDIS/pythia6-eic-1.0.0_18x275_q2_0to1_ep_noradcor.csv"
         - "SIDIS/pythia6-eic-1.0.0_10x100_q2_0to1_ep_noradcor.csv"
@@ -20,6 +24,10 @@ SIDIS:timings:
   parallel:
     matrix:
       - DATA:
+        - "SIDIS/eA/BeAGLE1.03.01-1.0_D0_eAu_10x100_q2_1to10000.csv"
+        - "SIDIS/eA/BeAGLE1.03.01-1.0_Lc_eAu_10x100_q2_1to10000.csv"
+        - "SIDIS/ep/pythia8.306-1.2_D0_ep_5x41_q2_1to10000.csv"
+        - "SIDIS/ep/pythia8.306-1.2_Lc_ep_10x100_q2_1to10000.csv"
         - "SIDIS/pythia6-eic-1.0.0_5x41_q2_0to1_ep_noradcor.csv"
         - "SIDIS/pythia6-eic-1.0.0_18x275_q2_0to1_ep_noradcor.csv"
         - "SIDIS/pythia6-eic-1.0.0_10x100_q2_0to1_ep_noradcor.csv"
