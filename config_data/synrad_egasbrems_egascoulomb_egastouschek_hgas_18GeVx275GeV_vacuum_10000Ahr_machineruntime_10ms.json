@@ -1,7 +1,7 @@
 [
   {
     "file": "root://dtn-eic.jlab.org//volatile/eic/EPIC/EVGEN/BACKGROUNDS/SYNRAD/dataprod_rel_1.0.0/18x275/dataprod_rel_1.0.0_synrad_18x275_run001.hepmc3.tree.root",
-    "freq": 14000,
+    "freq": 17000000000,
     "skip": 28,
     "status": 2000
   },
