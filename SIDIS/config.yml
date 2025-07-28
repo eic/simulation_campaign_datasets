@@ -22,6 +22,8 @@ SIDIS:timings:
   extends: .timings
   needs: 
     - SIDIS:nevents
+  variables:
+    NEVENTS_PER_TEST: 25
   parallel:
     matrix:
       - DATA:
