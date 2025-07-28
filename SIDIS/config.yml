@@ -4,6 +4,7 @@ SIDIS:nevents:
     matrix:
       - DATA:
         - "SIDIS/eA/BeAGLE1.03.01-1.0_D0_eAu_10x100_q2_1to10000.csv"
+        - "SIDIS/eA/BeAGLE1.03.01-1.0_D0_eAu_5x41_q2_1to10000.csv"
         - "SIDIS/eA/BeAGLE1.03.01-1.0_Lc_eAu_10x100_q2_1to10000.csv"
         - "SIDIS/ep/pythia8.306-1.2_D0_ep_5x41_q2_1to10000.csv"
         - "SIDIS/ep/pythia8.306-1.2_Lc_ep_10x100_q2_1to10000.csv"
@@ -25,6 +26,7 @@ SIDIS:timings:
     matrix:
       - DATA:
         - "SIDIS/eA/BeAGLE1.03.01-1.0_D0_eAu_10x100_q2_1to10000.csv"
+        - "SIDIS/eA/BeAGLE1.03.01-1.0_D0_eAu_5x41_q2_1to10000.csv"
         - "SIDIS/eA/BeAGLE1.03.01-1.0_Lc_eAu_10x100_q2_1to10000.csv"
         - "SIDIS/ep/pythia8.306-1.2_D0_ep_5x41_q2_1to10000.csv"
         - "SIDIS/ep/pythia8.306-1.2_Lc_ep_10x100_q2_1to10000.csv"
