@@ -9,7 +9,8 @@ EXCLUSIVE:DEMP:nevents:
         - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_K+Lambda.csv"
         - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_K+Lambda.csv"
         - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_pi+.csv"
-        
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x130_pi+.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x250_pi+.csv"        
 
 EXCLUSIVE:DEMP:timings:
   extends: .timings
@@ -24,6 +25,8 @@ EXCLUSIVE:DEMP:timings:
         - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_K+Lambda.csv"
         - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_K+Lambda.csv"
         - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_pi+.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x130_pi+.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x250_pi+.csv"
 
 EXCLUSIVE:DEMP:collect:
   extends: .collect
