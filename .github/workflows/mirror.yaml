@@ -23,7 +23,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: Push to EICweb
-      uses: eic/gitlab-sync@master
+      uses: eic/gitlab-sync@v1
       with:
         url: https://eicweb.phy.anl.gov/EIC/campaigns/datasets.git
         token: ${{ secrets.GITLAB_TOKEN }}
@@ -56,4 +56,5 @@ jobs:
           -H "Authorization: Bearer $GITHUB_TOKEN" \
           -H "X-GitHub-Api-Version: 2022-11-28" \
           -d '{"context": "eicweb/campaigns/datasets (nightly, '"$DETECTOR_CONFIG"')", "state": "pending", "description": "Waiting for response from the EICweb", "target_url": "${{ fromJson(steps.trigger_eicweb.outputs.json).web_url }}"}' \
+
           "https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.event.pull_request.head.sha || github.sha }}"
