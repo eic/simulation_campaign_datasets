@@ -4,6 +4,7 @@ EXCLUSIVE:DVMP:nevents:
     matrix:
       - DATA:
         - "EXCLUSIVE/DVMP/EpIC1.0.0-1.1_DVMP_10x100_hiAcc_ab.csv"
+        - "EXCLUSIVE/DVMP/unpolarised/EpIC1.1.6-1.0_DVMP_pi0_10x130_ab.csv"
 
 EXCLUSIVE:DVMP:timings:
   extends: .timings
@@ -13,6 +14,7 @@ EXCLUSIVE:DVMP:timings:
     matrix:
       - DATA:
         - "EXCLUSIVE/DVMP/EpIC1.0.0-1.1_DVMP_10x100_hiAcc_ab.csv"
+        - "EXCLUSIVE/DVMP/unpolarised/EpIC1.1.6-1.0_DVMP_pi0_10x130_ab.csv"
 
 EXCLUSIVE:DVMP:collect:
   extends: .collect
