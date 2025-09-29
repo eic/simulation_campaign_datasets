@@ -12,7 +12,19 @@ DIS:eA:nevents:
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_10to100.csv"
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_1to10.csv"
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_10to100.csv"
-        
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_10x166_q2_2to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_10x166_q2_10to100.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_10x166_q2_100to10000.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_10x110_q2_2to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_10x110_q2_10to100.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_10x110_q2_100to10000.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_18x110_q2_2to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_18x110_q2_10to100.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_18x110_q2_100to10000.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_5x41_q2_2to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_5x41_q2_10to100.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_5x41_q2_100to10000.csv"
+
 DIS:eA:timings:
   extends: .timings
   needs: 
@@ -29,6 +41,18 @@ DIS:eA:timings:
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_10to100.csv"
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_1to10.csv"
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_10to100.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_10x166_q2_2to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_10x166_q2_10to100.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_10x166_q2_100to10000.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_10x110_q2_2to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_10x110_q2_10to100.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_10x110_q2_100to10000.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_18x110_q2_2to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_18x110_q2_10to100.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_18x110_q2_100to10000.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_5x41_q2_2to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_5x41_q2_10to100.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_5x41_q2_100to10000.csv"
 
 DIS:eA:collect:
   extends: .collect
