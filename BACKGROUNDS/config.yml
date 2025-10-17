@@ -14,10 +14,12 @@ BACKGROUNDS:BEAMGAS:nevents:
         - "BACKGROUNDS/dataprod_rel-1.0.0_synrad_18x275.csv"
         - "BACKGROUNDS/dataprod_rel-1.0.0_electron_brems_18x275_10000Ahr_machine_runtime_1ms.csv"
         - "BACKGROUNDS/dataprod_rel-1.0.0_electron_brems_18x275_10000Ahr_machine_runtime_10ms.csv"
-        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_coulomb_18x275_10000Ahr_machine_runtime_1ms.csv"
-        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_coulomb_18x275_10000Ahr_machine_runtime_10ms.csv"
-        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_touschek_18x275_10000Ahr_machine_runtime_1ms.csv"
-        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_touschek_18x275_10000Ahr_machine_runtime_10ms.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.1_electron_coulomb_18x275_10000Ahr_machine_runtime_50s.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.1_electron_coulomb_10x275_10000Ahr_machine_runtime_50s.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.1_electron_coulomb_5x100_10000Ahr_machine_runtime_50s.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.1_electron_touschek_18x275_10000Ahr_machine_runtime_50s.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.1_electron_touschek_10x275_10000Ahr_machine_runtime_50s.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.1_electron_touschek_5x100_10000Ahr_machine_runtime_50s.csv"
         
 BACKGROUNDS:BEAMGAS:timings:
   extends: .timings
@@ -36,10 +38,12 @@ BACKGROUNDS:BEAMGAS:timings:
         - "BACKGROUNDS/dataprod_rel-1.0.0_synrad_18x275.csv"
         - "BACKGROUNDS/dataprod_rel-1.0.0_electron_brems_18x275_10000Ahr_machine_runtime_1ms.csv"
         - "BACKGROUNDS/dataprod_rel-1.0.0_electron_brems_18x275_10000Ahr_machine_runtime_10ms.csv"
-        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_coulomb_18x275_10000Ahr_machine_runtime_1ms.csv"
-        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_coulomb_18x275_10000Ahr_machine_runtime_10ms.csv"
-        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_touschek_18x275_10000Ahr_machine_runtime_1ms.csv"
-        - "BACKGROUNDS/dataprod_rel-1.0.0_electron_touschek_18x275_10000Ahr_machine_runtime_10ms.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.1_electron_coulomb_18x275_10000Ahr_machine_runtime_50s.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.1_electron_coulomb_10x275_10000Ahr_machine_runtime_50s.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.1_electron_coulomb_5x100_10000Ahr_machine_runtime_50s.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.1_electron_touschek_18x275_10000Ahr_machine_runtime_50s.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.1_electron_touschek_10x275_10000Ahr_machine_runtime_50s.csv"
+        - "BACKGROUNDS/dataprod_rel-1.0.1_electron_touschek_5x100_10000Ahr_machine_runtime_50s.csv"
         
 BACKGROUNDS:collect:
   extends: .collect
