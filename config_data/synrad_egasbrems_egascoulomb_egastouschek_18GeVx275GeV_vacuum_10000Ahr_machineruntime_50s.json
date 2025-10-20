@@ -1,0 +1,26 @@
+[
+  {
+    "file": "root://dtn-eic.jlab.org//volatile/eic/EPIC/EVGEN/BACKGROUNDS/SYNRAD/dataprod_rel_1.0.0/18x275/dataprod_rel_1.0.0_synrad_18x275_run001.preproc_10000repeats.hepmc3.tree.root",
+    "freq": 3324000,
+    "skip": 0.0,
+    "status": 2000
+  },
+  {
+    "file": "root://dtn-eic.jlab.org//volatile/eic/EPIC/EVGEN/BACKGROUNDS/BEAMGAS/electron/GETaLM1.0.0-1.1/18GeV/GETaLM1.0.0-1.1_ElectronBeamGas_18GeV_emin10keV_run001.hepmc3.tree.root",
+    "freq": 316.94,
+    "skip": 0.0,
+    "status": 3000
+  },
+  {
+    "file": "root://dtn-eic.jlab.org//volatile/eic/EPIC/EVGEN/BACKGROUNDS/BEAMGAS/electron/coulomb/EIC_ESR_Xsuite/dataprod_rel_1.0.1/18x275/10000Ahr/MachineRuntime50s/dataprod_rel_1.0.1_electron_coulomb_18x275_10000Ahr.hepmc3.tree.root",
+    "freq": 0.86,
+    "skip": 0.0,
+    "status": 4000
+  },
+  {
+    "file": "root://dtn-eic.jlab.org//volatile/eic/EPIC/EVGEN/BACKGROUNDS/BEAMGAS/electron/touschek/EIC_ESR_Xsuite/dataprod_rel_1.0.1/18x275/10000Ahr/MachineRuntime50s/dataprod_rel_1.0.1_electron_touschek_18x275_10000Ahr.hepmc3.tree.root",
+    "freq": 0.55,
+    "skip": 0.0,
+    "status": 5000
+  }
+]
