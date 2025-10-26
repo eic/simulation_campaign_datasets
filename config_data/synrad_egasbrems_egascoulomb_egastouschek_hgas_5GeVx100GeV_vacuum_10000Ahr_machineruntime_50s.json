@@ -1,5 +1,11 @@
 [
   {
+    "file": "root://dtn-eic.jlab.org//volatile/eic/EPIC/EVGEN/BACKGROUNDS/SYNRAD/dataprod_rel_1.0.0/5x100/dataprod_rel_1.0.0_synrad_5x100_run001.preproc_10000repeats.hepmc3.tree.root",
+    "freq": 36608000,
+    "skip": 0.0,
+    "status": 2000
+  },
+  {
     "file": "root://dtn-eic.jlab.org//volatile/eic/EPIC/EVGEN/BACKGROUNDS/BEAMGAS/electron/GETaLM1.0.0-1.1/5GeV/GETaLM1.0.0-1.1_ElectronBeamGas_5GeV_emin10keV_run001.hepmc3.tree.root",
     "freq": 2826.38,
     "skip": 0.0,
