@@ -6,7 +6,7 @@
     "status": 2000
   },
   {
-    "file": "root://dtn-eic.jlab.org//volatile/eic/EPIC/EVGEN/BACKGROUNDS/BEAMGAS/electron/GETaLM1.0.0-1.1/10GeV/GETaLM1.0.0-1.1_ElectronBeamGas_10GeV_emin10keV_run001.hepmc3.tree.root",
+    "file": "root://dtn-eic.jlab.org//volatile/eic/EPIC/EVGEN/BACKGROUNDS/BEAMGAS/electron/GETaLM1.0.0-1.0/10GeV/GETaLM1.0.0-1.0_ElectronBeamGas_10GeV_foam_emin10keV_run001.hepmc3.tree.root",
     "freq": 3177.25,
     "skip": 0.0,
     "status": 3000
