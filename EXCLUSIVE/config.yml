@@ -10,6 +10,7 @@ include:
   - local: 'EXCLUSIVE/DEMP/config.yml'
   - local: 'EXCLUSIVE/DVMP/config.yml'
   - local: 'EXCLUSIVE/DVCS/config.yml'
+  - local: 'EXCLUSIVE/DDVCS/config.yml'
   - local: 'EXCLUSIVE/TCS/config.yml'
 
 EXCLUSIVE:nevents:
@@ -34,7 +35,7 @@ EXCLUSIVE:timings:
 
 EXCLUSIVE:collect:
   extends: .collect
-  needs: 
+  needs:
     - EXCLUSIVE:DIFFRACTIVE_JPSI:collect
     - EXCLUSIVE:DIFFRACTIVE_PHI:collect
     - EXCLUSIVE:UCHANNEL_RHO:collect
@@ -46,5 +47,6 @@ EXCLUSIVE:collect:
     - EXCLUSIVE:DEMP:collect
     - EXCLUSIVE:DVMP:collect
     - EXCLUSIVE:DVCS:collect
+    - EXCLUSIVE:DDVCS:collect
     - EXCLUSIVE:TCS:collect
     - EXCLUSIVE:timings
