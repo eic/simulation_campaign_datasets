@@ -1,0 +1,22 @@
+EXCLUSIVE:PHOTOPRODUCTION_JPSI:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/PHOTOPRODUCTION_JPSI/eSTARlight/eSTARlight1.3.0-1.0_coherent_ep_JPsi_18x275_q2_nocut_edecay.csv"
+        - "EXCLUSIVE/PHOTOPRODUCTION_JPSI/eSTARlight/eSTARlight1.3.0-1.0_coherent_ep_JPsi_18x275_q2_nocut_mudecay.csv"
+
+EXCLUSIVE:PHOTOPRODUCTION_JPSI:timings:
+  extends: .timings
+  needs:
+    - EXCLUSIVE:PHOTOPRODUCTION_JPSI:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/PHOTOPRODUCTION_JPSI/eSTARlight/eSTARlight1.3.0-1.0_coherent_ep_JPsi_18x275_q2_nocut_edecay.csv"
+        - "EXCLUSIVE/PHOTOPRODUCTION_JPSI/eSTARlight/eSTARlight1.3.0-1.0_coherent_ep_JPsi_18x275_q2_nocut_mudecay.csv"
+
+EXCLUSIVE:PHOTOPRODUCTION_JPSI:collect:
+  extends: .collect
+  needs:
+    - EXCLUSIVE:PHOTOPRODUCTION_JPSI:timings

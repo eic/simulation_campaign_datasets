@@ -1,5 +1,6 @@
 include:
   - local: 'EXCLUSIVE/DIFFRACTIVE_JPSI/config.yml'
+  - local: 'EXCLUSIVE/PHOTOPRODUCTION_JPSI/config.yml'
   - local: 'EXCLUSIVE/DIFFRACTIVE_PHI/config.yml'
   - local: 'EXCLUSIVE/UCHANNEL_RHO/config.yml'
   - local: 'EXCLUSIVE/UCHANNEL_PI0/config.yml'
@@ -37,6 +38,7 @@ EXCLUSIVE:collect:
   extends: .collect
   needs:
     - EXCLUSIVE:DIFFRACTIVE_JPSI:collect
+    - EXCLUSIVE:PHOTOPRODUCTION_JPSI:collect
     - EXCLUSIVE:DIFFRACTIVE_PHI:collect
     - EXCLUSIVE:UCHANNEL_RHO:collect
     - EXCLUSIVE:UCHANNEL_PI0:collect

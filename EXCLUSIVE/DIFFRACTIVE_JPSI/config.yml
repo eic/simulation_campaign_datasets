@@ -12,8 +12,6 @@ EXCLUSIVE:DIFFRACTIVE_JPSI:nevents:
         - "EXCLUSIVE/DIFFRACTIVE_JPSI/lAger/lAger3.6.1-1.0_jpsi_18x275_hiAcc.csv"
         - "EXCLUSIVE/DIFFRACTIVE_JPSI/eSTARlight/eSTARlight1.2.0-1.0_coherent_eCu_jpsi_10x115_afterburned.csv"
         - "EXCLUSIVE/DIFFRACTIVE_JPSI/eSTARlight/eSTARlight1.2.0-1.0_coherent_eRu_jpsi_10x115_afterburned.csv"
-        - "EXCLUSIVE/DIFFRACTIVE_JPSI/eSTARlight/eSTARlight1.3.0-1.0_coherent_ep_JPsi_18x275_q2_nocut_edecay.csv"
-        - "EXCLUSIVE/DIFFRACTIVE_JPSI/eSTARlight/eSTARlight1.3.0-1.0_coherent_ep_JPsi_18x275_q2_nocut_mudecay.csv"
 
 
 
@@ -35,8 +33,6 @@ EXCLUSIVE:DIFFRACTIVE_JPSI:timings:
         - "EXCLUSIVE/DIFFRACTIVE_JPSI/lAger/lAger3.6.1-1.0_jpsi_18x275_hiAcc.csv"
         - "EXCLUSIVE/DIFFRACTIVE_JPSI/eSTARlight/eSTARlight1.2.0-1.0_coherent_eCu_jpsi_10x115_afterburned.csv"
         - "EXCLUSIVE/DIFFRACTIVE_JPSI/eSTARlight/eSTARlight1.2.0-1.0_coherent_eRu_jpsi_10x115_afterburned.csv"
-        - "EXCLUSIVE/DIFFRACTIVE_JPSI/eSTARlight/eSTARlight1.3.0-1.0_coherent_ep_JPsi_18x275_q2_nocut_edecay.csv"
-        - "EXCLUSIVE/DIFFRACTIVE_JPSI/eSTARlight/eSTARlight1.3.0-1.0_coherent_ep_JPsi_18x275_q2_nocut_mudecay.csv"
 
 EXCLUSIVE:DIFFRACTIVE_JPSI:collect:
   extends: .collect
