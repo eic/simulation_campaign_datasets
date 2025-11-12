@@ -1,0 +1,22 @@
+EXCLUSIVE:DDVCS:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DDVCS/EpIC1.1.6-1.0_DDVCS_18x275_q2_0_10_edecay.csv"
+        - "EXCLUSIVE/DDVCS/EpIC1.1.6-1.0_DDVCS_18x275_q2_0_10_mudecay.csv"
+
+EXCLUSIVE:DDVCS:timings:
+  extends: .timings
+  needs:
+    - EXCLUSIVE:DDVCS:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DDVCS/EpIC1.1.6-1.0_DDVCS_18x275_q2_0_10_edecay.csv"
+        - "EXCLUSIVE/DDVCS/EpIC1.1.6-1.0_DDVCS_18x275_q2_0_10_mudecay.csv"
+
+EXCLUSIVE:DDVCS:collect:
+  extends: .collect
+  needs:
+    - EXCLUSIVE:DDVCS:timings
