@@ -5,6 +5,11 @@ on:
   push:
   workflow_dispatch:
     inputs:
+      container_name:
+        description: 'Container name'
+        required: false
+        default: 'eic_xl'
+        type: string
       image_tag:
         description: 'Container image tag'
         required: false
@@ -59,6 +64,7 @@ jobs:
           GITHUB_SHA=${{ github.event.pull_request.head.sha || github.sha }}
           GITHUB_PR=${{ github.event.pull_request.number }}
           PIPELINE_NAME=${{ github.repository }}: ${{ github.event.pull_request.title || github.ref_name }}
+          CONTAINER_NAME=${{ inputs.container_name || 'eic_xl' }}
           IMAGE_TAG=${{ inputs.image_tag || 'nightly' }}
           DETECTOR_CONFIG=${{ inputs.detector_config || 'epic_craterlake' }}
           DETECTOR_VERSION=${{ inputs.detector_version || 'main' }}

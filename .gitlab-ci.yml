@@ -1,9 +1,10 @@
 variables:
+  CONTAINER_NAME: "eic_xl"
   IMAGE_TAG: "nightly"
   DETECTOR_CONFIG: "epic_craterlake"
   DETECTOR_VERSION: "main"
 
-image: eicweb.phy.anl.gov:4567/containers/eic_container/eic_xl:${IMAGE_TAG}
+image: eicweb.phy.anl.gov:4567/containers/eic_container/${CONTAINER_NAME}:${IMAGE_TAG}
 
 default:
   timeout: 3 hours
