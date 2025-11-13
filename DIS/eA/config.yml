@@ -1,4 +1,28 @@
-DIS:eA:nevents:
+DIS:eA:eAu:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_1to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_10to100.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_1to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_10to100.csv"
+
+DIS:eA:eAu:timings:
+  extends: .timings
+  needs:
+    - DIS:eA:eAu:nevents
+  variables:
+    DETECTOR_CONFIG: "epic_craterlake_without_zdc"
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_1to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_10to100.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_1to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_10to100.csv"
+
+DIS:eA:other:nevents:
   extends: .nevents
   parallel:
     matrix:
@@ -8,10 +32,6 @@ DIS:eA:nevents:
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eRu_en_10x115.csv"
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eRu_ep_10x115.csv"
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eHe3_10x166.csv"
-        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_1to10.csv"
-        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_10to100.csv"
-        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_1to10.csv"
-        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_10to100.csv"
         - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_10x166_q2_2to10.csv"
         - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_10x166_q2_10to100.csv"
         - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_10x166_q2_100to10000.csv"
@@ -25,10 +45,10 @@ DIS:eA:nevents:
         - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_5x41_q2_10to100.csv"
         - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_5x41_q2_100to10000.csv"
 
-DIS:eA:timings:
+DIS:eA:other:timings:
   extends: .timings
-  needs: 
-    - DIS:eA:nevents
+  needs:
+    - DIS:eA:other:nevents
   parallel:
     matrix:
       - DATA:
@@ -37,10 +57,6 @@ DIS:eA:timings:
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eRu_en_10x115.csv"
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eRu_ep_10x115.csv"
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eHe3_10x166.csv"
-        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_1to10.csv"
-        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_10to100.csv"
-        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_1to10.csv"
-        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_10to100.csv"
         - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_10x166_q2_2to10.csv"
         - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_10x166_q2_10to100.csv"
         - "DIS/eA/BeAGLE1.03.02-1.2_DIS_eHe3_10x166_q2_100to10000.csv"
@@ -56,5 +72,6 @@ DIS:eA:timings:
 
 DIS:eA:collect:
   extends: .collect
-  needs: 
-    - DIS:eA:timings
+  needs:
+    - DIS:eA:eAu:timings
+    - DIS:eA:other:timings

@@ -32,6 +32,10 @@ mkdir -p ${dir}
 logfile=results/logs/${file}.out
 mkdir -p $(dirname ${logfile})
 
+# Export detector configuration if provided
+export DETECTOR_CONFIG="${DETECTOR_CONFIG:-epic_craterlake}"
+export DETECTOR_VERSION="${DETECTOR_VERSION:-main}"
+
 # time for 1 event (first)
 t1=$(date +%s.%N)
 /opt/campaigns/hepmc3/scripts/run.sh EVGEN/${file} ${ext} 1 2>&1 | tee ${logfile}.1

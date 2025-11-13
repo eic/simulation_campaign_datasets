@@ -1,5 +1,9 @@
 image: eicweb.phy.anl.gov:4567/containers/eic_container/eic_xl:nightly
 
+variables:
+  DETECTOR_CONFIG: "epic_craterlake"
+  DETECTOR_VERSION: "main"
+
 default:
   timeout: 3 hours
   artifacts:
