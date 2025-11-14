@@ -23,7 +23,7 @@ SIDIS:timings:
   needs:
     - SIDIS:nevents
   variables:
-    NEVENTS_PER_TEST: 25
+    NEVENTS_PER_TEST: 15
   parallel:
     matrix:
       - DATA:
