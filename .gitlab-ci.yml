@@ -36,6 +36,8 @@ stages:
 .timings:
   stage: timings
   script:
+    - echo "DEBUG - DETECTOR_CONFIG from CI = ${DETECTOR_CONFIG}"
+    - echo "DEBUG - DETECTOR_VERSION from CI = ${DETECTOR_VERSION}"
     - mkdir -p $(dirname ${RESULTS_BASE}/datasets/timings/$DATA)
     # Use sed '1!d1' instead of head -n 1 to avoid pipefail issues
     - grep -v "^\#" ${RESULTS_BASE}/datasets/nevents/$DATA | sed '1!d' | parallel scripts/determine_timing.sh ${RESULTS_BASE}/datasets/timings/$DATA {}
