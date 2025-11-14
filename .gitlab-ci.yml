@@ -3,7 +3,6 @@ variables:
   IMAGE_TAG: "nightly"
   DETECTOR_CONFIG: "epic_craterlake"
   DETECTOR_VERSION: "main"
-  RESULTS_BASE: "results/${CONTAINER_NAME}/${IMAGE_TAG}/${DETECTOR_CONFIG}/${DETECTOR_VERSION}"
 
 image: eicweb.phy.anl.gov:4567/containers/eic_container/${CONTAINER_NAME}:${IMAGE_TAG}
 
@@ -25,6 +24,7 @@ stages:
 .nevents:
   stage: nevents
   script:
+    - export RESULTS_BASE="results/${CONTAINER_NAME}/${IMAGE_TAG}/${DETECTOR_CONFIG}/${DETECTOR_VERSION}"
     - mkdir -p $(dirname ${RESULTS_BASE}/datasets/glob/$DATA)
     - grep -v "^\#" $DATA | parallel scripts/glob.sh ${RESULTS_BASE}/datasets/glob/$DATA {}
     - sort -o ${RESULTS_BASE}/datasets/glob/$DATA ${RESULTS_BASE}/datasets/glob/$DATA
@@ -36,8 +36,10 @@ stages:
 .timings:
   stage: timings
   script:
+    - export RESULTS_BASE="results/${CONTAINER_NAME}/${IMAGE_TAG}/${DETECTOR_CONFIG}/${DETECTOR_VERSION}"
     - echo "DEBUG - DETECTOR_CONFIG from CI = ${DETECTOR_CONFIG}"
     - echo "DEBUG - DETECTOR_VERSION from CI = ${DETECTOR_VERSION}"
+    - echo "DEBUG - RESULTS_BASE = ${RESULTS_BASE}"
     - mkdir -p $(dirname ${RESULTS_BASE}/datasets/timings/$DATA)
     # Use sed '1!d1' instead of head -n 1 to avoid pipefail issues
     - grep -v "^\#" ${RESULTS_BASE}/datasets/nevents/$DATA | sed '1!d' | parallel scripts/determine_timing.sh ${RESULTS_BASE}/datasets/timings/$DATA {}
@@ -50,6 +52,7 @@ stages:
 .timings_all:
   stage: timings
   script:
+    - export RESULTS_BASE="results/${CONTAINER_NAME}/${IMAGE_TAG}/${DETECTOR_CONFIG}/${DETECTOR_VERSION}"
     - mkdir -p $(dirname ${RESULTS_BASE}/datasets/timings/$DATA)
     - grep -v "^\#" ${RESULTS_BASE}/datasets/nevents/$DATA | parallel scripts/determine_timing.sh ${RESULTS_BASE}/datasets/timings/$DATA {}
     - sort -o ${RESULTS_BASE}/datasets/timings/$DATA ${RESULTS_BASE}/datasets/timings/$DATA
@@ -57,6 +60,7 @@ stages:
 .collect:
   stage: collect
   script:
+    - export RESULTS_BASE="results/${CONTAINER_NAME}/${IMAGE_TAG}/${DETECTOR_CONFIG}/${DETECTOR_VERSION}"
     - rm -rf results/logs/
     - find ${RESULTS_BASE}/datasets/
     - find ${RESULTS_BASE}/datasets/timings/ -name "*.csv" -print0 -exec awk 'BEGIN {FS=","} {sum+=$3*$5+$4} END {print(":",sum/3600,"core-hours")}' {} \;
