@@ -29,12 +29,16 @@ nlines=$((2*n_events_test*n_lines_per_event))
 dir=$(dirname EVGEN/${file}.${ext})
 mkdir -p ${dir}
 
-logfile=results/logs/${file}.out
+logfile=${RESULTS_BASE:-results}/logs/${file}.out
 mkdir -p $(dirname ${logfile})
 
 # Export detector configuration if provided
 export DETECTOR_CONFIG="${DETECTOR_CONFIG:-epic_craterlake}"
 export DETECTOR_VERSION="${DETECTOR_VERSION:-main}"
+
+echo "DEBUG [determine_timing.sh] - DETECTOR_CONFIG = ${DETECTOR_CONFIG}"
+echo "DEBUG [determine_timing.sh] - DETECTOR_VERSION = ${DETECTOR_VERSION}"
+echo "DEBUG [determine_timing.sh] - RESULTS_BASE = ${RESULTS_BASE:-results}"
 
 # time for 1 event (first)
 t1=$(date +%s.%N)
