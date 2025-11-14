@@ -24,6 +24,8 @@ stages:
 .nevents:
   stage: nevents
   script:
+    - export DETECTOR_CONFIG="${DETECTOR_CONFIG_OVERRIDE:-${DETECTOR_CONFIG}}"
+    - export DETECTOR_VERSION="${DETECTOR_VERSION_OVERRIDE:-${DETECTOR_VERSION}}"
     - export RESULTS_BASE="results/${CONTAINER_NAME}/${IMAGE_TAG}/${DETECTOR_CONFIG}/${DETECTOR_VERSION}"
     - mkdir -p $(dirname ${RESULTS_BASE}/datasets/glob/$DATA)
     - grep -v "^\#" $DATA | parallel scripts/glob.sh ${RESULTS_BASE}/datasets/glob/$DATA {}

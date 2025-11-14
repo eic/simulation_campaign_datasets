@@ -1,24 +1,54 @@
-DIS:eA:eAu:nevents:
+.eAu_10x100_variables: &eAu_10x100_variables
+  DETECTOR_CONFIG_OVERRIDE: "epic_craterlake_without_zdc"
+  EBEAM_OVERRIDE: "10"
+  PBEAM_OVERRIDE: "100_Au197"
+
+DIS:eA:eAu:10x100:nevents:
+  variables:
+    <<: *eAu_10x100_variables
   extends: .nevents
   parallel:
     matrix:
       - DATA:
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_1to10.csv"
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_10to100.csv"
-        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_1to10.csv"
-        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_10to100.csv"
 
-DIS:eA:eAu:timings:
+DIS:eA:eAu:10x100:timings:
+  variables:
+    <<: *eAu_10x100_variables
   extends: .timings
   needs:
-    - DIS:eA:eAu:nevents
-  variables:
-    DETECTOR_CONFIG: "epic_craterlake_without_zdc"
+    - DIS:eA:eAu:10x100:nevents
   parallel:
     matrix:
       - DATA:
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_1to10.csv"
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_10to100.csv"
+
+.eAu_5x41_variables: &eAu_5x41_variables
+  DETECTOR_CONFIG_OVERRIDE: "epic_craterlake_without_zdc"
+  EBEAM_OVERRIDE: "5"
+  PBEAM_OVERRIDE: "41_Au197"
+
+DIS:eA:eAu:5x41:nevents:
+  variables:
+    <<: *eAu_5x41_variables
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_1to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_10to100.csv"
+
+DIS:eA:eAu:5x41:timings:
+  variables:
+    <<: *eAu_5x41_variables
+  extends: .timings
+  needs:
+    - DIS:eA:eAu:5x41:nevents
+  parallel:
+    matrix:
+      - DATA:
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_1to10.csv"
         - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_10to100.csv"
 
@@ -73,5 +103,6 @@ DIS:eA:other:timings:
 DIS:eA:collect:
   extends: .collect
   needs:
-    - DIS:eA:eAu:timings
+    - DIS:eA:eAu:10x100:timings
+    - DIS:eA:eAu:5x41:timings
     - DIS:eA:other:timings
