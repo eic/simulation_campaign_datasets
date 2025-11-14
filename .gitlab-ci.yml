@@ -1,5 +1,5 @@
 variables:
-  CONTAINER_NAME: "eic_xl"
+  CONTAINER_NAME: "eic_ci"
   IMAGE_TAG: "nightly"
   DETECTOR_CONFIG: "epic_craterlake"
   DETECTOR_VERSION: "main"
