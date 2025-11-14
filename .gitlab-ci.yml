@@ -3,6 +3,7 @@ variables:
   IMAGE_TAG: "nightly"
   DETECTOR_CONFIG: "epic_craterlake"
   DETECTOR_VERSION: "main"
+  RESULTS_BASE: "results/${CONTAINER_NAME}/${IMAGE_TAG}/${DETECTOR_CONFIG}/${DETECTOR_VERSION}"
 
 image: eicweb.phy.anl.gov:4567/containers/eic_container/${CONTAINER_NAME}:${IMAGE_TAG}
 
@@ -24,50 +25,50 @@ stages:
 .nevents:
   stage: nevents
   script:
-    - mkdir -p $(dirname results/datasets/glob/$DATA)
-    - grep -v "^\#" $DATA | parallel scripts/glob.sh results/datasets/glob/$DATA {}
-    - sort -o results/datasets/glob/$DATA results/datasets/glob/$DATA
-    - mkdir -p $(dirname results/datasets/nevents/$DATA)
-    - grep -v "^\#" results/datasets/glob/$DATA | parallel scripts/count_events.sh results/datasets/nevents/$DATA {}
-    - sort -o results/datasets/nevents/$DATA results/datasets/nevents/$DATA
+    - mkdir -p $(dirname ${RESULTS_BASE}/datasets/glob/$DATA)
+    - grep -v "^\#" $DATA | parallel scripts/glob.sh ${RESULTS_BASE}/datasets/glob/$DATA {}
+    - sort -o ${RESULTS_BASE}/datasets/glob/$DATA ${RESULTS_BASE}/datasets/glob/$DATA
+    - mkdir -p $(dirname ${RESULTS_BASE}/datasets/nevents/$DATA)
+    - grep -v "^\#" ${RESULTS_BASE}/datasets/glob/$DATA | parallel scripts/count_events.sh ${RESULTS_BASE}/datasets/nevents/$DATA {}
+    - sort -o ${RESULTS_BASE}/datasets/nevents/$DATA ${RESULTS_BASE}/datasets/nevents/$DATA
     - sort -o $DATA $DATA
 
 .timings:
   stage: timings
   script:
-    - mkdir -p $(dirname results/datasets/timings/$DATA)
+    - mkdir -p $(dirname ${RESULTS_BASE}/datasets/timings/$DATA)
     # Use sed '1!d1' instead of head -n 1 to avoid pipefail issues
-    - grep -v "^\#" results/datasets/nevents/$DATA | sed '1!d' | parallel scripts/determine_timing.sh results/datasets/timings/$DATA {}
+    - grep -v "^\#" ${RESULTS_BASE}/datasets/nevents/$DATA | sed '1!d' | parallel scripts/determine_timing.sh ${RESULTS_BASE}/datasets/timings/$DATA {}
     - |
-      IFS="," read file ext nevents dt0 dt1 < results/datasets/timings/$DATA
+      IFS="," read file ext nevents dt0 dt1 < ${RESULTS_BASE}/datasets/timings/$DATA
       export dt0 dt1
-      grep -v "^\#" results/datasets/nevents/$DATA | sed '1d' | parallel scripts/determine_timing.sh results/datasets/timings/$DATA {}
-    - sort -o results/datasets/timings/$DATA results/datasets/timings/$DATA
+      grep -v "^\#" ${RESULTS_BASE}/datasets/nevents/$DATA | sed '1d' | parallel scripts/determine_timing.sh ${RESULTS_BASE}/datasets/timings/$DATA {}
+    - sort -o ${RESULTS_BASE}/datasets/timings/$DATA ${RESULTS_BASE}/datasets/timings/$DATA
 
 .timings_all:
   stage: timings
   script:
-    - mkdir -p $(dirname results/datasets/timings/$DATA)
-    - grep -v "^\#" results/datasets/nevents/$DATA | parallel scripts/determine_timing.sh results/datasets/timings/$DATA {}
-    - sort -o results/datasets/timings/$DATA results/datasets/timings/$DATA
+    - mkdir -p $(dirname ${RESULTS_BASE}/datasets/timings/$DATA)
+    - grep -v "^\#" ${RESULTS_BASE}/datasets/nevents/$DATA | parallel scripts/determine_timing.sh ${RESULTS_BASE}/datasets/timings/$DATA {}
+    - sort -o ${RESULTS_BASE}/datasets/timings/$DATA ${RESULTS_BASE}/datasets/timings/$DATA
 
 .collect:
   stage: collect
   script:
     - rm -rf results/logs/
-    - find results/datasets/
-    - find results/datasets/timings/ -name "*.csv" -print0 -exec awk 'BEGIN {FS=","} {sum+=$3*$5+$4} END {print(":",sum/3600,"core-hours")}' {} \;
-    - for d in `find results/datasets/timings/ -type d` ; do
+    - find ${RESULTS_BASE}/datasets/
+    - find ${RESULTS_BASE}/datasets/timings/ -name "*.csv" -print0 -exec awk 'BEGIN {FS=","} {sum+=$3*$5+$4} END {print(":",sum/3600,"core-hours")}' {} \;
+    - for d in `find ${RESULTS_BASE}/datasets/timings/ -type d` ; do
         echo -n $d ;
         find $d -name "*.csv" -exec cat {} \; | awk 'BEGIN {FS=","} {sum+=$3*$5+$4} END {print(":",sum/3600,"core-hours")}' ;
       done
-    - find results/datasets/timings/ -name "*.csv" -print0 -exec awk 'BEGIN {FS=","} {sum+=$3*$7+$6} END {print(":",sum/1048576,"GB (full)")}' {} \;
-    - for d in `find results/datasets/timings/ -type d` ; do
+    - find ${RESULTS_BASE}/datasets/timings/ -name "*.csv" -print0 -exec awk 'BEGIN {FS=","} {sum+=$3*$7+$6} END {print(":",sum/1048576,"GB (full)")}' {} \;
+    - for d in `find ${RESULTS_BASE}/datasets/timings/ -type d` ; do
         echo -n $d ;
         find $d -name "*.csv" -exec cat {} \; | awk 'BEGIN {FS=","} {sum+=$3*$7+$6} END {print(":",sum/1048576,"GB (full)")}' ;
       done
-    - find results/datasets/timings/ -name "*.csv" -print0 -exec awk 'BEGIN {FS=","} {sum+=$3*$9+$8} END {print(":",sum/1048576,"GB (reco)")}' {} \;
-    - for d in `find results/datasets/timings/ -type d` ; do
+    - find ${RESULTS_BASE}/datasets/timings/ -name "*.csv" -print0 -exec awk 'BEGIN {FS=","} {sum+=$3*$9+$8} END {print(":",sum/1048576,"GB (reco)")}' {} \;
+    - for d in `find ${RESULTS_BASE}/datasets/timings/ -type d` ; do
         echo -n $d ;
         find $d -name "*.csv" -exec cat {} \; | awk 'BEGIN {FS=","} {sum+=$3*$9+$8} END {print(":",sum/1048576,"GB (reco)")}' ;
       done
