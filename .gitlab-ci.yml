@@ -30,6 +30,11 @@ stages:
     - export DETECTOR_CONFIG="${DETECTOR_CONFIG_OVERRIDE:-${DETECTOR_CONFIG}}"
     - export DETECTOR_VERSION="${DETECTOR_VERSION_OVERRIDE:-${DETECTOR_VERSION}}"
     - export RESULTS_BASE="results/${CONTAINER_NAME}/${IMAGE_TAG}/${DETECTOR_CONFIG}/${DETECTOR_VERSION}"
+    - echo "INFO [nevents] - CONTAINER_NAME = ${CONTAINER_NAME}"
+    - echo "INFO [nevents] - IMAGE_TAG = ${IMAGE_TAG}"
+    - echo "INFO [nevents] - DETECTOR_CONFIG = ${DETECTOR_CONFIG}"
+    - echo "INFO [nevents] - DETECTOR_VERSION = ${DETECTOR_VERSION}"
+    - echo "INFO [nevents] - RESULTS_BASE = ${RESULTS_BASE}"
     - mkdir -p $(dirname ${RESULTS_BASE}/datasets/glob/$DATA)
     - grep -v "^\#" $DATA | parallel scripts/glob.sh ${RESULTS_BASE}/datasets/glob/$DATA {}
     - sort -o ${RESULTS_BASE}/datasets/glob/$DATA ${RESULTS_BASE}/datasets/glob/$DATA
@@ -47,9 +52,14 @@ stages:
     - export PBEAM="${PBEAM_OVERRIDE:-${PBEAM}}"
     - export NEVENTS_PER_TEST="${NEVENTS_PER_TEST_OVERRIDE:-${NEVENTS_PER_TEST}}"
     - export RESULTS_BASE="results/${CONTAINER_NAME}/${IMAGE_TAG}/${DETECTOR_CONFIG}/${DETECTOR_VERSION}"
-    - echo "DEBUG - DETECTOR_CONFIG from CI = ${DETECTOR_CONFIG}"
-    - echo "DEBUG - DETECTOR_VERSION from CI = ${DETECTOR_VERSION}"
-    - echo "DEBUG - RESULTS_BASE = ${RESULTS_BASE}"
+    - echo "INFO [timings] - CONTAINER_NAME = ${CONTAINER_NAME}"
+    - echo "INFO [timings] - IMAGE_TAG = ${IMAGE_TAG}"
+    - echo "INFO [timings] - DETECTOR_CONFIG = ${DETECTOR_CONFIG}"
+    - echo "INFO [timings] - DETECTOR_VERSION = ${DETECTOR_VERSION}"
+    - echo "INFO [timings] - EBEAM = ${EBEAM}"
+    - echo "INFO [timings] - PBEAM = ${PBEAM}"
+    - echo "INFO [timings] - NEVENTS_PER_TEST = ${NEVENTS_PER_TEST}"
+    - echo "INFO [timings] - RESULTS_BASE = ${RESULTS_BASE}"
     - mkdir -p $(dirname ${RESULTS_BASE}/datasets/timings/$DATA)
     # Use sed '1!d1' instead of head -n 1 to avoid pipefail issues
     - grep -v "^\#" ${RESULTS_BASE}/datasets/nevents/$DATA | sed '1!d' | parallel scripts/determine_timing.sh ${RESULTS_BASE}/datasets/timings/$DATA {}

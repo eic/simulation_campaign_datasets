@@ -32,13 +32,12 @@ mkdir -p ${dir}
 logfile=${RESULTS_BASE:-results}/logs/${file}.out
 mkdir -p $(dirname ${logfile})
 
-# Export detector configuration if provided
-export DETECTOR_CONFIG="${DETECTOR_CONFIG:-epic_craterlake}"
-export DETECTOR_VERSION="${DETECTOR_VERSION:-main}"
-
-echo "DEBUG [determine_timing.sh] - DETECTOR_CONFIG = ${DETECTOR_CONFIG}"
-echo "DEBUG [determine_timing.sh] - DETECTOR_VERSION = ${DETECTOR_VERSION}"
-echo "DEBUG [determine_timing.sh] - RESULTS_BASE = ${RESULTS_BASE:-results}"
+echo "INFO [determine_timing.sh] - DETECTOR_CONFIG = ${DETECTOR_CONFIG:-epic_craterlake}"
+echo "INFO [determine_timing.sh] - DETECTOR_VERSION = ${DETECTOR_VERSION:-main}"
+echo "INFO [determine_timing.sh] - EBEAM = ${EBEAM:-18}"
+echo "INFO [determine_timing.sh] - PBEAM = ${PBEAM:-275}"
+echo "INFO [determine_timing.sh] - NEVENTS_PER_TEST = ${n_events_test}"
+echo "INFO [determine_timing.sh] - RESULTS_BASE = ${RESULTS_BASE:-results}"
 
 # time for 1 event (first)
 t1=$(date +%s.%N)
