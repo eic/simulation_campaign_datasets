@@ -1,5 +1,5 @@
 .eAu_10x100_variables: &eAu_10x100_variables
-  NEVENTS_PER_TEST: 25
+  NEVENTS_PER_TEST_OVERRIDE: 25
   DETECTOR_CONFIG_OVERRIDE: "epic_craterlake_without_zdc"
   EBEAM_OVERRIDE: "10"
   PBEAM_OVERRIDE: "100_Au197"
@@ -27,7 +27,7 @@ SIDIS:eAu:10x100:timings:
         - "SIDIS/eA/BeAGLE1.03.01-2.0_Lc_eAu_10x100_q2_1to10000.csv"
 
 .eAu_5x41_variables: &eAu_5x41_variables
-  NEVENTS_PER_TEST: 25
+  NEVENTS_PER_TEST_OVERRIDE: 25
   DETECTOR_CONFIG_OVERRIDE: "epic_craterlake_without_zdc"
   EBEAM_OVERRIDE: "5"
   PBEAM_OVERRIDE: "41_Au197"
@@ -74,7 +74,7 @@ SIDIS:ep:timings:
   needs:
     - SIDIS:ep:nevents
   variables:
-    NEVENTS_PER_TEST: 25
+    NEVENTS_PER_TEST_OVERRIDE: 25
   parallel:
     matrix:
       - DATA:

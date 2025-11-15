@@ -3,6 +3,9 @@ variables:
   IMAGE_TAG: "nightly"
   DETECTOR_CONFIG: "epic_craterlake"
   DETECTOR_VERSION: "main"
+  EBEAM: "18"
+  PBEAM: "275"
+  NEVENTS_PER_TEST: "100"
 
 image: eicweb.phy.anl.gov:4567/containers/eic_container/${CONTAINER_NAME}:${IMAGE_TAG}
 
@@ -38,6 +41,11 @@ stages:
 .timings:
   stage: timings
   script:
+    - export DETECTOR_CONFIG="${DETECTOR_CONFIG_OVERRIDE:-${DETECTOR_CONFIG}}"
+    - export DETECTOR_VERSION="${DETECTOR_VERSION_OVERRIDE:-${DETECTOR_VERSION}}"
+    - export EBEAM="${EBEAM_OVERRIDE:-${EBEAM}}"
+    - export PBEAM="${PBEAM_OVERRIDE:-${PBEAM}}"
+    - export NEVENTS_PER_TEST="${NEVENTS_PER_TEST_OVERRIDE:-${NEVENTS_PER_TEST}}"
     - export RESULTS_BASE="results/${CONTAINER_NAME}/${IMAGE_TAG}/${DETECTOR_CONFIG}/${DETECTOR_VERSION}"
     - echo "DEBUG - DETECTOR_CONFIG from CI = ${DETECTOR_CONFIG}"
     - echo "DEBUG - DETECTOR_VERSION from CI = ${DETECTOR_VERSION}"
