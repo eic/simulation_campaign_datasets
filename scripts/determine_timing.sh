@@ -29,8 +29,15 @@ nlines=$((2*n_events_test*n_lines_per_event))
 dir=$(dirname EVGEN/${file}.${ext})
 mkdir -p ${dir}
 
-logfile=results/logs/${file}.out
+logfile=${RESULTS_BASE:-results}/logs/${file}.out
 mkdir -p $(dirname ${logfile})
+
+echo "INFO [determine_timing.sh] - DETECTOR_CONFIG = ${DETECTOR_CONFIG:-epic_craterlake}"
+echo "INFO [determine_timing.sh] - DETECTOR_VERSION = ${DETECTOR_VERSION:-main}"
+echo "INFO [determine_timing.sh] - EBEAM = ${EBEAM:-18}"
+echo "INFO [determine_timing.sh] - PBEAM = ${PBEAM:-275}"
+echo "INFO [determine_timing.sh] - NEVENTS_PER_TEST = ${n_events_test}"
+echo "INFO [determine_timing.sh] - RESULTS_BASE = ${RESULTS_BASE:-results}"
 
 # time for 1 event (first)
 t1=$(date +%s.%N)

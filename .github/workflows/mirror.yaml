@@ -4,6 +4,27 @@ on:
   delete:
   push:
   workflow_dispatch:
+    inputs:
+      container_name:
+        description: 'Container name'
+        required: false
+        default: 'eic_ci'
+        type: string
+      image_tag:
+        description: 'Container image tag'
+        required: false
+        default: 'nightly'
+        type: string
+      detector_config:
+        description: 'Detector configuration'
+        required: false
+        default: 'epic_craterlake'
+        type: string
+      detector_version:
+        description: 'Detector version'
+        required: false
+        default: 'main'
+        type: string
 
 concurrency:
   group: mirror-${{ github.event_name }}
@@ -43,6 +64,10 @@ jobs:
           GITHUB_SHA=${{ github.event.pull_request.head.sha || github.sha }}
           GITHUB_PR=${{ github.event.pull_request.number }}
           PIPELINE_NAME=${{ github.repository }}: ${{ github.event.pull_request.title || github.ref_name }}
+          CONTAINER_NAME=${{ inputs.container_name || 'eic_ci' }}
+          IMAGE_TAG=${{ inputs.image_tag || 'nightly' }}
+          DETECTOR_CONFIG=${{ inputs.detector_config || 'epic_craterlake' }}
+          DETECTOR_VERSION=${{ inputs.detector_version || 'main' }}
     - name: Set pending EICweb status
       if: ${{ github.event_name != 'delete' }}
       env:
