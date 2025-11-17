@@ -29,7 +29,7 @@ stages:
   script:
     - export DETECTOR_CONFIG="${DETECTOR_CONFIG_OVERRIDE:-${DETECTOR_CONFIG}}"
     - export DETECTOR_VERSION="${DETECTOR_VERSION_OVERRIDE:-${DETECTOR_VERSION}}"
-    - export RESULTS_BASE="results/${CONTAINER_NAME}/${IMAGE_TAG}/${DETECTOR_CONFIG}/${DETECTOR_VERSION}"
+    - export RESULTS_BASE="results/${IMAGE_TAG}/${DETECTOR_CONFIG}/${DETECTOR_VERSION}"
     - echo "INFO [nevents] - CONTAINER_NAME = ${CONTAINER_NAME}"
     - echo "INFO [nevents] - IMAGE_TAG = ${IMAGE_TAG}"
     - echo "INFO [nevents] - DETECTOR_CONFIG = ${DETECTOR_CONFIG}"
@@ -51,7 +51,7 @@ stages:
     - export EBEAM="${EBEAM_OVERRIDE:-${EBEAM}}"
     - export PBEAM="${PBEAM_OVERRIDE:-${PBEAM}}"
     - export NEVENTS_PER_TEST="${NEVENTS_PER_TEST_OVERRIDE:-${NEVENTS_PER_TEST}}"
-    - export RESULTS_BASE="results/${CONTAINER_NAME}/${IMAGE_TAG}/${DETECTOR_CONFIG}/${DETECTOR_VERSION}"
+    - export RESULTS_BASE="results/${IMAGE_TAG}/${DETECTOR_CONFIG}/${DETECTOR_VERSION}"
     - echo "INFO [timings] - CONTAINER_NAME = ${CONTAINER_NAME}"
     - echo "INFO [timings] - IMAGE_TAG = ${IMAGE_TAG}"
     - echo "INFO [timings] - DETECTOR_CONFIG = ${DETECTOR_CONFIG}"
@@ -72,7 +72,7 @@ stages:
 .timings_all:
   stage: timings
   script:
-    - export RESULTS_BASE="results/${CONTAINER_NAME}/${IMAGE_TAG}/${DETECTOR_CONFIG}/${DETECTOR_VERSION}"
+    - export RESULTS_BASE="results/${IMAGE_TAG}/${DETECTOR_CONFIG}/${DETECTOR_VERSION}"
     - mkdir -p $(dirname ${RESULTS_BASE}/datasets/timings/$DATA)
     - grep -v "^\#" ${RESULTS_BASE}/datasets/nevents/$DATA | parallel scripts/determine_timing.sh ${RESULTS_BASE}/datasets/timings/$DATA {}
     - sort -o ${RESULTS_BASE}/datasets/timings/$DATA ${RESULTS_BASE}/datasets/timings/$DATA
@@ -80,7 +80,7 @@ stages:
 .collect:
   stage: collect
   script:
-    - export RESULTS_BASE="results/${CONTAINER_NAME}/${IMAGE_TAG}/${DETECTOR_CONFIG}/${DETECTOR_VERSION}"
+    - export RESULTS_BASE="results/${IMAGE_TAG}/${DETECTOR_CONFIG}/${DETECTOR_VERSION}"
     - rm -rf results/logs/
     - find ${RESULTS_BASE}/datasets/
     - find ${RESULTS_BASE}/datasets/timings/ -name "*.csv" -print0 -exec awk 'BEGIN {FS=","} {sum+=$3*$5+$4} END {print(":",sum/3600,"core-hours")}' {} \;
