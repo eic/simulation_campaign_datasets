@@ -5,16 +5,20 @@ EXCLUSIVE:DVMP:nevents:
       - DATA:
         - "EXCLUSIVE/DVMP/EpIC1.0.0-1.1_DVMP_10x100_hiAcc_ab.csv"
         - "EXCLUSIVE/DVMP/unpolarised/EpIC1.1.6-1.0_DVMP_pi0_10x130_ab.csv"
+        - "EXCLUSIVE/DVMP/unpolarised/EpIC1.1.6-1.1_DVMP_pi0_18x275_ab.csv"
+        - "EXCLUSIVE/DVMP/unpolarised/EpIC1.1.6-1.1_DVMP_pi0_5x41_ab.csv"
 
 EXCLUSIVE:DVMP:timings:
   extends: .timings
-  needs: 
+  needs:
     - EXCLUSIVE:DVMP:nevents
   parallel:
     matrix:
       - DATA:
         - "EXCLUSIVE/DVMP/EpIC1.0.0-1.1_DVMP_10x100_hiAcc_ab.csv"
         - "EXCLUSIVE/DVMP/unpolarised/EpIC1.1.6-1.0_DVMP_pi0_10x130_ab.csv"
+        - "EXCLUSIVE/DVMP/unpolarised/EpIC1.1.6-1.1_DVMP_pi0_18x275_ab.csv"
+        - "EXCLUSIVE/DVMP/unpolarised/EpIC1.1.6-1.1_DVMP_pi0_5x41_ab.csv"
 
 EXCLUSIVE:DVMP:collect:
   extends: .collect
