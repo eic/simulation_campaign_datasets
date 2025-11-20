@@ -33,4 +33,3 @@ EXCLUSIVE:collect:
     - EXCLUSIVE:DDVCS:collect
     - EXCLUSIVE:TCS:collect
     - EXCLUSIVE:UPSILON:collect
-    - EXCLUSIVE:timings
