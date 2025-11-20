@@ -1,0 +1,22 @@
+EXCLUSIVE:UPSILON:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/UPSILON/UPSILON_18x275_hiAcc.csv"
+        - "EXCLUSIVE/UPSILON/UPSILON_18x275_hiDiv.csv"
+
+EXCLUSIVE:UPSILON:timings:
+  extends: .timings
+  needs:
+    - EXCLUSIVE:UPSILON:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/UPSILON/UPSILON_18x275_hiAcc.csv"
+        - "EXCLUSIVE/UPSILON/UPSILON_18x275_hiDiv.csv"
+
+EXCLUSIVE:UPSILON:collect:
+  extends: .collect
+  needs:
+    - EXCLUSIVE:UPSILON:timings
