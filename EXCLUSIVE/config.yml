@@ -15,26 +15,6 @@ include:
   - local: 'EXCLUSIVE/TCS/config.yml'
   - local: 'EXCLUSIVE/UPSILON/config.yml'
 
-EXCLUSIVE:nevents:
-  extends: .nevents
-  parallel:
-    matrix:
-      - DATA:
-        #- "EXCLUSIVE/DVCSD.csv"
-        #- "EXCLUSIVE/DVMP.csv"
-        - "EXCLUSIVE/UPSILON.csv"
-
-EXCLUSIVE:timings:
-  extends: .timings
-  needs: 
-    - EXCLUSIVE:nevents
-  parallel:
-    matrix:
-      - DATA:
-        #- "EXCLUSIVE/DVCSD.csv"
-        #- "EXCLUSIVE/DVMP.csv"
-        - "EXCLUSIVE/UPSILON.csv"
-
 EXCLUSIVE:collect:
   extends: .collect
   needs:
