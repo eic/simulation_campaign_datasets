@@ -3,8 +3,7 @@ EXCLUSIVE:DIFFRACTIVE_RHO:gzip:
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DIFFRACTIVE_RHO/Sartre_Coherent.csv"
-        - "EXCLUSIVE/DIFFRACTIVE_RHO/Sartre_Incoherent.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_RHO/sartre1.39-1.1_coherent_rho_eAu_bsat_10x100_hiAcc.csv"
 
 EXCLUSIVE:DIFFRACTIVE_RHO:nevents:
   extends: .nevents
@@ -13,18 +12,16 @@ EXCLUSIVE:DIFFRACTIVE_RHO:nevents:
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DIFFRACTIVE_RHO/Sartre_Coherent.csv"
-        - "EXCLUSIVE/DIFFRACTIVE_RHO/Sartre_Incoherent.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_RHO/sartre1.39-1.1_coherent_rho_eAu_bsat_10x100_hiAcc.csv"
 
 EXCLUSIVE:DIFFRACTIVE_RHO:timings:
   extends: .timings
-  needs: 
+  needs:
     - EXCLUSIVE:DIFFRACTIVE_RHO:nevents
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DIFFRACTIVE_RHO/Sartre_Coherent.csv"
-        - "EXCLUSIVE/DIFFRACTIVE_RHO/Sartre_Incoherent.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_RHO/sartre1.39-1.1_coherent_rho_eAu_bsat_10x100_hiAcc.csv"
 
 EXCLUSIVE:DIFFRACTIVE_RHO:collect:
   extends: .collect

@@ -9,12 +9,13 @@ EXCLUSIVE:DIFFRACTIVE_PHI:nevents:
         - "EXCLUSIVE/DIFFRACTIVE_PHI/sartre1.39-1.0_coherent_phi_eAu_bsat_10x100.csv"
         - "EXCLUSIVE/DIFFRACTIVE_PHI/sartre1.39-1.0_coherent_phi_eCa_bsat_18x137.5_q2_1to10.csv"
         - "EXCLUSIVE/DIFFRACTIVE_PHI/BeAGLE1.03.02-1.0_phi_eCa_18x137.5_q2_1to10.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_PHI/BeAGLE1.03.02-1.1_phi_eAu_10x100_q2_1to10000_hiAcc.csv"
         - "EXCLUSIVE/DIFFRACTIVE_PHI/eSTARlight/eSTARlight1.2.0-1.0_coherent_eCu_phi_10x115_afterburned.csv"
         - "EXCLUSIVE/DIFFRACTIVE_PHI/eSTARlight/eSTARlight1.2.0-1.0_coherent_eRu_phi_10x115_afterburned.csv"
 
 EXCLUSIVE:DIFFRACTIVE_PHI:timings:
   extends: .timings
-  needs: 
+  needs:
     - EXCLUSIVE:DIFFRACTIVE_PHI:nevents
   variables:
     NEVENTS_PER_TEST: 25
@@ -27,6 +28,7 @@ EXCLUSIVE:DIFFRACTIVE_PHI:timings:
         - "EXCLUSIVE/DIFFRACTIVE_PHI/sartre1.39-1.0_coherent_phi_eAu_bsat_10x100.csv"
         - "EXCLUSIVE/DIFFRACTIVE_PHI/sartre1.39-1.0_coherent_phi_eCa_bsat_18x137.5_q2_1to10.csv"
         - "EXCLUSIVE/DIFFRACTIVE_PHI/BeAGLE1.03.02-1.0_phi_eCa_18x137.5_q2_1to10.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_PHI/BeAGLE1.03.02-1.1_phi_eAu_10x100_q2_1to10000_hiAcc.csv"
         - "EXCLUSIVE/DIFFRACTIVE_PHI/eSTARlight/eSTARlight1.2.0-1.0_coherent_eCu_phi_10x115_afterburned.csv"
         - "EXCLUSIVE/DIFFRACTIVE_PHI/eSTARlight/eSTARlight1.2.0-1.0_coherent_eRu_phi_10x115_afterburned.csv"
 
