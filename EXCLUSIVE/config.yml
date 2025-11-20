@@ -13,6 +13,7 @@ include:
   - local: 'EXCLUSIVE/DVCS/config.yml'
   - local: 'EXCLUSIVE/DDVCS/config.yml'
   - local: 'EXCLUSIVE/TCS/config.yml'
+  - local: 'EXCLUSIVE/UPSILON/config.yml'
 
 EXCLUSIVE:nevents:
   extends: .nevents
@@ -51,4 +52,5 @@ EXCLUSIVE:collect:
     - EXCLUSIVE:DVCS:collect
     - EXCLUSIVE:DDVCS:collect
     - EXCLUSIVE:TCS:collect
+    - EXCLUSIVE:UPSILON:collect
     - EXCLUSIVE:timings
