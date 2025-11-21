@@ -9,6 +9,8 @@ EXCLUSIVE:DIFFRACTIVE_RHO:timings:
   extends: .timings
   needs:
     - EXCLUSIVE:DIFFRACTIVE_RHO:nevents
+  variables:
+    NEVENTS_PER_TEST: 25
   parallel:
     matrix:
       - DATA:
