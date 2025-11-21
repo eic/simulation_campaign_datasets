@@ -1,14 +1,5 @@
-EXCLUSIVE:DIFFRACTIVE_RHO:gzip:
-  extends: .gzip
-  parallel:
-    matrix:
-      - DATA:
-        - "EXCLUSIVE/DIFFRACTIVE_RHO/sartre1.39-1.1_coherent_rho_eAu_bsat_10x100_hiAcc.csv"
-
 EXCLUSIVE:DIFFRACTIVE_RHO:nevents:
   extends: .nevents
-  needs:
-    - EXCLUSIVE:DIFFRACTIVE_RHO:gzip
   parallel:
     matrix:
       - DATA:
