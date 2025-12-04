@@ -68,6 +68,7 @@ SIDIS:ep:nevents:
         - "SIDIS/pythia8.306-1.1_D0_10x100_hiDiv.csv"
         - "SIDIS/pythia8.306-1.0_Lambda_18x275_hiAcc.csv"
         - "SIDIS/pythia8.306-1.0_Lambda_18x275_hiDiv.csv"
+        - "SIDIS/DIJET/pythia6.428-dijet-v1.0_PGF_noRC_ep_18x275_q2_1to20000_ab.csv"
 
 SIDIS:ep:timings:
   extends: .timings
@@ -89,6 +90,7 @@ SIDIS:ep:timings:
         - "SIDIS/pythia8.306-1.1_D0_10x100_hiDiv.csv"
         - "SIDIS/pythia8.306-1.0_Lambda_18x275_hiAcc.csv"
         - "SIDIS/pythia8.306-1.0_Lambda_18x275_hiDiv.csv"
+        - "SIDIS/DIJET/pythia6.428-dijet-v1.0_PGF_noRC_ep_18x275_q2_1to20000_ab.csv"
 
 SIDIS:collect:
   extends: .collect
