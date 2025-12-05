@@ -7,10 +7,18 @@ DIS:NC:18x275:nevents:
         - "DIS/NC/18x275/minQ2=100/DIS_NC_18x275_minQ2=100.csv"
         - "DIS/NC/18x275/minQ2=10/DIS_NC_18x275_minQ2=10.csv"
         - "DIS/NC/18x275/minQ2=1/DIS_NC_18x275_minQ2=1.csv"
+        - "DIS/NC/18x275/DJANGOH4.6.21-1.0_NC_noRad_ep_18x275_q2_1to10.csv"
+        - "DIS/NC/18x275/DJANGOH4.6.21-1.0_NC_noRad_ep_18x275_q2_10to100.csv"
+        - "DIS/NC/18x275/DJANGOH4.6.21-1.0_NC_noRad_ep_18x275_q2_100to1000.csv"
+        - "DIS/NC/18x275/DJANGOH4.6.21-1.0_NC_noRad_ep_18x275_q2_1000to10000.csv"
+        - "DIS/NC/18x275/DJANGOH4.6.21-1.0_NC_Rad_ep_18x275_q2_1to10.csv"
+        - "DIS/NC/18x275/DJANGOH4.6.21-1.0_NC_Rad_ep_18x275_q2_10to100.csv"
+        - "DIS/NC/18x275/DJANGOH4.6.21-1.0_NC_Rad_ep_18x275_q2_100to1000.csv"
+        - "DIS/NC/18x275/DJANGOH4.6.21-1.0_NC_Rad_ep_18x275_q2_1000to10000.csv"
 
 DIS:NC:18x275:timings:
   extends: .timings
-  needs: 
+  needs:
     - DIS:NC:18x275:nevents
   parallel:
     matrix:
@@ -19,6 +27,14 @@ DIS:NC:18x275:timings:
         - "DIS/NC/18x275/minQ2=100/DIS_NC_18x275_minQ2=100.csv"
         - "DIS/NC/18x275/minQ2=10/DIS_NC_18x275_minQ2=10.csv"
         - "DIS/NC/18x275/minQ2=1/DIS_NC_18x275_minQ2=1.csv"
+        - "DIS/NC/18x275/DJANGOH4.6.21-1.0_NC_noRad_ep_18x275_q2_1to10.csv"
+        - "DIS/NC/18x275/DJANGOH4.6.21-1.0_NC_noRad_ep_18x275_q2_10to100.csv"
+        - "DIS/NC/18x275/DJANGOH4.6.21-1.0_NC_noRad_ep_18x275_q2_100to1000.csv"
+        - "DIS/NC/18x275/DJANGOH4.6.21-1.0_NC_noRad_ep_18x275_q2_1000to10000.csv"
+        - "DIS/NC/18x275/DJANGOH4.6.21-1.0_NC_Rad_ep_18x275_q2_1to10.csv"
+        - "DIS/NC/18x275/DJANGOH4.6.21-1.0_NC_Rad_ep_18x275_q2_10to100.csv"
+        - "DIS/NC/18x275/DJANGOH4.6.21-1.0_NC_Rad_ep_18x275_q2_100to1000.csv"
+        - "DIS/NC/18x275/DJANGOH4.6.21-1.0_NC_Rad_ep_18x275_q2_1000to10000.csv"
 
 DIS:NC:18x275:collect:
   extends: .collect
