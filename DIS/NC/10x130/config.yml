@@ -1,0 +1,26 @@
+DIS:NC:10x130:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/NC/10x130/pythia6.428-1.0_NC_noRad_ep_10x130_q2_1to10.csv"
+        - "DIS/NC/10x130/pythia6.428-1.0_NC_noRad_ep_10x130_q2_10to100.csv"
+        - "DIS/NC/10x130/pythia6.428-1.0_NC_noRad_ep_10x130_q2_100to1000.csv"
+        - "DIS/NC/10x130/pythia6.428-1.0_NC_noRad_ep_10x130_q2_1000to10000.csv"
+
+DIS:NC:10x130:timings:
+  extends: .timings
+  needs:
+    - DIS:NC:10x130:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/NC/10x130/pythia6.428-1.0_NC_noRad_ep_10x130_q2_1to10.csv"
+        - "DIS/NC/10x130/pythia6.428-1.0_NC_noRad_ep_10x130_q2_10to100.csv"
+        - "DIS/NC/10x130/pythia6.428-1.0_NC_noRad_ep_10x130_q2_100to1000.csv"
+        - "DIS/NC/10x130/pythia6.428-1.0_NC_noRad_ep_10x130_q2_1000to10000.csv"
+
+DIS:NC:10x130:collect:
+  extends: .collect
+  needs:
+    - DIS:NC:10x130:timings
