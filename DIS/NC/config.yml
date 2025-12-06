@@ -2,14 +2,18 @@ include:
   - local: 'DIS/NC/5x41/config.yml'
   - local: 'DIS/NC/5x100/config.yml'
   - local: 'DIS/NC/10x100/config.yml'
+  - local: 'DIS/NC/10x130/config.yml'
+  - local: 'DIS/NC/10x250/config.yml'
   - local: 'DIS/NC/10x275/config.yml'
   - local: 'DIS/NC/18x275/config.yml'
 
 DIS:NC:collect:
   extends: .collect
-  needs: 
+  needs:
     - DIS:NC:5x41:collect
     - DIS:NC:5x100:collect
     - DIS:NC:10x100:collect
+    - DIS:NC:10x130:collect
+    - DIS:NC:10x250:collect
     - DIS:NC:10x275:collect
     - DIS:NC:18x275:collect
