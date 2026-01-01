@@ -10,8 +10,8 @@ DIS:eA:eAu:10x100:nevents:
   parallel:
     matrix:
       - DATA:
-        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_1to10.csv"
-        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_10to100.csv"
+        - "DIS/eA/BeAGLE1.03.02-2.0_DIS_eAu_10x100_q2_1to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-2.0_DIS_eAu_10x100_q2_10to100.csv"
 
 DIS:eA:eAu:10x100:timings:
   variables:
@@ -22,8 +22,8 @@ DIS:eA:eAu:10x100:timings:
   parallel:
     matrix:
       - DATA:
-        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_1to10.csv"
-        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_10x100_q2_10to100.csv"
+        - "DIS/eA/BeAGLE1.03.02-2.0_DIS_eAu_10x100_q2_1to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-2.0_DIS_eAu_10x100_q2_10to100.csv"
 
 .eAu_5x41_variables: &eAu_5x41_variables
   DETECTOR_CONFIG_OVERRIDE: "epic_craterlake_without_zdc"
@@ -37,8 +37,8 @@ DIS:eA:eAu:5x41:nevents:
   parallel:
     matrix:
       - DATA:
-        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_1to10.csv"
-        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_10to100.csv"
+        - "DIS/eA/BeAGLE1.03.02-2.0_DIS_eAu_5x41_q2_1to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-2.0_DIS_eAu_5x41_q2_10to100.csv"
 
 DIS:eA:eAu:5x41:timings:
   variables:
@@ -49,8 +49,8 @@ DIS:eA:eAu:5x41:timings:
   parallel:
     matrix:
       - DATA:
-        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_1to10.csv"
-        - "DIS/eA/BeAGLE1.03.02-1.0_DIS_eAu_5x41_q2_10to100.csv"
+        - "DIS/eA/BeAGLE1.03.02-2.0_DIS_eAu_5x41_q2_1to10.csv"
+        - "DIS/eA/BeAGLE1.03.02-2.0_DIS_eAu_5x41_q2_10to100.csv"
 
 DIS:eA:other:nevents:
   extends: .nevents
