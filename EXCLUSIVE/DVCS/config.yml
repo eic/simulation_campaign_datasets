@@ -10,6 +10,11 @@ EXCLUSIVE:DVCS:nevents:
         - "EXCLUSIVE/DVCS/DVCS_18x275_hiDiv.csv"
         - "EXCLUSIVE/DVCS/DVCS_18x275_hiAcc.csv"
         - "EXCLUSIVE/DVCS/EpIC_v1.1.6-1.1_DVCS_BH_INT_10x130_hiAcc.csv"
+        - "EXCLUSIVE/DVCS/EpIC_v1.1.6-1.2_DVCS_BH_5x41_q2_1_100_abconv.csv"
+        - "EXCLUSIVE/DVCS/EpIC_v1.1.6-1.2_DVCS_BH_10x100_q2_1_100_abconv.csv"
+        - "EXCLUSIVE/DVCS/EpIC_v1.1.6-1.2_DVCS_BH_10x130_q2_1_100_abconv.csv"
+        - "EXCLUSIVE/DVCS/EpIC_v1.1.6-1.2_DVCS_BH_10x250_q2_1_100_abconv.csv"
+        - "EXCLUSIVE/DVCS/EpIC_v1.1.6-1.2_DVCS_BH_18x275_q2_1_100_abconv.csv"
 
 EXCLUSIVE:DVCS:timings:
   extends: .timings
@@ -25,6 +30,11 @@ EXCLUSIVE:DVCS:timings:
         - "EXCLUSIVE/DVCS/DVCS_18x275_hiDiv.csv"
         - "EXCLUSIVE/DVCS/DVCS_18x275_hiAcc.csv"
         - "EXCLUSIVE/DVCS/EpIC_v1.1.6-1.1_DVCS_BH_INT_10x130_hiAcc.csv"
+        - "EXCLUSIVE/DVCS/EpIC_v1.1.6-1.2_DVCS_BH_5x41_q2_1_100_abconv.csv"
+        - "EXCLUSIVE/DVCS/EpIC_v1.1.6-1.2_DVCS_BH_10x100_q2_1_100_abconv.csv"
+        - "EXCLUSIVE/DVCS/EpIC_v1.1.6-1.2_DVCS_BH_10x130_q2_1_100_abconv.csv"
+        - "EXCLUSIVE/DVCS/EpIC_v1.1.6-1.2_DVCS_BH_10x250_q2_1_100_abconv.csv"
+        - "EXCLUSIVE/DVCS/EpIC_v1.1.6-1.2_DVCS_BH_18x275_q2_1_100_abconv.csv"
 
 EXCLUSIVE:DVCS:collect:
   extends: .collect
