@@ -14,6 +14,7 @@ include:
   - local: 'EXCLUSIVE/DDVCS/config.yml'
   - local: 'EXCLUSIVE/TCS/config.yml'
   - local: 'EXCLUSIVE/UPSILON/config.yml'
+  - local: 'EXCLUSIVE/MESON_SF/config.yml'
 
 EXCLUSIVE:collect:
   extends: .collect
@@ -33,3 +34,4 @@ EXCLUSIVE:collect:
     - EXCLUSIVE:DDVCS:collect
     - EXCLUSIVE:TCS:collect
     - EXCLUSIVE:UPSILON:collect
+    - EXCLUSIVE:MESON_SF:collect
