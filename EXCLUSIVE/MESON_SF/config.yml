@@ -1,0 +1,26 @@
+EXCLUSIVE:MESON_SF:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_5x41_ab.csv"
+        - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_10x100_ab.csv"
+        - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_10x130_ab.csv"
+        - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_18x275_ab.csv"
+
+EXCLUSIVE:MESON_SF:timings:
+  extends: .timings
+  needs:
+    - EXCLUSIVE:MESON_SF:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_5x41_ab.csv"
+        - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_10x100_ab.csv"
+        - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_10x130_ab.csv"
+        - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_18x275_ab.csv"
+
+EXCLUSIVE:MESON_SF:collect:
+  extends: .collect
+  needs:
+    - EXCLUSIVE:MESON_SF:timings
