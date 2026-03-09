@@ -3,30 +3,62 @@ EXCLUSIVE:DEMP:nevents:
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_pi+.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_10x100_pi+.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_18x275_pi+.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_K+Lambda.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_K+Lambda.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_pi+.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x130_pi+.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x250_pi+.csv"        
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_pi+_q2_3_10.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_pi+_q2_10_20.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_pi+_q2_20_35.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_10x100_pi+_q2_3_10.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_10x100_pi+_q2_10_20.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_10x100_pi+_q2_20_35.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_18x275_pi+_q2_3_10.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_18x275_pi+_q2_10_20.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_18x275_pi+_q2_20_35.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_K+Lambda_q2_1_10.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_K+Lambda_q2_10_20.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_K+Lambda_q2_20_35.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_K+Lambda_q2_3_10.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_K+Lambda_q2_10_20.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_K+Lambda_q2_20_35.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_pi+_q2_3_10.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_pi+_q2_10_20.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_pi+_q2_20_35.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x130_pi+_q2_3_10.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x130_pi+_q2_10_20.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x130_pi+_q2_20_35.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x250_pi+_q2_3_10.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x250_pi+_q2_10_20.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x250_pi+_q2_20_35.csv"
 
 EXCLUSIVE:DEMP:timings:
   extends: .timings
-  needs: 
+  needs:
     - EXCLUSIVE:DEMP:nevents
   parallel:
     matrix:
       - DATA:
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_pi+.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_10x100_pi+.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_18x275_pi+.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_K+Lambda.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_K+Lambda.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_pi+.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x130_pi+.csv"
-        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x250_pi+.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_pi+_q2_3_10.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_pi+_q2_10_20.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_pi+_q2_20_35.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_10x100_pi+_q2_3_10.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_10x100_pi+_q2_10_20.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_10x100_pi+_q2_20_35.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_18x275_pi+_q2_3_10.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_18x275_pi+_q2_10_20.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_18x275_pi+_q2_20_35.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_K+Lambda_q2_1_10.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_K+Lambda_q2_10_20.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.2_5x41_K+Lambda_q2_20_35.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_K+Lambda_q2_3_10.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_K+Lambda_q2_10_20.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_K+Lambda_q2_20_35.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_pi+_q2_3_10.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_pi+_q2_10_20.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.3_10x130_pi+_q2_20_35.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x130_pi+_q2_3_10.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x130_pi+_q2_10_20.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x130_pi+_q2_20_35.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x250_pi+_q2_3_10.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x250_pi+_q2_10_20.csv"
+        - "EXCLUSIVE/DEMP/DEMPgen-1.2.4_10x250_pi+_q2_20_35.csv"
 
 EXCLUSIVE:DEMP:collect:
   extends: .collect
