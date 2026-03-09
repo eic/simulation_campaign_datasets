@@ -1,8 +1,8 @@
-SINGLE/kaon+/100MeV/45to135deg/kaon+_100MeV_45to135deg,steer,1000000,0
-SINGLE/kaon+/200MeV/45to135deg/kaon+_200MeV_45to135deg,steer,1000000,0
-SINGLE/kaon+/500MeV/45to135deg/kaon+_500MeV_45to135deg,steer,1000000,0
-SINGLE/kaon+/1GeV/45to135deg/kaon+_1GeV_45to135deg,steer,1000000,0
-SINGLE/kaon+/2GeV/45to135deg/kaon+_2GeV_45to135deg,steer,1000000,0
-SINGLE/kaon+/5GeV/45to135deg/kaon+_5GeV_45to135deg,steer,1000000,0
-SINGLE/kaon+/10GeV/45to135deg/kaon+_10GeV_45to135deg,steer,1000000,0
-SINGLE/kaon+/20GeV/45to135deg/kaon+_20GeV_45to135deg,steer,1000000,0
+SINGLE/kaon+/100MeV/45to135deg/kaon+_100MeV_45to135deg,steer,1000000,0,"{""software_release"":""%software_release%"",""physics_process"":[""other""],""electron_beam_energy"":null,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"
+SINGLE/kaon+/200MeV/45to135deg/kaon+_200MeV_45to135deg,steer,1000000,0,"{""software_release"":""%software_release%"",""physics_process"":[""other""],""electron_beam_energy"":null,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"
+SINGLE/kaon+/500MeV/45to135deg/kaon+_500MeV_45to135deg,steer,1000000,0,"{""software_release"":""%software_release%"",""physics_process"":[""other""],""electron_beam_energy"":null,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"
+SINGLE/kaon+/1GeV/45to135deg/kaon+_1GeV_45to135deg,steer,1000000,0,"{""software_release"":""%software_release%"",""physics_process"":[""other""],""electron_beam_energy"":1.0,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"
+SINGLE/kaon+/2GeV/45to135deg/kaon+_2GeV_45to135deg,steer,1000000,0,"{""software_release"":""%software_release%"",""physics_process"":[""other""],""electron_beam_energy"":2.0,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"
+SINGLE/kaon+/5GeV/45to135deg/kaon+_5GeV_45to135deg,steer,1000000,0,"{""software_release"":""%software_release%"",""physics_process"":[""other""],""electron_beam_energy"":5.0,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"
+SINGLE/kaon+/10GeV/45to135deg/kaon+_10GeV_45to135deg,steer,1000000,0,"{""software_release"":""%software_release%"",""physics_process"":[""other""],""electron_beam_energy"":10.0,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"
+SINGLE/kaon+/20GeV/45to135deg/kaon+_20GeV_45to135deg,steer,1000000,0,"{""software_release"":""%software_release%"",""physics_process"":[""other""],""electron_beam_energy"":20.0,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"

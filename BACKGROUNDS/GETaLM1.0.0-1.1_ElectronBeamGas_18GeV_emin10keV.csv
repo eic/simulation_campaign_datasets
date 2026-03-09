@@ -1,1 +1,1 @@
-BACKGROUNDS/BEAMGAS/electron/GETaLM1.0.0-1.1/18GeV/GETaLM1.0.0-1.1_ElectronBeamGas_18GeV_emin10keV_run[0-9]+$,hepmc3.tree.root,0,0
+BACKGROUNDS/BEAMGAS/electron/GETaLM1.0.0-1.1/18GeV/GETaLM1.0.0-1.1_ElectronBeamGas_18GeV_emin10keV_run[0-9]+$,hepmc3.tree.root,0,0,"{""software_release"":""%software_release%"",""physics_process"":[""other""],""electron_beam_energy"":18.0,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""GETaLM""}"

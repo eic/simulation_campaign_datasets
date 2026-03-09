@@ -1,1 +1,1 @@
-DDIS/rapgap3.310-1.0/noRad/ep/10x100/rapgap3.310-1.0_ddis_ep_noRad_10x100_ab$,hepmc3.tree.root,0,0
+DDIS/rapgap3.310-1.0/noRad/ep/10x100/rapgap3.310-1.0_ddis_ep_noRad_10x100_ab$,hepmc3.tree.root,0,0,"{""software_release"":""%software_release%"",""physics_process"":[""inclusive""],""electron_beam_energy"":10.0,""hadron_beam_energy"":100.0,""background_configuration"":""%background_configuration%"",""hadron_species"":""p"",""generator"":""RAPGAP""}"

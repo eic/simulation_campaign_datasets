@@ -1,1 +1,1 @@
-DIS/BeAGLE1.03.02-1.0/eRu/en/10x115/q2_1to1000/BeAGLE1.03.02-1.0_DIS_eRu_en_10x115_q2_1to1000_ab,hepmc3.tree.root,0,0
+DIS/BeAGLE1.03.02-1.0/eRu/en/10x115/q2_1to1000/BeAGLE1.03.02-1.0_DIS_eRu_en_10x115_q2_1to1000_ab,hepmc3.tree.root,0,0,"{""software_release"":""%software_release%"",""physics_process"":[""inclusive""],""electron_beam_energy"":10.0,""hadron_beam_energy"":115.0,""background_configuration"":""%background_configuration%"",""hadron_species"":""Ru"",""generator"":""BeAGLE"",""q2_range"":{""min"":1.0,""max"":1000.0}}"

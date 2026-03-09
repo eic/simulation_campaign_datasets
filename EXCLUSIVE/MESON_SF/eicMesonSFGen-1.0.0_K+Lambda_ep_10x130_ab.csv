@@ -1,1 +1,1 @@
-EXCLUSIVE/MESON_SF_ABCONV/eicMesonSFGen-1.0.0/ep/10x130/eicMesonSFGen-1.0.0_K+Lambda_ep_10x130_ab_run[0-9]+$,hepmc3.tree.root,0,0
+EXCLUSIVE/MESON_SF_ABCONV/eicMesonSFGen-1.0.0/ep/10x130/eicMesonSFGen-1.0.0_K+Lambda_ep_10x130_ab_run[0-9]+$,hepmc3.tree.root,0,0,"{""software_release"":""%software_release%"",""physics_process"":[""exclusive_diff_tag""],""electron_beam_energy"":10.0,""hadron_beam_energy"":130.0,""background_configuration"":""%background_configuration%"",""hadron_species"":""p"",""generator"":""eicMesonSFGen""}"

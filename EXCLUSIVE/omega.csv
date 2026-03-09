@@ -1,2 +1,2 @@
-EVGEN/EXCLUSIVE/omega/u_omegaNeutralDecay_5x41GeV_5k_Q2_0_1.hepmc,5000,8
-EVGEN/EXCLUSIVE/omega/u_omegaNeutralDecay_5x41GeV_5k_Q2_1_5.hepmc,5000,8
+EVGEN/EXCLUSIVE/omega/u_omegaNeutralDecay_5x41GeV_5k_Q2_0_1.hepmc,5000,8,"{""software_release"":""%software_release%"",""physics_process"":[""exclusive_diff_tag""],""electron_beam_energy"":5.0,""hadron_beam_energy"":41.0,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%"",""q2_range"":{""min"":0.0,""max"":1.0}}"
+EVGEN/EXCLUSIVE/omega/u_omegaNeutralDecay_5x41GeV_5k_Q2_1_5.hepmc,5000,8,"{""software_release"":""%software_release%"",""physics_process"":[""exclusive_diff_tag""],""electron_beam_energy"":5.0,""hadron_beam_energy"":41.0,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%"",""q2_range"":{""min"":1.0,""max"":5.0}}"

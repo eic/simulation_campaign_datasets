@@ -1,8 +1,8 @@
-SINGLE/e+/100MeV/130to177deg/e+_100MeV_130to177deg,steer,1000000,0
-SINGLE/e+/200MeV/130to177deg/e+_200MeV_130to177deg,steer,1000000,0
-SINGLE/e+/500MeV/130to177deg/e+_500MeV_130to177deg,steer,1000000,0
-SINGLE/e+/1GeV/130to177deg/e+_1GeV_130to177deg,steer,1000000,0
-SINGLE/e+/2GeV/130to177deg/e+_2GeV_130to177deg,steer,1000000,0
-SINGLE/e+/5GeV/130to177deg/e+_5GeV_130to177deg,steer,1000000,0
-SINGLE/e+/10GeV/130to177deg/e+_10GeV_130to177deg,steer,1000000,0
-SINGLE/e+/20GeV/130to177deg/e+_20GeV_130to177deg,steer,1000000,0
+SINGLE/e+/100MeV/130to177deg/e+_100MeV_130to177deg,steer,1000000,0,"{""software_release"":""%software_release%"",""physics_process"":[""other""],""electron_beam_energy"":null,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"
+SINGLE/e+/200MeV/130to177deg/e+_200MeV_130to177deg,steer,1000000,0,"{""software_release"":""%software_release%"",""physics_process"":[""other""],""electron_beam_energy"":null,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"
+SINGLE/e+/500MeV/130to177deg/e+_500MeV_130to177deg,steer,1000000,0,"{""software_release"":""%software_release%"",""physics_process"":[""other""],""electron_beam_energy"":null,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"
+SINGLE/e+/1GeV/130to177deg/e+_1GeV_130to177deg,steer,1000000,0,"{""software_release"":""%software_release%"",""physics_process"":[""other""],""electron_beam_energy"":1.0,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"
+SINGLE/e+/2GeV/130to177deg/e+_2GeV_130to177deg,steer,1000000,0,"{""software_release"":""%software_release%"",""physics_process"":[""other""],""electron_beam_energy"":2.0,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"
+SINGLE/e+/5GeV/130to177deg/e+_5GeV_130to177deg,steer,1000000,0,"{""software_release"":""%software_release%"",""physics_process"":[""other""],""electron_beam_energy"":5.0,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"
+SINGLE/e+/10GeV/130to177deg/e+_10GeV_130to177deg,steer,1000000,0,"{""software_release"":""%software_release%"",""physics_process"":[""other""],""electron_beam_energy"":10.0,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"
+SINGLE/e+/20GeV/130to177deg/e+_20GeV_130to177deg,steer,1000000,0,"{""software_release"":""%software_release%"",""physics_process"":[""other""],""electron_beam_energy"":20.0,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"

@@ -1,2 +1,2 @@
-EXCLUSIVE/TCS_ABCONV/5x41/hel_minus/5x41_ab_hi[A-Za-z]+_[a-z]+_[0-9]+_corr_novtx$,hepmc3.tree.root,0,0
-EXCLUSIVE/TCS_ABCONV/5x41/hel_plus/5x41_ab_hi[A-Za-z]+_[a-z]+_[0-9]+_corr_novtx$,hepmc3.tree.root,0,0
+EXCLUSIVE/TCS_ABCONV/5x41/hel_minus/5x41_ab_hi[A-Za-z]+_[a-z]+_[0-9]+_corr_novtx$,hepmc3.tree.root,0,0,"{""software_release"":""%software_release%"",""physics_process"":[""exclusive_diff_tag""],""electron_beam_energy"":5.0,""hadron_beam_energy"":41.0,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"
+EXCLUSIVE/TCS_ABCONV/5x41/hel_plus/5x41_ab_hi[A-Za-z]+_[a-z]+_[0-9]+_corr_novtx$,hepmc3.tree.root,0,0,"{""software_release"":""%software_release%"",""physics_process"":[""exclusive_diff_tag""],""electron_beam_energy"":5.0,""hadron_beam_energy"":41.0,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"

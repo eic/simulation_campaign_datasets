@@ -1,4 +1,4 @@
-EVGEN/EXCLUSIVE/SPECTROSCOPY_ABCONV/y_ab_hiAcc_10_100.hepmc.gz,37511,11
-EVGEN/EXCLUSIVE/SPECTROSCOPY_ABCONV/y_ab_hiAcc_5_100.hepmc.gz,22384,11
-EVGEN/EXCLUSIVE/SPECTROSCOPY_ABCONV/y_ab_hiDiv_10_100.hepmc.gz,37511,11
-EVGEN/EXCLUSIVE/SPECTROSCOPY_ABCONV/y_ab_hiDiv_5_100.hepmc.gz,22384,11
+EVGEN/EXCLUSIVE/SPECTROSCOPY_ABCONV/y_ab_hiAcc_10_100.hepmc.gz,37511,11,"{""software_release"":""%software_release%"",""physics_process"":[""exclusive_diff_tag""],""electron_beam_energy"":null,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"
+EVGEN/EXCLUSIVE/SPECTROSCOPY_ABCONV/y_ab_hiAcc_5_100.hepmc.gz,22384,11,"{""software_release"":""%software_release%"",""physics_process"":[""exclusive_diff_tag""],""electron_beam_energy"":null,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"
+EVGEN/EXCLUSIVE/SPECTROSCOPY_ABCONV/y_ab_hiDiv_10_100.hepmc.gz,37511,11,"{""software_release"":""%software_release%"",""physics_process"":[""exclusive_diff_tag""],""electron_beam_energy"":null,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"
+EVGEN/EXCLUSIVE/SPECTROSCOPY_ABCONV/y_ab_hiDiv_5_100.hepmc.gz,22384,11,"{""software_release"":""%software_release%"",""physics_process"":[""exclusive_diff_tag""],""electron_beam_energy"":null,""hadron_beam_energy"":null,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"

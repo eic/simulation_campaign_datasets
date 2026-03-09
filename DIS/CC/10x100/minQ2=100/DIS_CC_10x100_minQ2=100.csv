@@ -1,1 +1,1 @@
-DIS/CC/10x100/minQ2=100/pythia8CCDIS_10x100_minQ2=100_beamEffects_xAngle=-0.025_hiDiv_[0-9]+$,hepmc3.tree.root,0,0
+DIS/CC/10x100/minQ2=100/pythia8CCDIS_10x100_minQ2=100_beamEffects_xAngle=-0.025_hiDiv_[0-9]+$,hepmc3.tree.root,0,0,"{""software_release"":""%software_release%"",""physics_process"":[""inclusive""],""electron_beam_energy"":10.0,""hadron_beam_energy"":100.0,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""Pythia8"",""q2_range"":{""min"":100.0,""max"":null}}"

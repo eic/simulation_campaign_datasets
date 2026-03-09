@@ -1,1 +1,1 @@
-EXCLUSIVE/UCHANNEL_PI0/18x275/pi0_18x275_uChannel_Q2of0to10_hiDiv,hepmc3.tree.root,0,0
+EXCLUSIVE/UCHANNEL_PI0/18x275/pi0_18x275_uChannel_Q2of0to10_hiDiv,hepmc3.tree.root,0,0,"{""software_release"":""%software_release%"",""physics_process"":[""exclusive_diff_tag""],""electron_beam_energy"":18.0,""hadron_beam_energy"":275.0,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%"",""q2_range"":{""min"":0.0,""max"":10.0}}"

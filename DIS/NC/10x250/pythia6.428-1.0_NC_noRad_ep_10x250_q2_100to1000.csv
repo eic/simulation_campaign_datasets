@@ -1,1 +1,1 @@
-DIS/pythia6.428-1.0/NC/noRad/ep/10x250/q2_100to1000/pythia6.428-1.0_NC_noRad_ep_10x250_q2_100to1000_ab,hepmc3.tree.root,0,0
+DIS/pythia6.428-1.0/NC/noRad/ep/10x250/q2_100to1000/pythia6.428-1.0_NC_noRad_ep_10x250_q2_100to1000_ab,hepmc3.tree.root,0,0,"{""software_release"":""%software_release%"",""physics_process"":[""inclusive""],""electron_beam_energy"":10.0,""hadron_beam_energy"":250.0,""background_configuration"":""%background_configuration%"",""hadron_species"":""p"",""generator"":""Pythia6"",""q2_range"":{""min"":100.0,""max"":1000.0}}"

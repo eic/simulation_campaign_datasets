@@ -1,1 +1,1 @@
-SIDIS/pythia6-eic/1.0.0/10x100/q2_0to1/pythia_ep_noradcor_10x100_q2_0.000000001_1.0_run[0-9]+.ab$,hepmc3.tree.root,0,0
+SIDIS/pythia6-eic/1.0.0/10x100/q2_0to1/pythia_ep_noradcor_10x100_q2_0.000000001_1.0_run[0-9]+.ab$,hepmc3.tree.root,0,0,"{""software_release"":""%software_release%"",""physics_process"":[""semi_inclusive""],""electron_beam_energy"":10.0,""hadron_beam_energy"":100.0,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""Pythia6"",""q2_range"":{""min"":0.0,""max"":1.0}}"

@@ -1,1 +1,1 @@
-DIS/DJANGOH4.6.21-1.0/NC/Rad/ep/18x275/q2_10to100/DJANGOH4.6.21-1.0_NC_Rad_ep_18x275_q2_10to100_ab,hepmc3.tree.root,0,0
+DIS/DJANGOH4.6.21-1.0/NC/Rad/ep/18x275/q2_10to100/DJANGOH4.6.21-1.0_NC_Rad_ep_18x275_q2_10to100_ab,hepmc3.tree.root,0,0,"{""software_release"":""%software_release%"",""physics_process"":[""inclusive""],""electron_beam_energy"":18.0,""hadron_beam_energy"":275.0,""background_configuration"":""%background_configuration%"",""hadron_species"":""p"",""generator"":""DJANGOH"",""q2_range"":{""min"":10.0,""max"":100.0}}"

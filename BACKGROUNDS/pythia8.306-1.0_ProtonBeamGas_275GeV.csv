@@ -1,1 +1,1 @@
-BACKGROUNDS/BEAMGAS/proton/pythia8.306-1.0/275GeV/pythia8.306-1.0_ProtonBeamGas_275GeV_run[0-9]+$,hepmc3.tree.root,0,0
+BACKGROUNDS/BEAMGAS/proton/pythia8.306-1.0/275GeV/pythia8.306-1.0_ProtonBeamGas_275GeV_run[0-9]+$,hepmc3.tree.root,0,0,"{""software_release"":""%software_release%"",""physics_process"":[""other""],""electron_beam_energy"":null,""hadron_beam_energy"":275.0,""background_configuration"":""%background_configuration%"",""hadron_species"":""p"",""generator"":""Pythia8""}"

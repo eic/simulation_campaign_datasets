@@ -1,1 +1,1 @@
-EXCLUSIVE/DVCS_ABCONV/5x41/DVCS.[0-9]+.ab.hiDiv.5x41$,hepmc3.tree.root,0,0
+EXCLUSIVE/DVCS_ABCONV/5x41/DVCS.[0-9]+.ab.hiDiv.5x41$,hepmc3.tree.root,0,0,"{""software_release"":""%software_release%"",""physics_process"":[""exclusive_diff_tag""],""electron_beam_energy"":5.0,""hadron_beam_energy"":41.0,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""%generator%""}"

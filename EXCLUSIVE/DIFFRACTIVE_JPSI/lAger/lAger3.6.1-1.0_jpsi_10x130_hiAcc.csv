@@ -1,1 +1,1 @@
-EXCLUSIVE/DIFFRACTIVE_JPSI_ABCONV/lAger3.6.1-1.0/10x130/hiAcc/lAger3.6.1-1.0_jpsi_10x130_hiAcc_run[0-9]+$,hepmc3.tree.root,0,0
+EXCLUSIVE/DIFFRACTIVE_JPSI_ABCONV/lAger3.6.1-1.0/10x130/hiAcc/lAger3.6.1-1.0_jpsi_10x130_hiAcc_run[0-9]+$,hepmc3.tree.root,0,0,"{""software_release"":""%software_release%"",""physics_process"":[""exclusive_diff_tag""],""electron_beam_energy"":10.0,""hadron_beam_energy"":130.0,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""lAger""}"

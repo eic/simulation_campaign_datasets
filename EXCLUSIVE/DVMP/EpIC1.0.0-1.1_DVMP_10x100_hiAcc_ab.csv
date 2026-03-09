@@ -1,1 +1,1 @@
-EXCLUSIVE/DVMP/EpIC1.0.0-1.1/EpIC1.0.0-1.1_DVMP_10x100_hiAcc_ab_[0-9]+$,hepmc3.tree.root,0,0
+EXCLUSIVE/DVMP/EpIC1.0.0-1.1/EpIC1.0.0-1.1_DVMP_10x100_hiAcc_ab_[0-9]+$,hepmc3.tree.root,0,0,"{""software_release"":""%software_release%"",""physics_process"":[""exclusive_diff_tag""],""electron_beam_energy"":10.0,""hadron_beam_energy"":100.0,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""EpIC""}"

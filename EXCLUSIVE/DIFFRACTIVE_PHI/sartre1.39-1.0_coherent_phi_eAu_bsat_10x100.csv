@@ -1,1 +1,1 @@
-EXCLUSIVE/DIFFRACTIVE_PHI_ABCONV/sartre1.39-1.0/eAu/coherent/bsat/10x100/sartre1.39-1.0_coherent_phi_eAu_bsat_10x100_ab,hepmc3.tree.root,2000000,0
+EXCLUSIVE/DIFFRACTIVE_PHI_ABCONV/sartre1.39-1.0/eAu/coherent/bsat/10x100/sartre1.39-1.0_coherent_phi_eAu_bsat_10x100_ab,hepmc3.tree.root,2000000,0,"{""software_release"":""%software_release%"",""physics_process"":[""exclusive_diff_tag""],""electron_beam_energy"":10.0,""hadron_beam_energy"":100.0,""background_configuration"":""%background_configuration%"",""hadron_species"":""Au"",""generator"":""Sartre""}"

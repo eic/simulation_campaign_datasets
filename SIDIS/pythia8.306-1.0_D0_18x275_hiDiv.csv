@@ -1,1 +1,1 @@
-SIDIS/D0_ABCONV/pythia8.306-1.0/18x275/hiDiv/pythia8.306-1.0_D0_18x275_hiDiv_run[0-9]+$,hepmc3.tree.root,0,0
+SIDIS/D0_ABCONV/pythia8.306-1.0/18x275/hiDiv/pythia8.306-1.0_D0_18x275_hiDiv_run[0-9]+$,hepmc3.tree.root,0,0,"{""software_release"":""%software_release%"",""physics_process"":[""semi_inclusive""],""electron_beam_energy"":18.0,""hadron_beam_energy"":275.0,""background_configuration"":""%background_configuration%"",""hadron_species"":""%hadron_species%"",""generator"":""Pythia8""}"
