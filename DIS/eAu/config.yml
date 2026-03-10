@@ -3,6 +3,8 @@ include:
   - local: 'DIS/eAu/5x41/config.yml'
 
 DIS:eAu:collect:
+  variables:
+    DETECTOR_CONFIG_OVERRIDE: "epic_craterlake_without_zdc"
   extends: .collect
   needs:
     - DIS:eAu:10x100:collect

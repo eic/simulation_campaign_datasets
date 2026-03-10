@@ -26,6 +26,8 @@ DIS:eAu:10x100:timings:
         - "DIS/eAu/10x100/BeAGLE1.03.02-2.0_DIS_eAu_10x100_q2_10to100.csv"
 
 DIS:eAu:10x100:collect:
+  variables:
+    <<: *eAu_10x100_variables
   extends: .collect
   needs:
     - DIS:eAu:10x100:timings
