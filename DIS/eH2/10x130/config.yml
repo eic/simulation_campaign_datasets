@@ -1,0 +1,20 @@
+DIS:eH2:10x130:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/eH2/10x130/BeAGLE1.03.02-1.0_DIS_eH2_10x130_q2_1to1000.csv"
+
+DIS:eH2:10x130:timings:
+  extends: .timings
+  needs:
+    - DIS:eH2:10x130:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/eH2/10x130/BeAGLE1.03.02-1.0_DIS_eH2_10x130_q2_1to1000.csv"
+
+DIS:eH2:10x130:collect:
+  extends: .collect
+  needs:
+    - DIS:eH2:10x130:timings

@@ -1,0 +1,24 @@
+DIS:eHe3:5x41:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/eHe3/5x41/BeAGLE1.03.02-1.2_DIS_eHe3_5x41_q2_2to10.csv"
+        - "DIS/eHe3/5x41/BeAGLE1.03.02-1.2_DIS_eHe3_5x41_q2_10to100.csv"
+        - "DIS/eHe3/5x41/BeAGLE1.03.02-1.2_DIS_eHe3_5x41_q2_100to10000.csv"
+
+DIS:eHe3:5x41:timings:
+  extends: .timings
+  needs:
+    - DIS:eHe3:5x41:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/eHe3/5x41/BeAGLE1.03.02-1.2_DIS_eHe3_5x41_q2_2to10.csv"
+        - "DIS/eHe3/5x41/BeAGLE1.03.02-1.2_DIS_eHe3_5x41_q2_10to100.csv"
+        - "DIS/eHe3/5x41/BeAGLE1.03.02-1.2_DIS_eHe3_5x41_q2_100to10000.csv"
+
+DIS:eHe3:5x41:collect:
+  extends: .collect
+  needs:
+    - DIS:eHe3:5x41:timings

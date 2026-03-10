@@ -1,0 +1,9 @@
+include:
+  - local: 'DIS/eAu/10x100/config.yml'
+  - local: 'DIS/eAu/5x41/config.yml'
+
+DIS:eAu:collect:
+  extends: .collect
+  needs:
+    - DIS:eAu:10x100:collect
+    - DIS:eAu:5x41:collect

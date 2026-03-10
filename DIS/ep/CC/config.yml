@@ -1,0 +1,15 @@
+include:
+  - local: 'DIS/ep/CC/5x41/config.yml'
+  - local: 'DIS/ep/CC/5x100/config.yml'
+  - local: 'DIS/ep/CC/10x100/config.yml'
+  - local: 'DIS/ep/CC/10x275/config.yml'
+  - local: 'DIS/ep/CC/18x275/config.yml'
+
+DIS:ep:CC:collect:
+  extends: .collect
+  needs: 
+    - DIS:ep:CC:5x41:collect
+    - DIS:ep:CC:5x100:collect
+    - DIS:ep:CC:10x100:collect
+    - DIS:ep:CC:10x275:collect
+    - DIS:ep:CC:18x275:collect

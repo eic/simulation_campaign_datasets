@@ -1,0 +1,7 @@
+include:
+  - local: 'DIS/eCu/10x115/config.yml'
+
+DIS:eCu:collect:
+  extends: .collect
+  needs:
+    - DIS:eCu:10x115:collect

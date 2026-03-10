@@ -1,0 +1,22 @@
+DIS:eCu:10x115:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/eCu/10x115/BeAGLE1.03.02-1.0_DIS_eCu_en_10x115.csv"
+        - "DIS/eCu/10x115/BeAGLE1.03.02-1.0_DIS_eCu_ep_10x115.csv"
+
+DIS:eCu:10x115:timings:
+  extends: .timings
+  needs:
+    - DIS:eCu:10x115:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/eCu/10x115/BeAGLE1.03.02-1.0_DIS_eCu_en_10x115.csv"
+        - "DIS/eCu/10x115/BeAGLE1.03.02-1.0_DIS_eCu_ep_10x115.csv"
+
+DIS:eCu:10x115:collect:
+  extends: .collect
+  needs:
+    - DIS:eCu:10x115:timings
