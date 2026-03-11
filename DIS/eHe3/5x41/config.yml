@@ -1,4 +1,10 @@
+.eHe3_5x41_variables: &eHe3_5x41_variables
+  EBEAM_OVERRIDE: "5"
+  PBEAM_OVERRIDE: "41_He3"
+
 DIS:eHe3:5x41:nevents:
+  variables:
+    <<: *eHe3_5x41_variables
   extends: .nevents
   parallel:
     matrix:
@@ -8,6 +14,8 @@ DIS:eHe3:5x41:nevents:
         - "DIS/eHe3/5x41/BeAGLE1.03.02-1.2_DIS_eHe3_5x41_q2_100to10000.csv"
 
 DIS:eHe3:5x41:timings:
+  variables:
+    <<: *eHe3_5x41_variables
   extends: .timings
   needs:
     - DIS:eHe3:5x41:nevents
@@ -19,6 +27,8 @@ DIS:eHe3:5x41:timings:
         - "DIS/eHe3/5x41/BeAGLE1.03.02-1.2_DIS_eHe3_5x41_q2_100to10000.csv"
 
 DIS:eHe3:5x41:collect:
+  variables:
+    <<: *eHe3_5x41_variables
   extends: .collect
   needs:
     - DIS:eHe3:5x41:timings

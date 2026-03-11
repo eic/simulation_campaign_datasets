@@ -1,4 +1,10 @@
+.eCu_10x115_variables: &eCu_10x115_variables
+  EBEAM_OVERRIDE: "10"
+  PBEAM_OVERRIDE: "115_Cu63"
+
 DIS:eCu:10x115:nevents:
+  variables:
+    <<: *eCu_10x115_variables
   extends: .nevents
   parallel:
     matrix:
@@ -7,6 +13,8 @@ DIS:eCu:10x115:nevents:
         - "DIS/eCu/10x115/BeAGLE1.03.02-1.0_DIS_eCu_ep_10x115.csv"
 
 DIS:eCu:10x115:timings:
+  variables:
+    <<: *eCu_10x115_variables
   extends: .timings
   needs:
     - DIS:eCu:10x115:nevents
@@ -17,6 +25,8 @@ DIS:eCu:10x115:timings:
         - "DIS/eCu/10x115/BeAGLE1.03.02-1.0_DIS_eCu_ep_10x115.csv"
 
 DIS:eCu:10x115:collect:
+  variables:
+    <<: *eCu_10x115_variables
   extends: .collect
   needs:
     - DIS:eCu:10x115:timings

@@ -1,4 +1,10 @@
+.eH2_10x130_variables: &eH2_10x130_variables
+  EBEAM_OVERRIDE: "10"
+  PBEAM_OVERRIDE: "130_H2"
+
 DIS:eH2:10x130:nevents:
+  variables:
+    <<: *eH2_10x130_variables
   extends: .nevents
   parallel:
     matrix:
@@ -6,6 +12,8 @@ DIS:eH2:10x130:nevents:
         - "DIS/eH2/10x130/BeAGLE1.03.02-1.0_DIS_eH2_10x130_q2_1to1000.csv"
 
 DIS:eH2:10x130:timings:
+  variables:
+    <<: *eH2_10x130_variables
   extends: .timings
   needs:
     - DIS:eH2:10x130:nevents
@@ -15,6 +23,8 @@ DIS:eH2:10x130:timings:
         - "DIS/eH2/10x130/BeAGLE1.03.02-1.0_DIS_eH2_10x130_q2_1to1000.csv"
 
 DIS:eH2:10x130:collect:
+  variables:
+    <<: *eH2_10x130_variables
   extends: .collect
   needs:
     - DIS:eH2:10x130:timings
