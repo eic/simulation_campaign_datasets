@@ -80,6 +80,8 @@ stages:
 .collect:
   stage: collect
   script:
+    - export DETECTOR_CONFIG="${DETECTOR_CONFIG_OVERRIDE:-${DETECTOR_CONFIG}}"
+    - export DETECTOR_VERSION="${DETECTOR_VERSION_OVERRIDE:-${DETECTOR_VERSION}}"
     - export RESULTS_BASE="results/${IMAGE_TAG}/${DETECTOR_CONFIG}/${DETECTOR_VERSION}"
     - rm -rf results/logs/
     - find ${RESULTS_BASE}/datasets/

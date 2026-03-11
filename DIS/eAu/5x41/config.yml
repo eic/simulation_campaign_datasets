@@ -27,7 +27,7 @@ DIS:eAu:5x41:timings:
 
 DIS:eAu:5x41:collect:
   variables:
-    DETECTOR_CONFIG: "epic_craterlake_without_zdc"
+    <<: *eAu_5x41_variables
   extends: .collect
   needs:
     - DIS:eAu:5x41:timings
