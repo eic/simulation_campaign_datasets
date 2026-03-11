@@ -1,0 +1,7 @@
+include:
+  - local: 'DIS/eRu/10x115/config.yml'
+
+DIS:eRu:collect:
+  extends: .collect
+  needs:
+    - DIS:eRu:10x115:collect

@@ -1,0 +1,19 @@
+include:
+  - local: 'DIS/ep/NC/5x41/config.yml'
+  - local: 'DIS/ep/NC/5x100/config.yml'
+  - local: 'DIS/ep/NC/10x100/config.yml'
+  - local: 'DIS/ep/NC/10x130/config.yml'
+  - local: 'DIS/ep/NC/10x250/config.yml'
+  - local: 'DIS/ep/NC/10x275/config.yml'
+  - local: 'DIS/ep/NC/18x275/config.yml'
+
+DIS:ep:NC:collect:
+  extends: .collect
+  needs:
+    - DIS:ep:NC:5x41:collect
+    - DIS:ep:NC:5x100:collect
+    - DIS:ep:NC:10x100:collect
+    - DIS:ep:NC:10x130:collect
+    - DIS:ep:NC:10x250:collect
+    - DIS:ep:NC:10x275:collect
+    - DIS:ep:NC:18x275:collect

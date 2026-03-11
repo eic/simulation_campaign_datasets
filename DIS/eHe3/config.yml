@@ -1,0 +1,13 @@
+include:
+  - local: 'DIS/eHe3/5x41/config.yml'
+  - local: 'DIS/eHe3/10x110/config.yml'
+  - local: 'DIS/eHe3/10x166/config.yml'
+  - local: 'DIS/eHe3/18x110/config.yml'
+
+DIS:eHe3:collect:
+  extends: .collect
+  needs:
+    - DIS:eHe3:5x41:collect
+    - DIS:eHe3:10x110:collect
+    - DIS:eHe3:10x166:collect
+    - DIS:eHe3:18x110:collect

@@ -1,11 +1,17 @@
 include:
-  - local: 'DIS/CC/config.yml'
-  - local: 'DIS/NC/config.yml'
-  - local: 'DIS/eA/config.yml'
+  - local: 'DIS/ep/config.yml'
+  - local: 'DIS/eAu/config.yml'
+  - local: 'DIS/eCu/config.yml'
+  - local: 'DIS/eH2/config.yml'
+  - local: 'DIS/eHe3/config.yml'
+  - local: 'DIS/eRu/config.yml'
 
 DIS:collect:
   extends: .collect
   needs:
-    - DIS:CC:collect
-    - DIS:NC:collect
-    - DIS:eA:collect
+    - DIS:ep:collect
+    - DIS:eAu:collect
+    - DIS:eCu:collect
+    - DIS:eH2:collect
+    - DIS:eHe3:collect
+    - DIS:eRu:collect

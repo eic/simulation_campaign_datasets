@@ -1,0 +1,26 @@
+DIS:ep:NC:10x275:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/ep/NC/10x275/DIS_NC_10x275_minQ2=1000.csv"
+        - "DIS/ep/NC/10x275/DIS_NC_10x275_minQ2=100.csv"
+        - "DIS/ep/NC/10x275/DIS_NC_10x275_minQ2=10.csv"
+        - "DIS/ep/NC/10x275/DIS_NC_10x275_minQ2=1.csv"
+
+DIS:ep:NC:10x275:timings:
+  extends: .timings
+  needs: 
+    - DIS:ep:NC:10x275:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/ep/NC/10x275/DIS_NC_10x275_minQ2=1000.csv"
+        - "DIS/ep/NC/10x275/DIS_NC_10x275_minQ2=100.csv"
+        - "DIS/ep/NC/10x275/DIS_NC_10x275_minQ2=10.csv"
+        - "DIS/ep/NC/10x275/DIS_NC_10x275_minQ2=1.csv"
+
+DIS:ep:NC:10x275:collect:
+  extends: .collect
+  needs: 
+    - DIS:ep:NC:10x275:timings
