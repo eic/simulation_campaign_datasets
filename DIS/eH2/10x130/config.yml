@@ -10,6 +10,8 @@ DIS:eH2:10x130:nevents:
     matrix:
       - DATA:
         - "DIS/eH2/10x130/BeAGLE1.03.02-1.0_DIS_eH2_10x130_q2_1to1000.csv"
+        - "DIS/eH2/10x130/BeAGLE1.03.02-1.3_DIS_eH2_en_10x130_q2_1to1000.csv"
+        - "DIS/eH2/10x130/BeAGLE1.03.02-1.3_DIS_eH2_ep_10x130_q2_1to1000.csv"
 
 DIS:eH2:10x130:timings:
   variables:
@@ -21,6 +23,8 @@ DIS:eH2:10x130:timings:
     matrix:
       - DATA:
         - "DIS/eH2/10x130/BeAGLE1.03.02-1.0_DIS_eH2_10x130_q2_1to1000.csv"
+        - "DIS/eH2/10x130/BeAGLE1.03.02-1.3_DIS_eH2_en_10x130_q2_1to1000.csv"
+        - "DIS/eH2/10x130/BeAGLE1.03.02-1.3_DIS_eH2_ep_10x130_q2_1to1000.csv"
 
 DIS:eH2:10x130:collect:
   variables:
