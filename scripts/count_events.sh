@@ -13,12 +13,18 @@ xrootd="root://dtn-eic.jlab.org//volatile/eic/EPIC/EVGEN"
 
 # if hepmc3.tree.root file
 if [[ "${ext}" =~ ^hepmc3\.tree.root$ ]] ; then
-  # get entries from xrootd
-  nevents=$(root -l -b -q ${xrootd}/${file}.${ext} -e 'cout << hepmc3_tree->GetEntries() << endl;' | tail -n1)
+  # if prescribed nevents > 0, use it; otherwise get actual entries from xrootd
+  if [[ -n "${nevents}" ]] && [[ "${nevents}" -gt 0 ]] ; then
+    # use prescribed value from CSV
+    true
+  else
+    # get entries from xrootd
+    nevents=$(root -l -b -q ${xrootd}/${file}.${ext} -e 'cout << hepmc3_tree->GetEntries() << endl;' | tail -n1)
+  fi
   n_lines_per_event=0
-elif [[ "${ext}" =~ ^steer$ ]] ; then 
+elif [[ "${ext}" =~ ^steer$ ]] ; then
   true
-else 
+else
   echo "Error: Input extension is not recognized. Only '.hepmc3.tree.root' or '.steer' format is accepted. Please see the input pre-processing policy https://eic.github.io/epic-prod/documentation/input_preprocessing.html"
   exit -1
 fi
