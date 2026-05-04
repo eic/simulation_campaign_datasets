@@ -5,6 +5,10 @@ EXCLUSIVE:UPSILON:nevents:
       - DATA:
         - "EXCLUSIVE/UPSILON/UPSILON_18x275_hiAcc.csv"
         - "EXCLUSIVE/UPSILON/UPSILON_18x275_hiDiv.csv"
+        - "EXCLUSIVE/UPSILON/UPSILON_threshold_10x100_hiAcc.csv"
+        - "EXCLUSIVE/UPSILON/UPSILON_threshold_10x100_hiDiv.csv"
+        - "EXCLUSIVE/UPSILON/UPSILON_threshold_18x275_hiAcc.csv"
+        - "EXCLUSIVE/UPSILON/UPSILON_threshold_18x275_hiDiv.csv"
 
 EXCLUSIVE:UPSILON:timings:
   extends: .timings
@@ -15,6 +19,10 @@ EXCLUSIVE:UPSILON:timings:
       - DATA:
         - "EXCLUSIVE/UPSILON/UPSILON_18x275_hiAcc.csv"
         - "EXCLUSIVE/UPSILON/UPSILON_18x275_hiDiv.csv"
+        - "EXCLUSIVE/UPSILON/UPSILON_threshold_10x100_hiAcc.csv"
+        - "EXCLUSIVE/UPSILON/UPSILON_threshold_10x100_hiDiv.csv"
+        - "EXCLUSIVE/UPSILON/UPSILON_threshold_18x275_hiAcc.csv"
+        - "EXCLUSIVE/UPSILON/UPSILON_threshold_18x275_hiDiv.csv"
 
 EXCLUSIVE:UPSILON:collect:
   extends: .collect
