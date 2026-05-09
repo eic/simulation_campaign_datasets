@@ -5,6 +5,7 @@ EXCLUSIVE:DDVCS:nevents:
       - DATA:
         - "EXCLUSIVE/DDVCS/EpIC1.1.6-1.0_DDVCS_18x275_q2_0_10_edecay.csv"
         - "EXCLUSIVE/DDVCS/EpIC1.1.6-1.0_DDVCS_18x275_q2_0_10_mudecay.csv"
+        - "EXCLUSIVE/DDVCS/EpIC1.1.6-1.1_DDVCS_10x130_q2_0_10_edecay.csv"
 
 EXCLUSIVE:DDVCS:timings:
   extends: .timings
@@ -15,6 +16,7 @@ EXCLUSIVE:DDVCS:timings:
       - DATA:
         - "EXCLUSIVE/DDVCS/EpIC1.1.6-1.0_DDVCS_18x275_q2_0_10_edecay.csv"
         - "EXCLUSIVE/DDVCS/EpIC1.1.6-1.0_DDVCS_18x275_q2_0_10_mudecay.csv"
+        - "EXCLUSIVE/DDVCS/EpIC1.1.6-1.1_DDVCS_10x130_q2_0_10_edecay.csv"
 
 EXCLUSIVE:DDVCS:collect:
   extends: .collect
