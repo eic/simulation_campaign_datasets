@@ -1,0 +1,7 @@
+include:
+  - local: 'EW_BSM/ALP/10x110/config.yml'
+
+EW_BSM:ALP:collect:
+  extends: .collect
+  needs:
+    - EW_BSM:ALP:10x110:collect
