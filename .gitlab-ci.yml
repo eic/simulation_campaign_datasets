@@ -105,6 +105,7 @@ include:
   - local: 'BACKGROUNDS/config.yml'
   - local: 'DDIS/config.yml'
   - local: 'DIS/config.yml'
+  - local: 'EW_BSM/config.yml'
   - local: 'EXCLUSIVE/config.yml'
   - local: 'SIDIS/config.yml'
   - local: 'SINGLE/config.yml'
@@ -116,6 +117,7 @@ collect:
     - "BACKGROUNDS:collect"
     - "DDIS:collect"
     - "DIS:collect"
+    - "EW_BSM:collect"
     - "EXCLUSIVE:collect"
     - "SIDIS:collect"
     - "SINGLE:collect"
