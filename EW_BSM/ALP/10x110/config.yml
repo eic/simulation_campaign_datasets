@@ -1,4 +1,10 @@
+.EW_BSM_ALP_10x110_variables: &EW_BSM_ALP_10x110_variables
+  EBEAM_OVERRIDE: "10"
+  PBEAM_OVERRIDE: "110_Pb208"
+
 EW_BSM:ALP:10x110:nevents:
+  variables:
+    <<: *EW_BSM_ALP_10x110_variables
   extends: .nevents
   parallel:
     matrix:
@@ -21,6 +27,8 @@ EW_BSM:ALP:10x110:nevents:
         - "EW_BSM/ALP/10x110/madgraph5-3.7.0-1.0_aem-ax-emmupmum_10x110_ma_20.0.csv"
 
 EW_BSM:ALP:10x110:timings:
+  variables:
+    <<: *EW_BSM_ALP_10x110_variables
   extends: .timings
   needs:
     - EW_BSM:ALP:10x110:nevents
@@ -45,6 +53,8 @@ EW_BSM:ALP:10x110:timings:
         - "EW_BSM/ALP/10x110/madgraph5-3.7.0-1.0_aem-ax-emmupmum_10x110_ma_20.0.csv"
 
 EW_BSM:ALP:10x110:collect:
+  variables:
+    <<: *EW_BSM_ALP_10x110_variables
   extends: .collect
   needs:
     - EW_BSM:ALP:10x110:timings
