@@ -7,10 +7,13 @@ DIS:ep:NC:5x100:nevents:
         - "DIS/ep/NC/5x100/DIS_NC_5x100_minQ2=100.csv"
         - "DIS/ep/NC/5x100/DIS_NC_5x100_minQ2=10.csv"
         - "DIS/ep/NC/5x100/DIS_NC_5x100_minQ2=1.csv"
+        - "DIS/ep/NC/5x100/pythia8.316-1.0_NC_noRad_ep_5x100_q2_1to10.csv"
+        - "DIS/ep/NC/5x100/pythia8.316-1.0_NC_noRad_ep_5x100_q2_10to100.csv"
+        - "DIS/ep/NC/5x100/pythia8.316-1.0_NC_noRad_ep_5x100_q2_100to1000.csv"
 
 DIS:ep:NC:5x100:timings:
   extends: .timings
-  needs: 
+  needs:
     - DIS:ep:NC:5x100:nevents
   parallel:
     matrix:
@@ -19,6 +22,9 @@ DIS:ep:NC:5x100:timings:
         - "DIS/ep/NC/5x100/DIS_NC_5x100_minQ2=100.csv"
         - "DIS/ep/NC/5x100/DIS_NC_5x100_minQ2=10.csv"
         - "DIS/ep/NC/5x100/DIS_NC_5x100_minQ2=1.csv"
+        - "DIS/ep/NC/5x100/pythia8.316-1.0_NC_noRad_ep_5x100_q2_1to10.csv"
+        - "DIS/ep/NC/5x100/pythia8.316-1.0_NC_noRad_ep_5x100_q2_10to100.csv"
+        - "DIS/ep/NC/5x100/pythia8.316-1.0_NC_noRad_ep_5x100_q2_100to1000.csv"
 
 DIS:ep:NC:5x100:collect:
   extends: .collect
