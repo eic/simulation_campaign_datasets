@@ -1,3 +1,8 @@
+include:
+  - local: 'EXCLUSIVE/DVCS/BH_ONLY/config.yml'
+  - local: 'EXCLUSIVE/DVCS/DVCS_BH/config.yml'
+  - local: 'EXCLUSIVE/DVCS/DVCS_ONLY/config.yml'
+
 EXCLUSIVE:DVCS:nevents:
   extends: .nevents
   parallel:
@@ -18,7 +23,7 @@ EXCLUSIVE:DVCS:nevents:
 
 EXCLUSIVE:DVCS:timings:
   extends: .timings
-  needs: 
+  needs:
     - EXCLUSIVE:DVCS:nevents
   parallel:
     matrix:
@@ -38,5 +43,8 @@ EXCLUSIVE:DVCS:timings:
 
 EXCLUSIVE:DVCS:collect:
   extends: .collect
-  needs: 
+  needs:
     - EXCLUSIVE:DVCS:timings
+    - EXCLUSIVE:DVCS:BH_ONLY:collect
+    - EXCLUSIVE:DVCS:DVCS_BH:collect
+    - EXCLUSIVE:DVCS:DVCS_ONLY:collect

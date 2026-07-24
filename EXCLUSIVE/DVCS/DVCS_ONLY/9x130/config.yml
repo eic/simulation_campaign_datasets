@@ -1,0 +1,22 @@
+EXCLUSIVE:DVCS:DVCS_ONLY:9x130:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DVCS/DVCS_ONLY/9x130/EpIC_v1.1.8-1.4_DVCS_ONLY_9x130_q2_1_100_emhLm.csv"
+        - "EXCLUSIVE/DVCS/DVCS_ONLY/9x130/EpIC_v1.1.8-1.4_DVCS_ONLY_9x130_q2_1_100_emhTm.csv"
+
+EXCLUSIVE:DVCS:DVCS_ONLY:9x130:timings:
+  extends: .timings
+  needs:
+    - EXCLUSIVE:DVCS:DVCS_ONLY:9x130:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/DVCS/DVCS_ONLY/9x130/EpIC_v1.1.8-1.4_DVCS_ONLY_9x130_q2_1_100_emhLm.csv"
+        - "EXCLUSIVE/DVCS/DVCS_ONLY/9x130/EpIC_v1.1.8-1.4_DVCS_ONLY_9x130_q2_1_100_emhTm.csv"
+
+EXCLUSIVE:DVCS:DVCS_ONLY:9x130:collect:
+  extends: .collect
+  needs:
+    - EXCLUSIVE:DVCS:DVCS_ONLY:9x130:timings
