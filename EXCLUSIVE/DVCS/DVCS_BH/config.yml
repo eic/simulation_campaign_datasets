@@ -1,0 +1,9 @@
+include:
+  - local: 'EXCLUSIVE/DVCS/DVCS_BH/9x130/config.yml'
+  - local: 'EXCLUSIVE/DVCS/DVCS_BH/9x275/config.yml'
+
+EXCLUSIVE:DVCS:DVCS_BH:collect:
+  extends: .collect
+  needs:
+    - EXCLUSIVE:DVCS:DVCS_BH:9x130:collect
+    - EXCLUSIVE:DVCS:DVCS_BH:9x275:collect
