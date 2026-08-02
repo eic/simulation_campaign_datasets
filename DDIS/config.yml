@@ -1,20 +1,7 @@
-DDIS:nevents:
-  extends: .nevents
-  parallel:
-    matrix:
-      - DATA:
-        - "DDIS/rapgap3.310-1.0_ddis_ep_noRad_10x100.csv"
-
-DDIS:timings:
-  extends: .timings
-  needs:
-    - DDIS:nevents
-  parallel:
-    matrix:
-      - DATA:
-        - "DDIS/rapgap3.310-1.0_ddis_ep_noRad_10x100.csv"
+include:
+  - local: 'DDIS/ep/config.yml'
 
 DDIS:collect:
   extends: .collect
   needs:
-    - DDIS:timings
+    - DDIS:ep:collect

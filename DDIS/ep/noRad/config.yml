@@ -1,0 +1,11 @@
+include:
+  - local: 'DDIS/ep/noRad/9x130/config.yml'
+  - local: 'DDIS/ep/noRad/9x275/config.yml'
+  - local: 'DDIS/ep/noRad/10x100/config.yml'
+
+DDIS:ep:noRad:collect:
+  extends: .collect
+  needs:
+    - DDIS:ep:noRad:9x130:collect
+    - DDIS:ep:noRad:9x275:collect
+    - DDIS:ep:noRad:10x100:collect
