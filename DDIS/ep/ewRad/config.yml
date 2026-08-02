@@ -1,0 +1,9 @@
+include:
+  - local: 'DDIS/ep/ewRad/9x130/config.yml'
+  - local: 'DDIS/ep/ewRad/9x275/config.yml'
+
+DDIS:ep:ewRad:collect:
+  extends: .collect
+  needs:
+    - DDIS:ep:ewRad:9x130:collect
+    - DDIS:ep:ewRad:9x275:collect

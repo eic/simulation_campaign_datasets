@@ -1,0 +1,20 @@
+DDIS:ep:noRad:10x100:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DDIS/ep/noRad/10x100/rapgap3.310-1.0_ddis_ep_noRad_10x100.csv"
+
+DDIS:ep:noRad:10x100:timings:
+  extends: .timings
+  needs:
+    - DDIS:ep:noRad:10x100:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DDIS/ep/noRad/10x100/rapgap3.310-1.0_ddis_ep_noRad_10x100.csv"
+
+DDIS:ep:noRad:10x100:collect:
+  extends: .collect
+  needs:
+    - DDIS:ep:noRad:10x100:timings

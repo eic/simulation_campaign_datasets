@@ -1,0 +1,20 @@
+DDIS:ep:ewRad:9x275:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DDIS/ep/ewRad/9x275/rapgap3.310-2.0_ddis_ep_ewRad_9x275_q2_5to1e8.csv"
+
+DDIS:ep:ewRad:9x275:timings:
+  extends: .timings
+  needs:
+    - DDIS:ep:ewRad:9x275:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DDIS/ep/ewRad/9x275/rapgap3.310-2.0_ddis_ep_ewRad_9x275_q2_5to1e8.csv"
+
+DDIS:ep:ewRad:9x275:collect:
+  extends: .collect
+  needs:
+    - DDIS:ep:ewRad:9x275:timings
