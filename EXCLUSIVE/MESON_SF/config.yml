@@ -4,6 +4,9 @@ EXCLUSIVE:MESON_SF:nevents:
     matrix:
       - DATA:
         - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_5x41_ab.csv"
+        - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_9x100_ab.csv"
+        - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_9x130_ab.csv"
+        - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_9x275_ab.csv"
         - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_10x100_ab.csv"
         - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_10x130_ab.csv"
         - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_18x275_ab.csv"
@@ -16,6 +19,9 @@ EXCLUSIVE:MESON_SF:timings:
     matrix:
       - DATA:
         - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_5x41_ab.csv"
+        - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_9x100_ab.csv"
+        - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_9x130_ab.csv"
+        - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_9x275_ab.csv"
         - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_10x100_ab.csv"
         - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_10x130_ab.csv"
         - "EXCLUSIVE/MESON_SF/eicMesonSFGen-1.0.0_K+Lambda_ep_18x275_ab.csv"
