@@ -1,0 +1,34 @@
+.eHe3_9x166_variables: &eHe3_9x166_variables
+  EBEAM_OVERRIDE: "9"
+  PBEAM_OVERRIDE: "166_He3"
+
+DIS:eHe3:9x166:nevents:
+  variables:
+    <<: *eHe3_9x166_variables
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/eHe3/9x166/BeAGLE1.03.02-3.0_DIS_eHe3_9x166_q2_1to10.csv"
+        - "DIS/eHe3/9x166/BeAGLE1.03.02-3.0_DIS_eHe3_9x166_q2_10to100.csv"
+        - "DIS/eHe3/9x166/BeAGLE1.03.02-3.0_DIS_eHe3_9x166_q2_100to10000.csv"
+
+DIS:eHe3:9x166:timings:
+  variables:
+    <<: *eHe3_9x166_variables
+  extends: .timings
+  needs:
+    - DIS:eHe3:9x166:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/eHe3/9x166/BeAGLE1.03.02-3.0_DIS_eHe3_9x166_q2_1to10.csv"
+        - "DIS/eHe3/9x166/BeAGLE1.03.02-3.0_DIS_eHe3_9x166_q2_10to100.csv"
+        - "DIS/eHe3/9x166/BeAGLE1.03.02-3.0_DIS_eHe3_9x166_q2_100to10000.csv"
+
+DIS:eHe3:9x166:collect:
+  variables:
+    <<: *eHe3_9x166_variables
+  extends: .collect
+  needs:
+    - DIS:eHe3:9x166:timings
