@@ -1,0 +1,11 @@
+include:
+  - local: 'SIDIS/pythia6-eic/1.2.0/ep_noradcor/5x41/config.yml'
+  - local: 'SIDIS/pythia6-eic/1.2.0/ep_noradcor/10x100/config.yml'
+  - local: 'SIDIS/pythia6-eic/1.2.0/ep_noradcor/18x275/config.yml'
+
+SIDIS:pythia6-eic:1.2.0:ep_noradcor:collect:
+  extends: .collect
+  needs:
+    - SIDIS:pythia6-eic:1.2.0:ep_noradcor:5x41:collect
+    - SIDIS:pythia6-eic:1.2.0:ep_noradcor:10x100:collect
+    - SIDIS:pythia6-eic:1.2.0:ep_noradcor:18x275:collect

@@ -1,5 +1,5 @@
 include:
-  - local: 'SIDIS/pythia6-eic/1.3.0/config.yml'
+  - local: 'SIDIS/pythia6-eic/config.yml'
 
 .eAu_10x100_variables: &eAu_10x100_variables
   NEVENTS_PER_TEST_OVERRIDE: 25
@@ -75,20 +75,6 @@ SIDIS:ep:nevents:
         - "SIDIS/ep/pythia8.312-2.0_D0_ep_10x130_q2_1.csv"
         - "SIDIS/ep/pythia8.312-2.0_D0_ep_10x250_q2_1.csv"
         - "SIDIS/ep/pythia8.312-2.0_Lc_ep_10x250_q2_1.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_18x275_q2_0to1.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_18x275_q2_1to10.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_18x275_q2_10to100.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_18x275_q2_100to1000.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_18x275_q2_1000to100000.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_5x41_q2_0to1.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_5x41_q2_1to10.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_5x41_q2_10to100.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_5x41_q2_100to1000.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_5x41_q2_1000to100000.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_10x100_q2_1to10.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_10x100_q2_10to100.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_10x100_q2_100to1000.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_10x100_q2_1000to100000.csv"
 
 SIDIS:ep:timings:
   extends: .timings
@@ -114,20 +100,6 @@ SIDIS:ep:timings:
         - "SIDIS/ep/pythia8.312-2.0_D0_ep_10x130_q2_1.csv"
         - "SIDIS/ep/pythia8.312-2.0_D0_ep_10x250_q2_1.csv"
         - "SIDIS/ep/pythia8.312-2.0_Lc_ep_10x250_q2_1.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_18x275_q2_0to1.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_18x275_q2_1to10.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_18x275_q2_10to100.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_18x275_q2_100to1000.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_18x275_q2_1000to100000.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_5x41_q2_0to1.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_5x41_q2_1to10.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_5x41_q2_10to100.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_5x41_q2_100to1000.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_5x41_q2_1000to100000.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_10x100_q2_1to10.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_10x100_q2_10to100.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_10x100_q2_100to1000.csv"
-        - "SIDIS/pythia6-eic/1.2.0/ep/noradcor/pythia6-eic-1.2.0_ep_noradcor_10x100_q2_1000to100000.csv"
 
 SIDIS:collect:
   extends: .collect
@@ -135,4 +107,4 @@ SIDIS:collect:
     - SIDIS:eAu:10x100:timings
     - SIDIS:eAu:5x41:timings
     - SIDIS:ep:timings
-    - SIDIS:pythia6-eic:1.3.0:collect
+    - SIDIS:pythia6-eic:collect
