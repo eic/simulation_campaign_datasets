@@ -9,9 +9,9 @@ DIS:eHe3:9x166:nevents:
   parallel:
     matrix:
       - DATA:
-        - "DIS/eHe3/9x166/BeAGLE1.03.02-3.0_DIS_eHe3_9x166_q2_1to10.csv"
-        - "DIS/eHe3/9x166/BeAGLE1.03.02-3.0_DIS_eHe3_9x166_q2_10to100.csv"
-        - "DIS/eHe3/9x166/BeAGLE1.03.02-3.0_DIS_eHe3_9x166_q2_100to10000.csv"
+        - "DIS/eHe3/9x166/BeAGLE1.03.02-3.1_DIS_eHe3_9x166_q2_1to10.csv"
+        - "DIS/eHe3/9x166/BeAGLE1.03.02-3.1_DIS_eHe3_9x166_q2_10to100.csv"
+        - "DIS/eHe3/9x166/BeAGLE1.03.02-3.1_DIS_eHe3_9x166_q2_100to10000.csv"
 
 DIS:eHe3:9x166:timings:
   variables:
@@ -22,9 +22,9 @@ DIS:eHe3:9x166:timings:
   parallel:
     matrix:
       - DATA:
-        - "DIS/eHe3/9x166/BeAGLE1.03.02-3.0_DIS_eHe3_9x166_q2_1to10.csv"
-        - "DIS/eHe3/9x166/BeAGLE1.03.02-3.0_DIS_eHe3_9x166_q2_10to100.csv"
-        - "DIS/eHe3/9x166/BeAGLE1.03.02-3.0_DIS_eHe3_9x166_q2_100to10000.csv"
+        - "DIS/eHe3/9x166/BeAGLE1.03.02-3.1_DIS_eHe3_9x166_q2_1to10.csv"
+        - "DIS/eHe3/9x166/BeAGLE1.03.02-3.1_DIS_eHe3_9x166_q2_10to100.csv"
+        - "DIS/eHe3/9x166/BeAGLE1.03.02-3.1_DIS_eHe3_9x166_q2_100to10000.csv"
 
 DIS:eHe3:9x166:collect:
   variables:
