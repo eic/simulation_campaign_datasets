@@ -1,0 +1,26 @@
+SIDIS:pythia6-eic:1.2.0:ep_noradcor:10x100:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "SIDIS/pythia6-eic/1.2.0/ep_noradcor/10x100/pythia6-eic_1.2.0_ep_noradcor_10x100_q2_1to10.csv"
+        - "SIDIS/pythia6-eic/1.2.0/ep_noradcor/10x100/pythia6-eic_1.2.0_ep_noradcor_10x100_q2_10to100.csv"
+        - "SIDIS/pythia6-eic/1.2.0/ep_noradcor/10x100/pythia6-eic_1.2.0_ep_noradcor_10x100_q2_100to1000.csv"
+        - "SIDIS/pythia6-eic/1.2.0/ep_noradcor/10x100/pythia6-eic_1.2.0_ep_noradcor_10x100_q2_1000to100000.csv"
+
+SIDIS:pythia6-eic:1.2.0:ep_noradcor:10x100:timings:
+  extends: .timings
+  needs:
+    - SIDIS:pythia6-eic:1.2.0:ep_noradcor:10x100:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "SIDIS/pythia6-eic/1.2.0/ep_noradcor/10x100/pythia6-eic_1.2.0_ep_noradcor_10x100_q2_1to10.csv"
+        - "SIDIS/pythia6-eic/1.2.0/ep_noradcor/10x100/pythia6-eic_1.2.0_ep_noradcor_10x100_q2_10to100.csv"
+        - "SIDIS/pythia6-eic/1.2.0/ep_noradcor/10x100/pythia6-eic_1.2.0_ep_noradcor_10x100_q2_100to1000.csv"
+        - "SIDIS/pythia6-eic/1.2.0/ep_noradcor/10x100/pythia6-eic_1.2.0_ep_noradcor_10x100_q2_1000to100000.csv"
+
+SIDIS:pythia6-eic:1.2.0:ep_noradcor:10x100:collect:
+  extends: .collect
+  needs:
+    - SIDIS:pythia6-eic:1.2.0:ep_noradcor:10x100:timings
