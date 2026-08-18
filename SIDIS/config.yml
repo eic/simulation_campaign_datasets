@@ -1,3 +1,6 @@
+include:
+  - local: 'SIDIS/pythia6-eic/1.3.0/config.yml'
+
 .eAu_10x100_variables: &eAu_10x100_variables
   NEVENTS_PER_TEST_OVERRIDE: 25
   DETECTOR_CONFIG_OVERRIDE: "epic_craterlake_without_zdc"
@@ -132,3 +135,4 @@ SIDIS:collect:
     - SIDIS:eAu:10x100:timings
     - SIDIS:eAu:5x41:timings
     - SIDIS:ep:timings
+    - SIDIS:pythia6-eic:1.3.0:collect
