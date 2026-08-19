@@ -1,4 +1,4 @@
-DIS:ep:CC:10x100:nevents:
+DIS:ep:CC:10x100:pythia8CCDIS:nevents:
   extends: .nevents
   parallel:
     matrix:
@@ -6,10 +6,10 @@ DIS:ep:CC:10x100:nevents:
         - "DIS/ep/CC/10x100/DIS_CC_10x100_minQ2=1000.csv"
         - "DIS/ep/CC/10x100/DIS_CC_10x100_minQ2=100.csv"
 
-DIS:ep:CC:10x100:timings:
+DIS:ep:CC:10x100:pythia8CCDIS:timings:
   extends: .timings
-  needs: 
-    - DIS:ep:CC:10x100:nevents
+  needs:
+    - DIS:ep:CC:10x100:pythia8CCDIS:nevents
   parallel:
     matrix:
       - DATA:
@@ -18,5 +18,5 @@ DIS:ep:CC:10x100:timings:
 
 DIS:ep:CC:10x100:collect:
   extends: .collect
-  needs: 
-    - DIS:ep:CC:10x100:timings
+  needs:
+    - DIS:ep:CC:10x100:pythia8CCDIS:timings
