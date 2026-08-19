@@ -1,4 +1,4 @@
-DIS:ep:NC:10x130:nevents:
+DIS:ep:NC:10x130:pythia6.428-1.0:nevents:
   extends: .nevents
   parallel:
     matrix:
@@ -8,10 +8,10 @@ DIS:ep:NC:10x130:nevents:
         - "DIS/ep/NC/10x130/pythia6.428-1.0_NC_noRad_ep_10x130_q2_100to1000.csv"
         - "DIS/ep/NC/10x130/pythia6.428-1.0_NC_noRad_ep_10x130_q2_1000to10000.csv"
 
-DIS:ep:NC:10x130:timings:
+DIS:ep:NC:10x130:pythia6.428-1.0:timings:
   extends: .timings
   needs:
-    - DIS:ep:NC:10x130:nevents
+    - DIS:ep:NC:10x130:pythia6.428-1.0:nevents
   parallel:
     matrix:
       - DATA:
@@ -23,4 +23,4 @@ DIS:ep:NC:10x130:timings:
 DIS:ep:NC:10x130:collect:
   extends: .collect
   needs:
-    - DIS:ep:NC:10x130:timings
+    - DIS:ep:NC:10x130:pythia6.428-1.0:timings
