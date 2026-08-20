@@ -1,7 +1,7 @@
 include:
-  - local: 'DIS/eH2/10x130/config.yml'
+  - local: 'DIS/eH2/9x130/config.yml'
 
 DIS:eH2:collect:
   extends: .collect
   needs:
-    - DIS:eH2:10x130:collect
+    - DIS:eH2:9x130:collect
