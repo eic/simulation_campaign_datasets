@@ -1,0 +1,35 @@
+.eAu_9x100_variables: &eAu_9x100_variables
+  DETECTOR_CONFIG_OVERRIDE: "epic_craterlake_without_zdc"
+  EBEAM_OVERRIDE: "9"
+  PBEAM_OVERRIDE: "100_Au197"
+
+DIS:eAu:9x100:nevents:
+  variables:
+    <<: *eAu_9x100_variables
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/eAu/9x100/BeAGLE1.03.02-3.1_DIS_eAu_9x100_q2_1to10.csv"
+        - "DIS/eAu/9x100/BeAGLE1.03.02-3.1_DIS_eAu_9x100_q2_10to100.csv"
+        - "DIS/eAu/9x100/BeAGLE1.03.02-3.1_DIS_eAu_9x100_q2_100to10000.csv"
+
+DIS:eAu:9x100:timings:
+  variables:
+    <<: *eAu_9x100_variables
+  extends: .timings
+  needs:
+    - DIS:eAu:9x100:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/eAu/9x100/BeAGLE1.03.02-3.1_DIS_eAu_9x100_q2_1to10.csv"
+        - "DIS/eAu/9x100/BeAGLE1.03.02-3.1_DIS_eAu_9x100_q2_10to100.csv"
+        - "DIS/eAu/9x100/BeAGLE1.03.02-3.1_DIS_eAu_9x100_q2_100to10000.csv"
+
+DIS:eAu:9x100:collect:
+  variables:
+    <<: *eAu_9x100_variables
+  extends: .collect
+  needs:
+    - DIS:eAu:9x100:timings

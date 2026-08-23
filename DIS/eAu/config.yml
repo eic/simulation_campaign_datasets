@@ -1,6 +1,7 @@
 include:
   - local: 'DIS/eAu/10x100/config.yml'
   - local: 'DIS/eAu/5x41/config.yml'
+  - local: 'DIS/eAu/9x100/config.yml'
 
 DIS:eAu:collect:
   variables:
@@ -9,3 +10,4 @@ DIS:eAu:collect:
   needs:
     - DIS:eAu:10x100:collect
     - DIS:eAu:5x41:collect
+    - DIS:eAu:9x100:collect
