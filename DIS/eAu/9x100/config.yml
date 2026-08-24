@@ -1,5 +1,5 @@
 .eAu_9x100_variables: &eAu_9x100_variables
-  DETECTOR_CONFIG_OVERRIDE: "epic_craterlake"
+  DETECTOR_CONFIG_OVERRIDE: "epic_craterlake_without_zdc"
   EBEAM_OVERRIDE: "9"
   PBEAM_OVERRIDE: "100_Au197"
 
