@@ -10,7 +10,8 @@ DIS:collect:
   extends: .collect
   needs:
     - DIS:ep:collect
-    - DIS:eAu:collect
+    - DIS:eAu:collect:without_zdc
+    - DIS:eAu:collect:craterlake
     - DIS:eCu:collect
     - DIS:eH2:collect
     - DIS:eHe3:collect
