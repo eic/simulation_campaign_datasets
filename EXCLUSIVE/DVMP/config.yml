@@ -10,9 +10,9 @@ EXCLUSIVE:DVMP:nevents:
         - "EXCLUSIVE/DVMP/unpolarised/EpIC1.1.8-1.0_DVMP_pi0_9x130_ab.csv"
         - "EXCLUSIVE/DVMP/unpolarised/EpIC1.1.8-1.0_DVMP_pi0_9x275_hiAcc_ab.csv"
         - "EXCLUSIVE/DVMP/unpolarised/EpIC1.1.8-1.0_DVMP_pi0_9x275_hiDiv_ab.csv"
-        - "EXCLUSIVE/DVMP/lAger3.6.1-1.0_DVMP_JPsi_MuMu_10x130.csv"
-        - "EXCLUSIVE/DVMP/lAger3.6.1-1.0_DVMP_JPsi_MuMu_10x250.csv"
         - "EXCLUSIVE/DVMP/lAger3.6.1-1.0_DVMP_JPsi_MuMu_18x275.csv"
+        - "EXCLUSIVE/DVMP/lAger3.6.1-1.1_DVMP_JPsi_MuMu_9x130.csv"
+        - "EXCLUSIVE/DVMP/lAger3.6.1-1.1_DVMP_JPsi_MuMu_9x275.csv"
 
 EXCLUSIVE:DVMP:timings:
   extends: .timings
@@ -28,9 +28,9 @@ EXCLUSIVE:DVMP:timings:
         - "EXCLUSIVE/DVMP/unpolarised/EpIC1.1.8-1.0_DVMP_pi0_9x130_ab.csv"
         - "EXCLUSIVE/DVMP/unpolarised/EpIC1.1.8-1.0_DVMP_pi0_9x275_hiAcc_ab.csv"
         - "EXCLUSIVE/DVMP/unpolarised/EpIC1.1.8-1.0_DVMP_pi0_9x275_hiDiv_ab.csv"
-        - "EXCLUSIVE/DVMP/lAger3.6.1-1.0_DVMP_JPsi_MuMu_10x130.csv"
-        - "EXCLUSIVE/DVMP/lAger3.6.1-1.0_DVMP_JPsi_MuMu_10x250.csv"
         - "EXCLUSIVE/DVMP/lAger3.6.1-1.0_DVMP_JPsi_MuMu_18x275.csv"
+        - "EXCLUSIVE/DVMP/lAger3.6.1-1.1_DVMP_JPsi_MuMu_9x130.csv"
+        - "EXCLUSIVE/DVMP/lAger3.6.1-1.1_DVMP_JPsi_MuMu_9x275.csv"
 
 EXCLUSIVE:DVMP:collect:
   extends: .collect
