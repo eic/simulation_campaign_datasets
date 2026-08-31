@@ -4,6 +4,7 @@ EXCLUSIVE:DIFFRACTIVE_RHO:nevents:
     matrix:
       - DATA:
         - "EXCLUSIVE/DIFFRACTIVE_RHO/sartre1.39-1.1_coherent_rho_eAu_bsat_10x100_hiAcc.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_RHO/sartre1.39-1.4_coherent_rho_eAu_bsat_9x100_q2_1to10_ab.csv"
 
 EXCLUSIVE:DIFFRACTIVE_RHO:timings:
   extends: .timings
@@ -15,6 +16,7 @@ EXCLUSIVE:DIFFRACTIVE_RHO:timings:
     matrix:
       - DATA:
         - "EXCLUSIVE/DIFFRACTIVE_RHO/sartre1.39-1.1_coherent_rho_eAu_bsat_10x100_hiAcc.csv"
+        - "EXCLUSIVE/DIFFRACTIVE_RHO/sartre1.39-1.4_coherent_rho_eAu_bsat_9x100_q2_1to10_ab.csv"
 
 EXCLUSIVE:DIFFRACTIVE_RHO:collect:
   extends: .collect
