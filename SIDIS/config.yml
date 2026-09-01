@@ -55,6 +55,36 @@ SIDIS:eAu:5x41:timings:
       - DATA:
         - "SIDIS/eA/BeAGLE1.03.01-2.0_D0_eAu_5x41_q2_1to10000.csv"
 
+.eAu_9x100_variables: &eAu_9x100_variables
+  NEVENTS_PER_TEST_OVERRIDE: 25
+  DETECTOR_CONFIG_OVERRIDE: "epic_craterlake"
+  EBEAM_OVERRIDE: "9"
+  PBEAM_OVERRIDE: "100_Au197"
+
+SIDIS:eAu:9x100:nevents:
+  variables:
+    <<: *eAu_9x100_variables
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "SIDIS/eA/BeAGLE1.03.02-1.0_Ds_eAu_9x100_q2_1.csv"
+        - "SIDIS/eA/BeAGLE1.03.02-1.0_Lc_eAu_9x100_q2_1.csv"
+        - "SIDIS/eA/BeAGLE1.03.02-1.0_D0_eAu_9x100_q2_1.csv"
+
+SIDIS:eAu:9x100:timings:
+  variables:
+    <<: *eAu_9x100_variables
+  extends: .timings
+  needs:
+    - SIDIS:eAu:9x100:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "SIDIS/eA/BeAGLE1.03.02-1.0_Ds_eAu_9x100_q2_1.csv"
+        - "SIDIS/eA/BeAGLE1.03.02-1.0_Lc_eAu_9x100_q2_1.csv"
+        - "SIDIS/eA/BeAGLE1.03.02-1.0_D0_eAu_9x100_q2_1.csv"
+
 SIDIS:ep:nevents:
   extends: .nevents
   parallel:
@@ -75,6 +105,10 @@ SIDIS:ep:nevents:
         - "SIDIS/ep/pythia8.312-2.0_D0_ep_10x130_q2_1.csv"
         - "SIDIS/ep/pythia8.312-2.0_D0_ep_10x250_q2_1.csv"
         - "SIDIS/ep/pythia8.312-2.0_Lc_ep_10x250_q2_1.csv"
+        - "SIDIS/ep/pythia8.316-1.1_Ds_ep_9x275_q2_1.csv"
+        - "SIDIS/ep/pythia8.316-1.0_Lc_ep_9x275_q2_1.csv"
+        - "SIDIS/ep/pythia8.316-1.0_D0_ep_9x130_q2_1.csv"
+        - "SIDIS/ep/pythia8.316-1.0_D0_ep_9x275_q2_1.csv"
 
 SIDIS:ep:timings:
   extends: .timings
@@ -100,11 +134,16 @@ SIDIS:ep:timings:
         - "SIDIS/ep/pythia8.312-2.0_D0_ep_10x130_q2_1.csv"
         - "SIDIS/ep/pythia8.312-2.0_D0_ep_10x250_q2_1.csv"
         - "SIDIS/ep/pythia8.312-2.0_Lc_ep_10x250_q2_1.csv"
+        - "SIDIS/ep/pythia8.316-1.1_Ds_ep_9x275_q2_1.csv"
+        - "SIDIS/ep/pythia8.316-1.0_Lc_ep_9x275_q2_1.csv"
+        - "SIDIS/ep/pythia8.316-1.0_D0_ep_9x130_q2_1.csv"
+        - "SIDIS/ep/pythia8.316-1.0_D0_ep_9x275_q2_1.csv"
 
 SIDIS:collect:
   extends: .collect
   needs:
     - SIDIS:eAu:10x100:timings
     - SIDIS:eAu:5x41:timings
+    - SIDIS:eAu:9x100:timings
     - SIDIS:ep:timings
     - SIDIS:pythia6-eic:collect
