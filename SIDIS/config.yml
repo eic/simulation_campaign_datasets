@@ -69,6 +69,7 @@ SIDIS:eAu:9x100:nevents:
     matrix:
       - DATA:
         - "SIDIS/eA/BeAGLE1.03.02-1.0_Ds_eAu_9x100_q2_1.csv"
+        - "SIDIS/eA/BeAGLE1.03.02-1.0_Lc_eAu_9x100_q2_1.csv"
 
 SIDIS:eAu:9x100:timings:
   variables:
@@ -80,6 +81,7 @@ SIDIS:eAu:9x100:timings:
     matrix:
       - DATA:
         - "SIDIS/eA/BeAGLE1.03.02-1.0_Ds_eAu_9x100_q2_1.csv"
+        - "SIDIS/eA/BeAGLE1.03.02-1.0_Lc_eAu_9x100_q2_1.csv"
 
 SIDIS:ep:nevents:
   extends: .nevents
@@ -102,6 +104,7 @@ SIDIS:ep:nevents:
         - "SIDIS/ep/pythia8.312-2.0_D0_ep_10x250_q2_1.csv"
         - "SIDIS/ep/pythia8.312-2.0_Lc_ep_10x250_q2_1.csv"
         - "SIDIS/ep/pythia8.316-1.1_Ds_ep_9x275_q2_1.csv"
+        - "SIDIS/ep/pythia8.316-1.0_Lc_ep_9x275_q2_1.csv"
 
 SIDIS:ep:timings:
   extends: .timings
@@ -128,6 +131,7 @@ SIDIS:ep:timings:
         - "SIDIS/ep/pythia8.312-2.0_D0_ep_10x250_q2_1.csv"
         - "SIDIS/ep/pythia8.312-2.0_Lc_ep_10x250_q2_1.csv"
         - "SIDIS/ep/pythia8.316-1.1_Ds_ep_9x275_q2_1.csv"
+        - "SIDIS/ep/pythia8.316-1.0_Lc_ep_9x275_q2_1.csv"
 
 SIDIS:collect:
   extends: .collect
