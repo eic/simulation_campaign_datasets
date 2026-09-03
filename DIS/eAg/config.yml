@@ -1,0 +1,7 @@
+include:
+  - local: 'DIS/eAg/9x115/config.yml'
+
+DIS:eAg:collect:
+  extends: .collect
+  needs:
+    - DIS:eAg:9x115:collect
