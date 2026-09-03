@@ -1,5 +1,6 @@
 include:
   - local: 'DIS/ep/config.yml'
+  - local: 'DIS/eAg/config.yml'
   - local: 'DIS/eAu/config.yml'
   - local: 'DIS/eCu/config.yml'
   - local: 'DIS/eH2/config.yml'
@@ -10,6 +11,7 @@ DIS:collect:
   extends: .collect
   needs:
     - DIS:ep:collect
+    - DIS:eAg:collect
     - DIS:eAu:collect:without_zdc
     - DIS:eAu:collect:craterlake
     - DIS:eCu:collect
