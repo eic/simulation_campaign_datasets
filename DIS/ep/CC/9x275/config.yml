@@ -1,0 +1,30 @@
+DIS:ep:CC:9x275:DJANGOH4.6.10-2.0:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/ep/CC/9x275/DJANGOH4.6.10-2.0_CC_Rad_eMinus-pMinus_9x275_q2_100to1000.csv"
+        - "DIS/ep/CC/9x275/DJANGOH4.6.10-2.0_CC_Rad_eMinus-pMinus_9x275_q2_1000to3000.csv"
+        - "DIS/ep/CC/9x275/DJANGOH4.6.10-2.0_CC_Rad_eMinus-pMinus_9x275_q2_3000to9000.csv"
+        - "DIS/ep/CC/9x275/DJANGOH4.6.10-2.0_CC_Rad_eMinus-pPlus_9x275_q2_100to1000.csv"
+        - "DIS/ep/CC/9x275/DJANGOH4.6.10-2.0_CC_Rad_eMinus-pPlus_9x275_q2_1000to3000.csv"
+        - "DIS/ep/CC/9x275/DJANGOH4.6.10-2.0_CC_Rad_eMinus-pPlus_9x275_q2_3000to9000.csv"
+
+DIS:ep:CC:9x275:DJANGOH4.6.10-2.0:timings:
+  extends: .timings
+  needs:
+    - DIS:ep:CC:9x275:DJANGOH4.6.10-2.0:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "DIS/ep/CC/9x275/DJANGOH4.6.10-2.0_CC_Rad_eMinus-pMinus_9x275_q2_100to1000.csv"
+        - "DIS/ep/CC/9x275/DJANGOH4.6.10-2.0_CC_Rad_eMinus-pMinus_9x275_q2_1000to3000.csv"
+        - "DIS/ep/CC/9x275/DJANGOH4.6.10-2.0_CC_Rad_eMinus-pMinus_9x275_q2_3000to9000.csv"
+        - "DIS/ep/CC/9x275/DJANGOH4.6.10-2.0_CC_Rad_eMinus-pPlus_9x275_q2_100to1000.csv"
+        - "DIS/ep/CC/9x275/DJANGOH4.6.10-2.0_CC_Rad_eMinus-pPlus_9x275_q2_1000to3000.csv"
+        - "DIS/ep/CC/9x275/DJANGOH4.6.10-2.0_CC_Rad_eMinus-pPlus_9x275_q2_3000to9000.csv"
+
+DIS:ep:CC:9x275:collect:
+  extends: .collect
+  needs:
+    - DIS:ep:CC:9x275:DJANGOH4.6.10-2.0:timings
