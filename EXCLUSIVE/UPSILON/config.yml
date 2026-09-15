@@ -24,7 +24,40 @@ EXCLUSIVE:UPSILON:timings:
         - "EXCLUSIVE/UPSILON/UPSILON_threshold_18x275_hiAcc.csv"
         - "EXCLUSIVE/UPSILON/UPSILON_threshold_18x275_hiDiv.csv"
 
+EXCLUSIVE:UPSILON:eSTARlight1.3.0-1.0:nevents:
+  extends: .nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/UPSILON/eSTARlight/eSTARlight1.3.0-1.0_Upsilon1S_9x130_q2_0to0.01_hiAcc.csv"
+        - "EXCLUSIVE/UPSILON/eSTARlight/eSTARlight1.3.0-1.0_Upsilon1S_9x275_q2_0to0.01_hiAcc.csv"
+        - "EXCLUSIVE/UPSILON/eSTARlight/eSTARlight1.3.0-1.0_Upsilon1S_9x275_q2_0to0.01_hiDiv.csv"
+        - "EXCLUSIVE/UPSILON/eSTARlight/eSTARlight1.3.0-1.0_Upsilon2S_9x130_q2_0to0.01_hiAcc.csv"
+        - "EXCLUSIVE/UPSILON/eSTARlight/eSTARlight1.3.0-1.0_Upsilon2S_9x275_q2_0to0.01_hiAcc.csv"
+        - "EXCLUSIVE/UPSILON/eSTARlight/eSTARlight1.3.0-1.0_Upsilon2S_9x275_q2_0to0.01_hiDiv.csv"
+        - "EXCLUSIVE/UPSILON/eSTARlight/eSTARlight1.3.0-1.0_Upsilon3S_9x130_q2_0to0.01_hiAcc.csv"
+        - "EXCLUSIVE/UPSILON/eSTARlight/eSTARlight1.3.0-1.0_Upsilon3S_9x275_q2_0to0.01_hiAcc.csv"
+        - "EXCLUSIVE/UPSILON/eSTARlight/eSTARlight1.3.0-1.0_Upsilon3S_9x275_q2_0to0.01_hiDiv.csv"
+
+EXCLUSIVE:UPSILON:eSTARlight1.3.0-1.0:timings:
+  extends: .timings
+  needs:
+    - EXCLUSIVE:UPSILON:eSTARlight1.3.0-1.0:nevents
+  parallel:
+    matrix:
+      - DATA:
+        - "EXCLUSIVE/UPSILON/eSTARlight/eSTARlight1.3.0-1.0_Upsilon1S_9x130_q2_0to0.01_hiAcc.csv"
+        - "EXCLUSIVE/UPSILON/eSTARlight/eSTARlight1.3.0-1.0_Upsilon1S_9x275_q2_0to0.01_hiAcc.csv"
+        - "EXCLUSIVE/UPSILON/eSTARlight/eSTARlight1.3.0-1.0_Upsilon1S_9x275_q2_0to0.01_hiDiv.csv"
+        - "EXCLUSIVE/UPSILON/eSTARlight/eSTARlight1.3.0-1.0_Upsilon2S_9x130_q2_0to0.01_hiAcc.csv"
+        - "EXCLUSIVE/UPSILON/eSTARlight/eSTARlight1.3.0-1.0_Upsilon2S_9x275_q2_0to0.01_hiAcc.csv"
+        - "EXCLUSIVE/UPSILON/eSTARlight/eSTARlight1.3.0-1.0_Upsilon2S_9x275_q2_0to0.01_hiDiv.csv"
+        - "EXCLUSIVE/UPSILON/eSTARlight/eSTARlight1.3.0-1.0_Upsilon3S_9x130_q2_0to0.01_hiAcc.csv"
+        - "EXCLUSIVE/UPSILON/eSTARlight/eSTARlight1.3.0-1.0_Upsilon3S_9x275_q2_0to0.01_hiAcc.csv"
+        - "EXCLUSIVE/UPSILON/eSTARlight/eSTARlight1.3.0-1.0_Upsilon3S_9x275_q2_0to0.01_hiDiv.csv"
+
 EXCLUSIVE:UPSILON:collect:
   extends: .collect
   needs:
     - EXCLUSIVE:UPSILON:timings
+    - EXCLUSIVE:UPSILON:eSTARlight1.3.0-1.0:timings
